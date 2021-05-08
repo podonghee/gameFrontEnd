@@ -2,8 +2,11 @@ var GameController = function () {
     var _this = this;
 
     this.game = {
-        search: function (data, callback) {
+        search : function (data, callback) {
             _this.request("game", "gameSelectList", {contents: data}, callback);
+        },
+        detail : function (data, callback) {
+            _this.request("game", "gameDetail", {contents: data}, callback);
         },
     };
     this.request = function (moduleCode, tkCode, data, callback, async) {
