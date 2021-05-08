@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="assets/css/common.css" rel="stylesheet">
+    <link href="assets/css/gameinfo.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/plugins/jquery/jquery.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery/jquery.ajax-cross-origin.min.js"></script>
+    <script layout:fragment="script" type="text/javascript" th:src="@{/assets/js/common/header.js}"></script>
+</head>
+<body>
+<div id="header">
+    <script>
+        window.fbAsyncInit = function() {FB.init({ appId : '1238320742883088', xfbml : true, version : 'v7.0' });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ko_KR/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="gnb">
+        <div class="gnb-top">
+            <div class="logo">
+                <a href="/"><img src="https://cdn.gamemeca.com/g17/images/common/meca_logo_s.gif"></a>
+            </div>
+            <div class="gnb-user">
+                <a href="/login.php" class="login"></a>
+                <a href="/member.php?rts=joinStep1" class="join">회원가입</a>
+                <span class="gt_bar"></span>
+                <a href="/member.php?rts=userSearch" class="find">아이디 비밀번호 찾기</a>
+                <span class="gt_bar"></span>
+                <a href="https://m.gamemeca.com" class="mobile"></a>
+            </div>
+        </div>
+        <hr class="hr-gray-gnb content-size">
+    </div>
+
+    <div id="lnb" class="">
+        <div class="lnb-sub">
+            <ul class="lnb-sub-left">
+                <li class="static-img menu01"><a href="/news.php"><!-- 뉴스 --></a></li>
+                <li class="static-img menu02"><a href="/review.php"><!-- 프리뷰/리뷰 --></a></li>
+                <li class="static-img menu03"><a href="/feature.php"><!-- 특집기사 --></a></li>
+                <li class="static-img menu04 on"><a href="/game.php"><!-- 게임정보 --></a></li>
+                <li class="static-img menu05"><a href="/hardware.php"><!-- 하드웨어 --></a></li>
+                <li class="static-img menu06"><a href="/smart.php"><!-- 모바일 --></a></li>
+                <li class="static-img menu07"><a href="/webgame.php"><!-- 웹게임 --></a></li>
+                <li class="static-img menu08"><a href="/magazine/" target="_blink"><!-- 게임잡지 --></a></li>
+                <li class="static-img menu09"><a href="https://trees.gamemeca.com" target="_blink"><!-- 국민트리 --></a></li>
+            </ul>
+            <ul class="lnb-sub-right search">
+                <div class="gnb-search">
+                    <input type="text" name="q">
+                    <button class="static-img-btn btn-search btnSearch"></button>
+                </div>
+            </ul>
+        </div>
+        <hr class="hr-red content-size">
+        <hr class="hr-gray content-size">
+        <div class="lnb-sub section">
+            <ul class="lnb-sub-left">
+                <li class="static-img smenu000"><!-- = --></li>
+                <li class="static-img smenu401 on"><a href="/game.php"><!-- 게임DB --></a></li>
+                <li class="static-img smenu402"><a href="/game.php?rts=company"><!-- 업체정보 --></a></li>
+                <li class="static-img smenu403"><a href="/game.php?rts=guide"><!-- 공략 --></a></li>
+                <li class="static-img smenu404"><a href="/game.php?rts=schedule"><!-- 게임일정 --></a></li>
+                <li class="static-img smenu405"><a href="/game.php?rts=sshot"><!-- 스크린샷 --></a></li>
+                <li class="static-img smenu406"><a href="/game.php?rts=movie"><!-- 동영상 --></a></li>
+                <li class="static-img smenu407"><a href="/game.php?rts=gmshow"><!-- 게임쇼 --></a></li>
+                <li class="static-img smenu408"><a href="/ranking.php"><!-- 게임순위 --></a></li>
+            </ul>
+            <ul class="lnb-sub-right">
+                <li class="static-img smenu01 main"><a href="/fam.php"><!-- 팸 --></a></li>
+                <li class="static-img smenu02 main"><a href="/event.php"><!-- 이벤트 --></a></li>
+                <li class="static-img smenu03 main"><a href="/potion.php"><!-- 포션마켓 --></a></li>
+                <li class="static-img smenu04 main"><a class="btnCommunityLayer"><!-- 커뮤니티 --></a></li>
+            </ul>
+        </div>
+        <hr class="hr-gray content-size">
+        <hr class="hr-gray1 content-size">
+        <hr class="hr-gray1 content-size">
+    </div>
+
+    <div id="dropdown-menu" style="display: none;">
+        <div class="dpmenu">
+            <div class="ss_col">
+                <span class="ss_stit">뉴스</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/news.php">전체</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=I">산업</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=O">온라인</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=P">PC</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=V">비디오</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=W">웹게임</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=M">모바일</a></li>
+                    <li class="ss_sitem"><a href="/news.php?ca=T">테마</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">프리뷰.리뷰</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/review.php">전체</a></li>
+                    <li class="ss_sitem"><a href="/review.php?ca=review">리뷰</a></li>
+                    <li class="ss_sitem"><a href="/review.php?ca=preview">프리뷰</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">특집</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/feature.php">기획기사</a></li>
+                    <li class="ss_sitem"><a href="/feature.php?gc=mecazine">메카파워진</a></li>
+                    <li class="ss_sitem"><a href="/magazine/">게임잡지</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">게임정보</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/game.php">게임DB</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=company">업체정보</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=guide">공략</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=schedule">게임일정</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=sshot">스크린샷</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=movie">동영상</a></li>
+                    <li class="ss_sitem"><a href="/game.php?rts=gmshow">게임쇼</a></li>
+                    <li class="ss_sitem"><a href="/ranking.php">게임순위</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">하드웨어</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/hardware.php/list.php?category=N">뉴스</a></li>
+                    <li class="ss_sitem"><a href="/hardware.php/list.php?category=F">기획기사</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">모바일</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/smart.php">전체</a></li>
+                    <li class="ss_sitem"><a href="/smart.php?ca=M">뉴스</a></li>
+                    <li class="ss_sitem"><a href="/smart.php?rts=tip">공략</a></li>
+                    <li class="ss_sitem"><a href="/smart.php?rts=board">커뮤니티</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">웹게임</span>
+                <ul>
+                    <li class="ss_sitem"><a href="/webgame.php">웹게임 홈</a></li>
+                    <li class="ss_sitem"><a href="/webgame.php?ca=W">뉴스</a></li>
+                    <li class="ss_sitem"><a href="/webgame.php?ca=P">프리뷰</a></li>
+                    <li class="ss_sitem"><a href="/webgame.php?rts=gameinfo">웹게임정보</a></li>
+                </ul>
+            </div>
+            <div class="ss_col">
+                <span class="ss_stit">게임공략</span>
+                <ul>
+                    <li class="ss_sitem"><a href="https://trees.gamemeca.com/odin/">오딘: 발할라 라이징</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/2worlds/">제2의 나라</a></li><li class="ss_sitem"><a href=" https://trees.gamemeca.com/icaruseternal/">이카루스 이터널</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/gransaga/">그랑사가</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/guardiantales/">가디언 테일즈</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/a3/">A3: 스틸얼라이브</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/bnsmkr/">블소 레볼루션</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/lineageii/">리니지2 레볼루션</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/pc-console-game-list-korean-patch/">한글패치</a></li><li class="ss_sitem"><a href="https://trees.gamemeca.com/hubs/steamgame-list/">스팀공략</a></li>			</ul>
+            </div>
+            <div class="ss_col last">
+                <ul>
+                    <li class="ss_sitem2"><a href="/fam.php">팸</a></li>
+                    <li class="ss_sitem2"><a href="/potion.php">포션마켓</a></li>
+                    <li class="ss_sitem2"><a href="/event.php">이벤트</a></li>
+                    <li class="ss_sitem2"><a href="/company.php?rts=company01">회사소개</a></li>
+                    <li class="ss_sitem2"><a href="/company.php?rts=company03">제휴문의</a></li>
+                    <li class="ss_sitem2"><a href="/biz/">광고안내</a></li>
+                    <li class="ss_sitem2"><a href="/company.php?rts=cscenter01">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown-menu-trees">
+            <div class="dpmenu-trees">
+                <div class="ss_titree"><a href="https://trees.gamemeca.com" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');"></a></div>
+                <ul class="ss_al">
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/odin/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/odin/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-odin-a.gif" width="50" height="50"></span>오딘: 발할라 라이징					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/2worlds/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/2worlds/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-2worlds-a.gif" width="50" height="50"></span>제2의 나라: Cross Worlds					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href=" https://trees.gamemeca.com/icaruseternal/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', ' https://trees.gamemeca.com/icaruseternal/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-icarus-a.gif" width="50" height="50"></span>이카루스 이터널					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/gransaga/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/gransaga/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-gransaga-a.gif" width="50" height="50"></span>그랑사가					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/guardiantales/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/guardiantales/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-guardan-a.gif" width="50" height="50"></span>가디언 테일즈					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/a3/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/a3/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-a3-a.gif" width="50" height="50"></span>A3: 스틸얼라이브					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/bnsmkr/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/bnsmkr/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-bsr-a.gif" width="50" height="50"></span>블레이드&amp;소울 레볼루션					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/lineageii/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/lineageii/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-lineage-a.gif" width="50" height="50"></span>리니지2 레볼루션					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/pc-console-game-list-korean-patch/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/pc-console-game-list-korean-patch/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-kor-a.gif" width="50" height="50"></span>한글패치					</a>
+                    </li>
+                    <li class="ss_aitem">
+                        <a href="https://trees.gamemeca.com/hubs/steamgame-list/" target="_blank" onclick="ga('send', 'event', 'GM_DROPDOWN_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/hubs/steamgame-list/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">
+                            <span class="ss_ico"><img src="https://cdn.gamemeca.com/g17/images/conico/conico-steam-a.gif" width="50" height="50"></span>스팀공략					</a>
+                    </li>
+                </ul>
+                <div class="ss_close"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="communityLayer" style="display: none;">
+        <!--커뮤니티 레이어-->
+        <div>
+            <ul>
+                <li>
+                    <img src="https://cdn.gamemeca.com/g17/images/conico/conico-odin-b.gif" class="rBanImg">
+                    <a href="https://trees.gamemeca.com/odin/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/odin/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">오딘: 발할라 라이징</a>
+                </li>
+                <li>
+                    <img src="https://cdn.gamemeca.com/g17/images/conico/conico-2worlds-b.gif" class="rBanImg">
+                    <a href="https://trees.gamemeca.com/2worlds/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/2worlds/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">제2의 나라</a>
+                </li>
+            </ul><ul>			<li>
+            <img src="https://cdn.gamemeca.com/g17/images/conico/conico-icarus-b.gif" class="rBanImg">
+            <a href=" https://trees.gamemeca.com/icaruseternal/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', ' https://trees.gamemeca.com/icaruseternal/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">이카루스 이터널</a>
+        </li>
+            <li>
+                <img src="https://cdn.gamemeca.com/g17/images/conico/conico-gransaga-b.gif" class="rBanImg">
+                <a href="https://trees.gamemeca.com/gransaga/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/gransaga/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">그랑사가</a>
+            </li>
+        </ul><ul>			<li>
+            <img src="https://cdn.gamemeca.com/g17/images/conico/conico-guardan-b.gif" class="rBanImg">
+            <a href="https://trees.gamemeca.com/guardiantales/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/guardiantales/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">가디언 테일즈</a>
+        </li>
+            <li>
+                <img src="https://cdn.gamemeca.com/g17/images/conico/conico-a3-b.gif" class="rBanImg">
+                <a href="https://trees.gamemeca.com/a3/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/a3/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">A3: 스틸얼라이브</a>
+            </li>
+        </ul><ul>			<li>
+            <img src="https://cdn.gamemeca.com/g17/images/conico/conico-bsr-b.gif" class="rBanImg">
+            <a href="https://trees.gamemeca.com/bnsmkr/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/bnsmkr/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">블소 레볼루션</a>
+        </li>
+            <li>
+                <img src="https://cdn.gamemeca.com/g17/images/conico/conico-lineage-b.gif" class="rBanImg">
+                <a href="https://trees.gamemeca.com/lineageii/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/lineageii/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">리니지2 레볼루션</a>
+            </li>
+        </ul><ul>			<li>
+            <img src="https://cdn.gamemeca.com/g17/images/conico/conico-kor-b.gif" class="rBanImg">
+            <a href="https://trees.gamemeca.com/pc-console-game-list-korean-patch/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/pc-console-game-list-korean-patch/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">한글패치</a>
+        </li>
+            <li>
+                <img src="https://cdn.gamemeca.com/g17/images/conico/conico-steam-b.gif" class="rBanImg">
+                <a href="https://trees.gamemeca.com/hubs/steamgame-list/" target="_blank" class="rBan" onclick="ga('send', 'event', 'GM_TOP_LAYER_TREES_CLICK', 'click_url', 'https://trees.gamemeca.com/hubs/steamgame-list/'); ga('send', 'event', 'GM_TOTAL_TREES_CLICK', 'click_url', 'GM_TOTAL_TREES_CLICK');">스팀공략</a>
+            </li>
+        </ul>
+        </div>
+        <!--//커뮤니티 레이어-->
+    </div>
+
+    <script>
+        jQuery(function() {
+            jQuery('#lnb .menu00, #lnb .smenu000').on('click', function() {
+                jQuery('#dropdown-menu').toggle();
+                if(jQuery(this).hasClass('on')) jQuery(this).removeClass('on');
+                else jQuery(this).addClass('on');
+            });
+            jQuery('#lnb .menu00.on, #lnb .smenu000.on, #dropdown-menu .ss_close').on('click', function() {
+                jQuery('#dropdown-menu').hide();
+                jQuery('#lnb .menu00, #lnb .smenu000').removeClass('on');
+            });
+
+            jQuery('.btnCommunityLayer').on('click', function() {
+                jQuery('.communityLayer').toggle();
+            })
+        });
+    </script>
+</div>
+</body>
+</html>
