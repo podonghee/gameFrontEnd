@@ -1,11 +1,9 @@
-package com.podong.game.gamefrontend.game.gm001.controller;
+package com.podong.game.gamefrontend.game.gm000.controller;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,12 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/game")
 public class GameController {
 
-    @RequestMapping(value = "gm001", method = RequestMethod.GET)
+    @RequestMapping(value = "gm000", method = RequestMethod.GET)
     public String detail(HttpServletRequest request, Model model){
         String gameId = request.getParameter("gameId");
-        model.addAttribute("gameId",gameId);
+        String gmTabNm = request.getParameter("gmTabNm");
 
-        return "gm/gm001/gm001";
+        model.addAttribute("gameId",gameId);
+        model.addAttribute("gmTabNm",gmTabNm);
+
+        return "gm/gm000/gm000";
     }
 
 }

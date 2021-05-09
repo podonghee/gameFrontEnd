@@ -9,28 +9,23 @@ $(function(){
         _this.detailView.initView();
     };
     fnObj.detailView = {
+        targetId : ".gm_info",
         gameId : $("#gameId").val(),
+
         initView: function () {
             this.initDisplay();
-            this.initEvent();
         },
         initDisplay : function() {
-            fnObj.detailView.search();
+            //fnObj.detailView.search();
         },
-        gameDetail : function(list){
-            var _list = list;
 
-        },
         search : function(){
             //상세 게임 백앤드 호출
             controller.Game.game.detail({gameId :fnObj.detailView.gameId},function(res){
                 if(undefined !=  res.list && 0 != res.list) {
-                    fnObj.detailView.gameDetail(res.list);
+                    common.setData(res.list[0],fnObj.detailView.targetId);
                 }
             });
-        },
-        initEvent : function() {
-
         },
     }
     init();

@@ -12,4 +12,27 @@ common.loadController = function (controllerName) {
             console.log(controllerName + " 로드 실패.");
         }
     });
+},
+common.setData = function(data,target)
+{
+    var targetTag = undefined;
+    var useDeptListStr = undefined;
+    var targetArea = target === undefined ? this.target : target;
+
+    for(var key in data) {
+        targetTag = $(targetArea).find("[data-ax-path='" + key + "']");
+        if (targetTag.length < 1) {
+            targetTag =$(targetArea).find("." + key + "");
+            if (targetTag.length < 1)
+                targetTag = $(targetArea).find("#" + key + "");
+            if (targetTag.length < 1)
+                continue;
+        }
+
+        if ("input" == targetTag.prop("tagName").toLowerCase() || "select" == targetTag.prop("tagName").toLowerCase() || "textarea" == targetTag.prop("tagName").toLowerCase()
+        )
+            targetTag.val(data[key]);
+        else
+            targetTag.text(data[key]);
+    }
 }

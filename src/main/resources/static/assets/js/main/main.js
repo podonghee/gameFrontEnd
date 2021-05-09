@@ -162,7 +162,7 @@ $(function(){
             });
             //게임 이미지 클릭시  상세페이지
             $(document).on("click",'.dblist_gallery a',function(){
-                location.href ='game/gm001?gameId='+$(this).attr("gameId");
+                location.href ='game/gm000?gameId='+$(this).attr("gameId")+"&gmTabNm=gmInfo";
             });
         },
         //페이지 목록 뿌려주는 함수

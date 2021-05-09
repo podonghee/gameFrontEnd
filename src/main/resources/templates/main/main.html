@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdn.gamemeca.com/g17/css/common.css?v=21050818">
     <th:block th:include="common/base"></th:block>
     <script layout:fragment="script" type="text/javascript" th:src="@{/assets/js/main/main.js}"></script>
 </head>
@@ -154,7 +155,7 @@
         <!--//게임 DB 리스트-->
 
         <!--gmdb list -->
-        <form method="GET" th:action="@{/game/gm001}" name="detailFrom">
+        <form method="GET" th:action="@{/game/gm000}" name="detailFrom">
             <div class="dblist_area" id="gmdb-list-box">
                 <ul class="dblist_gallery" id="ulEmpty">
                     <li style="display: none;">
