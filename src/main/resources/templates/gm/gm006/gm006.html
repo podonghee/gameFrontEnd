@@ -1,0 +1,2818 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_16x16.ico" rel="shortcut icon">
+    <link rel="apple-touch-icon-precomposed" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180"
+          href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_180x180.png">
+    <title>인기 게임 순위 - 게임메카</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="title" content="인기 게임 순위 - 게임메카">
+    <meta name="description" content="할 게임이 없네. 요즘 무슨 게임이 재미있나 한 번 볼까? 게임 불감증에 걸린 게이머를 위한 게임메카 인기 게임 순위">
+    <meta name="keywords" content="인기 게임 순위 - 게임메카">
+    <meta name="news_keywords" content="인기 게임 순위 - 게임메카">
+    <meta name="subject" content="인기 게임 순위 - 게임메카">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@game_meca">
+    <meta name="twitter:creator" content="@game_meca">
+    <meta name="twitter:image" content="https://cdn.gamemeca.com/g17/images/common/meca_logo_sns.gif">
+    <meta name="twitter:title" content="인기 게임 순위 - 게임메카">
+    <meta name="twitter:description" content="할 게임이 없네. 요즘 무슨 게임이 재미있나 한 번 볼까? 게임 불감증에 걸린 게이머를 위한 게임메카 인기 게임 순위">
+
+    <meta property="og:url" content="https://www.gamemeca.com">
+    <meta property="og:title" content="인기 게임 순위 - 게임메카">
+    <meta property="og:description" content="할 게임이 없네. 요즘 무슨 게임이 재미있나 한 번 볼까? 게임 불감증에 걸린 게이머를 위한 게임메카 인기 게임 순위">
+    <meta property="og:image" content="https://cdn.gamemeca.com/g17/images/common/meca_logo_sns.gif">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="480">
+    <meta property="og:type" content="article">
+    <meta property="og:article:author" content="게임메카">
+    <meta property="og:locale" content="ko_KR">
+
+
+    <meta property="kakao:title" content="인기 게임 순위 - 게임메카">
+    <meta property="kakao:description" content="할 게임이 없네. 요즘 무슨 게임이 재미있나 한 번 볼까? 게임 불감증에 걸린 게이머를 위한 게임메카 인기 게임 순위">
+    <meta name="resource-type" content="article">
+    <meta name="image" content="https://cdn.gamemeca.com/g17/images/common/meca_logo_sns.gif">
+    <link rel="image_src" href="https://cdn.gamemeca.com/g17/images/common/meca_logo_sns.gif">
+
+    <link rel="canonical" href="https://www.gamemeca.com/ranking.php">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.gamemeca.com/ranking.php">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.gamemeca.com/g17/css/common.css?v=21051318">
+    <script src="https://www.googletagservices.com/activeview/js/current/osd.js"></script>
+    <script src="https://partner.googleadservices.com/gampad/cookie.js?domain=www.gamemeca.com&amp;callback=_gfp_s_&amp;client=ca-pub-2639901077908883&amp;cookie=ID%3D8074a0501fd65e83-22c4646cd4c70047%3AT%3D1620346922%3ART%3D1620346922%3AS%3DALNI_MbmouJTq7I9Jw0230NAMARflbAF5g"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/r20210510/r20190131/show_ads_impl_fy2019.js"
+            id="google_shimpl"></script>
+    <script src="https://connect.facebook.net/ko_KR/sdk.js?hash=18ac2eec1b20bab4c50a1bfbdd3a3365&amp;ua=modern_es6"
+            async="" crossorigin="anonymous"></script>
+    <script id="facebook-jssdk" src="//connect.facebook.net/ko_KR/sdk.js"></script>
+
+    <th:block th:include="common/base"></th:block>
+    <script layout:fragment="script" type="text/javascript" th:src="@{/assets/js/gm/gm006/gm006.js}"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.gamemeca.com/g17/css/ranking.css?v=21051318">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-161YMYELG0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-161YMYELG0');
+    </script>
+    <meta http-equiv="origin-trial"
+          content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+    <meta http-equiv="origin-trial"
+          content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <style type="text/css"
+           data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden {
+        position: absolute;
+        top: -10000px;
+        z-index: 10001
+    }
+
+    .fb_reposition {
+        overflow: hidden;
+        position: relative
+    }
+
+    .fb_invisible {
+        display: none
+    }
+
+    .fb_reset {
+        background: none;
+        border: 0;
+        border-spacing: 0;
+        color: #000;
+        cursor: auto;
+        direction: ltr;
+        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+        font-size: 11px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        text-shadow: none;
+        text-transform: none;
+        visibility: visible;
+        white-space: normal;
+        word-spacing: normal
+    }
+
+    .fb_reset > div {
+        overflow: hidden
+    }
+
+    @keyframes fb_transform {
+        from {
+            opacity: 0;
+            transform: scale(.95)
+        }
+        to {
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
+    .fb_animate {
+        animation: fb_transform .3s forwards
+    }
+
+    .fb_dialog {
+        background: rgba(82, 82, 82, .7);
+        position: absolute;
+        top: -10000px;
+        z-index: 10001
+    }
+
+    .fb_dialog_advanced {
+        border-radius: 8px;
+        padding: 10px
+    }
+
+    .fb_dialog_content {
+        background: #fff;
+        color: #373737
+    }
+
+    .fb_dialog_close_icon {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+        cursor: pointer;
+        display: block;
+        height: 15px;
+        position: absolute;
+        right: 18px;
+        top: 17px;
+        width: 15px
+    }
+
+    .fb_dialog_mobile .fb_dialog_close_icon {
+        left: 5px;
+        right: auto;
+        top: 5px
+    }
+
+    .fb_dialog_padding {
+        background-color: transparent;
+        position: absolute;
+        width: 1px;
+        z-index: -1
+    }
+
+    .fb_dialog_close_icon:hover {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+    }
+
+    .fb_dialog_close_icon:active {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+    }
+
+    .fb_dialog_iframe {
+        line-height: 0
+    }
+
+    .fb_dialog_content .dialog_title {
+        background: #6d84b4;
+        border: 1px solid #365899;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0
+    }
+
+    .fb_dialog_content .dialog_title > span {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+        float: left;
+        padding: 5px 0 7px 26px
+    }
+
+    body.fb_hidden {
+        height: 100%;
+        left: 0;
+        margin: 0;
+        overflow: visible;
+        position: absolute;
+        top: -10000px;
+        transform: none;
+        width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+        min-height: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 10001
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered {
+        background: none;
+        height: auto;
+        min-height: initial;
+        min-width: initial;
+        width: auto
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+        width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+        background: none
+    }
+
+    .loading.centered #fb_dialog_loader_close {
+        clear: both;
+        color: #fff;
+        display: block;
+        font-size: 18px;
+        padding-top: 20px
+    }
+
+    #fb-root #fb_dialog_ipad_overlay {
+        background: rgba(0, 0, 0, .4);
+        bottom: 0;
+        left: 0;
+        min-height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 10000
+    }
+
+    #fb-root #fb_dialog_ipad_overlay.hidden {
+        display: none
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading iframe {
+        visibility: hidden
+    }
+
+    .fb_dialog_mobile .fb_dialog_iframe {
+        position: sticky;
+        top: 0
+    }
+
+    .fb_dialog_content .dialog_header {
+        background: linear-gradient(from(#738aba), to(#2c4987));
+        border-bottom: 1px solid;
+        border-color: #043b87;
+        box-shadow: white 0 1px 1px -1px inset;
+        color: #fff;
+        font: bold 14px Helvetica, sans-serif;
+        text-overflow: ellipsis;
+        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+        vertical-align: middle;
+        white-space: nowrap
+    }
+
+    .fb_dialog_content .dialog_header table {
+        height: 43px;
+        width: 100%
+    }
+
+    .fb_dialog_content .dialog_header td.header_left {
+        font-size: 12px;
+        padding-left: 5px;
+        vertical-align: middle;
+        width: 60px
+    }
+
+    .fb_dialog_content .dialog_header td.header_right {
+        font-size: 12px;
+        padding-right: 5px;
+        vertical-align: middle;
+        width: 60px
+    }
+
+    .fb_dialog_content .touchable_button {
+        background: linear-gradient(from(#4267B2), to(#2a4887));
+        background-clip: padding-box;
+        border: 1px solid #29487d;
+        border-radius: 3px;
+        display: inline-block;
+        line-height: 18px;
+        margin-top: 3px;
+        max-width: 85px;
+        padding: 4px 12px;
+        position: relative
+    }
+
+    .fb_dialog_content .dialog_header .touchable_button input {
+        background: none;
+        border: none;
+        color: #fff;
+        font: bold 12px Helvetica, sans-serif;
+        margin: 2px -12px;
+        padding: 2px 6px 3px 6px;
+        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog_content .dialog_header .header_center {
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        vertical-align: middle
+    }
+
+    .fb_dialog_content .dialog_content {
+        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+        border: 1px solid #4a4a4a;
+        border-bottom: 0;
+        border-top: 0;
+        height: 150px
+    }
+
+    .fb_dialog_content .dialog_footer {
+        background: #f5f6f7;
+        border: 1px solid #4a4a4a;
+        border-top-color: #ccc;
+        height: 40px
+    }
+
+    #fb_dialog_loader_close {
+        float: left
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+        visibility: hidden
+    }
+
+    #fb_dialog_loader_spinner {
+        animation: rotateSpinner 1.2s linear infinite;
+        background-color: transparent;
+        background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        height: 24px;
+        width: 24px
+    }
+
+    @keyframes rotateSpinner {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    .fb_iframe_widget {
+        display: inline-block;
+        position: relative
+    }
+
+    .fb_iframe_widget span {
+        display: inline-block;
+        position: relative;
+        text-align: justify
+    }
+
+    .fb_iframe_widget iframe {
+        position: absolute
+    }
+
+    .fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe {
+        max-width: 100%
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe {
+        min-width: 220px;
+        position: relative
+    }
+
+    .fb_iframe_widget_lift {
+        z-index: 1
+    }
+
+    .fb_iframe_widget_fluid {
+        display: inline
+    }
+
+    .fb_iframe_widget_fluid span {
+        width: 100%
+    }
+
+    .fb_mpn_mobile_landing_page_slide_out {
+        animation-duration: 200ms;
+        animation-name: fb_mpn_landing_page_slide_out;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_landing_page_slide_out_from_left {
+        animation-duration: 200ms;
+        animation-name: fb_mpn_landing_page_slide_out_from_left;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_landing_page_slide_up {
+        animation-duration: 500ms;
+        animation-name: fb_mpn_landing_page_slide_up;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_bounce_in {
+        animation-duration: 300ms;
+        animation-name: fb_mpn_bounce_in;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_bounce_out {
+        animation-duration: 300ms;
+        animation-name: fb_mpn_bounce_out;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_bounce_out_v2 {
+        animation-duration: 300ms;
+        animation-name: fb_mpn_fade_out;
+        transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_in_v2 {
+        animation-duration: 300ms;
+        animation-name: fb_bounce_in_v2;
+        transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_in_from_left {
+        animation-duration: 300ms;
+        animation-name: fb_bounce_in_from_left;
+        transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_out_v2 {
+        animation-duration: 300ms;
+        animation-name: fb_bounce_out_v2;
+        transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_out_from_left {
+        animation-duration: 300ms;
+        animation-name: fb_bounce_out_from_left;
+        transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bubble_animated_no_badge {
+        box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+        transition: box-shadow 150ms linear
+    }
+
+    .fb_customer_chat_bubble_animated_no_badge:hover {
+        box-shadow: 0 5px 24px rgba(0, 0, 0, .3)
+    }
+
+    .fb_customer_chat_bubble_animated_with_badge {
+        box-shadow: -5px 4px 14px rgba(0, 0, 0, .15);
+        transition: box-shadow 150ms linear
+    }
+
+    .fb_customer_chat_bubble_animated_with_badge:hover {
+        box-shadow: -5px 8px 24px rgba(0, 0, 0, .2)
+    }
+
+    .fb_invisible_flow {
+        display: inherit;
+        height: 0;
+        overflow-x: hidden;
+        width: 0
+    }
+
+    .fb_new_ui_mobile_overlay_active {
+        overflow: hidden
+    }
+
+    @keyframes fb_mpn_landing_page_slide_in {
+        0% {
+            border-radius: 50%;
+            margin: 0 24px;
+            width: 60px
+        }
+        40% {
+            border-radius: 18px
+        }
+        100% {
+            margin: 0 12px;
+            width: 100% -24px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_in_from_left {
+        0% {
+            border-radius: 50%;
+            left: 12px;
+            margin: 0 24px;
+            width: 60px
+        }
+        40% {
+            border-radius: 18px
+        }
+        100% {
+            left: 12px;
+            margin: 0 12px;
+            width: 100% -24px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_out {
+        0% {
+            margin: 0 12px;
+            width: 100% -24px
+        }
+        60% {
+            border-radius: 18px
+        }
+        100% {
+            border-radius: 50%;
+            margin: 0 24px;
+            width: 60px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_out_from_left {
+        0% {
+            left: 12px;
+            width: 100% -24px
+        }
+        60% {
+            border-radius: 18px
+        }
+        100% {
+            border-radius: 50%;
+            left: 12px;
+            width: 60px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_up {
+        0% {
+            bottom: 0;
+            opacity: 0
+        }
+        100% {
+            bottom: 24px;
+            opacity: 1
+        }
+    }
+
+    @keyframes fb_mpn_bounce_in {
+        0% {
+            opacity: .5;
+            top: 100%
+        }
+        100% {
+            opacity: 1;
+            top: 0
+        }
+    }
+
+    @keyframes fb_mpn_fade_out {
+        0% {
+            bottom: 30px;
+            opacity: 1
+        }
+        100% {
+            bottom: 0;
+            opacity: 0
+        }
+    }
+
+    @keyframes fb_mpn_bounce_out {
+        0% {
+            opacity: 1;
+            top: 0
+        }
+        100% {
+            opacity: .5;
+            top: 100%
+        }
+    }
+
+    @keyframes fb_bounce_in_v2 {
+        0% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom right
+        }
+        50% {
+            transform: scale(1.03, 1.03);
+            transform-origin: bottom right
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom right
+        }
+    }
+
+    @keyframes fb_bounce_in_from_left {
+        0% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom left
+        }
+        50% {
+            transform: scale(1.03, 1.03);
+            transform-origin: bottom left
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom left
+        }
+    }
+
+    @keyframes fb_bounce_out_v2 {
+        0% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom right
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom right
+        }
+    }
+
+    @keyframes fb_bounce_out_from_left {
+        0% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom left
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom left
+        }
+    }
+
+    @keyframes fb_bounce_out_v2_mobile_chat_started {
+        0% {
+            opacity: 1;
+            top: 0
+        }
+        100% {
+            opacity: 0;
+            top: 20px
+        }
+    }
+
+    @keyframes fb_customer_chat_bubble_bounce_in_animation {
+        0% {
+            bottom: 6pt;
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: center
+        }
+        70% {
+            bottom: 18pt;
+            opacity: 1;
+            transform: scale(1.2, 1.2)
+        }
+        100% {
+            transform: scale(1, 1)
+        }
+    }
+
+    @keyframes slideInFromBottom {
+        0% {
+            opacity: .1;
+            transform: translateY(100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes slideInFromBottomDelay {
+        0% {
+            opacity: 0;
+            transform: translateY(100%)
+        }
+        97% {
+            opacity: 0;
+            transform: translateY(100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }</style>
+    <script charset="utf-8" src="https://platform.twitter.com/js/button.5573c974dc31bbdab5ea7923a0bd5cf3.js"></script>
+    <meta http-equiv="origin-trial"
+          content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+    <meta http-equiv="origin-trial"
+          content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta http-equiv="origin-trial"
+          content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <link rel="preload" href="https://adservice.google.co.kr/adsid/integrator.js?domain=www.gamemeca.com" as="script">
+    <script type="text/javascript"
+            src="https://adservice.google.co.kr/adsid/integrator.js?domain=www.gamemeca.com"></script>
+    <link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.gamemeca.com" as="script">
+    <script type="text/javascript"
+            src="https://adservice.google.com/adsid/integrator.js?domain=www.gamemeca.com"></script>
+</head>
+<body>
+<div class="ad-topscroll">
+    <script type="text/javascript"
+            src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_topscroll"></script>
+    <div class="topScrollHeight"></div>
+</div>
+<div class="header-background">
+    <div></div>
+</div>
+<div class="background-ad">
+    <script type="text/javascript"
+            src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_backskin"></script>
+    <style>body {
+        background: none;
+    }
+
+    .backgroundAdClick {
+        position: absolute;
+        width: 500px;
+        min-height: 500px;
+        height: 1024px;
+    }
+
+    .backgroundAdClick.Left {
+        left: -500px;
+    }
+
+    .backgroundAdClick.Right {
+        right: -500px;
+    }
+
+    #bg_ad {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    #bg_ad > div {
+        width: 1041px;
+        margin: auto;
+        height: 1024px;
+        background-color: #ffffff;
+        position: relative;
+    }
+    </style>
+</div>
+<th:block th:include="fragments/header"></th:block>
+<div id="main">
+    <th:block th:include="common/aside"></th:block>
+    <div id="content">
+        <div class="content-top-ad">
+            <script type="text/javascript"
+                    src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_big"></script>
+            <div id="meca_ads_7">
+                <iframe src="https://ads.gamemeca.com/adver/html/?id=7" width="1041" height="80" scrolling="no"
+                        style="margin: 0; padding: 0; border: none;"></iframe>
+            </div>
+        </div>
+        <div class="content-ti-ad"></div>
+        <div class="ranking_list">
+            <div class="ranking-header">
+				<span class="ranking-date">
+					2021.05.05~05.11<span style="font-size:0.8em;"> 기준</span>
+				</span>
+                <span class="ranking-description">
+					포털 트렌드, PC방 게임접속, 인터넷 게임방송 시청자 수, 게임메카 유저들의 투표를 기준으로 집계				</span>
+
+                <span class="ranking-complete-select">
+					<select class="before-ranking" id="selectWeeks">
+						<option value="">월/일</option>
+												<option value="2105" selected="">05.05~05.11</option>
+												<option value="2104">04.28~05.04</option>
+												<option value="2103">04.21~04.27</option>
+												<option value="2102">04.14~04.20</option>
+												<option value="2101">04.07~04.13</option>
+												<option value="2100">03.31~04.06</option>
+												<option value="2099">03.24~03.30</option>
+												<option value="2098">03.17~03.23</option>
+												<option value="2097">03.10~03.16</option>
+												<option value="2096">03.03~03.09</option>
+												<option value="2095">02.24~03.02</option>
+												<option value="2094">02.17~02.23</option>
+												<option value="2093">02.10~02.16</option>
+												<option value="2092">02.03~02.09</option>
+												<option value="2091">01.27~02.02</option>
+												<option value="2090">01.20~01.26</option>
+												<option value="2089">01.13~01.19</option>
+												<option value="2088">01.06~01.12</option>
+											</select>
+				</span>
+
+                <span class="ranking-complete-select">
+					<select id="selectYears">
+						<option value="">년도</option>
+													<option value="2021" selected="">2021년</option>
+													<option value="2020">2020년</option>
+													<option value="2019">2019년</option>
+													<option value="2018">2018년</option>
+													<option value="2017">2017년</option>
+													<option value="2016">2016년</option>
+													<option value="2015">2015년</option>
+													<option value="2014">2014년</option>
+													<option value="2013">2013년</option>
+													<option value="2012">2012년</option>
+													<option value="2011">2011년</option>
+													<option value="2010">2010년</option>
+													<option value="2009">2009년</option>
+													<option value="2008">2008년</option>
+													<option value="2007">2007년</option>
+													<option value="2006">2006년</option>
+											</select>
+				</span>
+            </div>
+
+            <table class="ranking-table">
+                <thead>
+                <tr class="ranking-table-header">
+                    <th>순위</th>
+                    <th></th>
+                    <th></th>
+                    <th>게임명</th>
+                    <th>국민트리</th>
+                    <th>뉴스</th>
+                    <th>프리뷰<br>/리뷰</th>
+                    <th>동영상</th>
+                    <th>스크린샷</th>
+                    <th>사이트</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663251"> <span class="rank red">1</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/26/18/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002618">리그 오브 레전드</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=103">라이엇게임즈</a></span> |
+                            <span>AOS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/leagueoflegends/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002618"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002618"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002618&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002618&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002618"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663252"> <span class="rank red">2</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/88/08/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0008808">플레이어언노운스 배틀그라운드</a>
+                        </div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=54">크래프톤</a></span> |
+                            <span>FPS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/battleground/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0008808"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0008808"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0008808&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0008808&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0008808"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663253"> <span class="rank red">3</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/72/97/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0007297">로스트아크</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=2085">스마일게이트 RPG</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/lostark/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0007297"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0007297"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0007297&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0007297&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0007297"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663254"> <span class="rank ">4</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/18/23/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001823">서든어택</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=582">넥슨지티</a></span> |
+                            <span>FPS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/suddenattack/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001823"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001823"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001823&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001823&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001823"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663255"> <span class="rank ">5</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/96/37/692068_221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0009637">피파 온라인 4</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=843">EA코리아 스튜디오</a></span> |
+                            <span>스포츠</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/fifaonline4/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0009637"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0009637"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0009637&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0009637&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0009637"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663256"> <span class="rank ">6</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/72/94/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0007294">오버워치</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>FPS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/playoverwatch/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0007294"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0007294"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0007294&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0007294&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0007294"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663257"> <span class="rank ">7</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon"
+                             src="https://cdn.gamemeca.com/gmdb/g001/17/93/538821_200302-risell-uu5.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011793">발로란트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=103">라이엇게임즈</a></span> |
+                            <span>FPS</span>
+                            <span>무료</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/valorant/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011793"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011793"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011793&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011793&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011793"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663258"> <span class="rank ">8</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/42/53/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0004253">아이온: 영원의 탑</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=74">엔씨소프트</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/aion/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0004253"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0004253"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0004253&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0004253&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0004253"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663259"> <span class="rank ">9</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/10/53/221151(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001053">메이플스토리</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=299">위젯스튜디오</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/maplestory/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001053"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001053"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001053&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001053&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001053"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663260"> <span class="rank ">10</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/04/35/12877(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0000435">스타크래프트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>RTS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0000435"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0000435"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0000435&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0000435&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0000435"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663261"> <span class="rank ">11</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/15/23/221151(1).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001523">던전앤파이터</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=18">네오플</a></span> |
+                            <span>액션 RPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/df/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001523"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001523"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001523&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001523&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001523"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663262"> <span class="rank ">12</span>
+                        <span class="rankChange"><span class="icon up"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/28/44/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002844">리니지</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=74">엔씨소프트</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/lineageon/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002844"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002844"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002844&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002844&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002844"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663263"> <span class="rank ">13</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/13/36/221151(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001336">카트라이더</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=19">넥슨</a></span> |
+                            <span>레이싱</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/kartrider/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001336"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001336"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001336&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001336&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001336"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663264"> <span class="rank ">14</span>
+                        <span class="rankChange"><span class="icon down"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g001/08/63/320908_600335.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0010863">패스 오브 엑자일</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=2019">그라인딩 기어 게임즈</a></span>
+                            |
+                            <span>액션 RPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/poe/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0010863"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0010863"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0010863&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0010863&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0010863"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663265"> <span class="rank ">15</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/28/35/221151(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002835">월드 오브 워크래프트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/wow-tip/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002835"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002835"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002835&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002835&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002835"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663266"> <span class="rank ">16</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/49/31/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0004931">사이퍼즈</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=18">네오플</a></span> |
+                            <span>AOS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/cyphers/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0004931"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0004931"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0004931&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0004931&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0004931"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663267"> <span class="rank ">17</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/10/08/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001008">리니지 2</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=74">엔씨소프트</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/lineageonii/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001008"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001008"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001008&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001008&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001008"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663268"> <span class="rank ">18</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/33/28/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0003328">워크래프트 3</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>RTS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0003328"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0003328"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0003328&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0003328&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0003328"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663269"> <span class="rank ">19</span>
+                        <span class="rankChange"><span class="icon up"></span>2</span>
+                    </td>
+                    <td><img class="game-icon"
+                             src="https://cdn.gamemeca.com/gmdb/g001/08/21/959552_190212-risell-ii4.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0010821">에이펙스 레전드</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=741">리스폰엔터테인먼트</a></span> |
+                            <span>FPS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0010821"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0010821"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0010821&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0010821&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0010821"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663270"> <span class="rank ">20</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/21/36/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002136">디아블로 3</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>액션 RPG</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/diablo3/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002136"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002136"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002136&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002136&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002136"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663271"> <span class="rank ">21</span>
+                        <span class="rankChange"><span class="icon down"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/32/65/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0003265">GTA 5</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=347">락스타게임즈</a></span> |
+                            <span>액션</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0003265"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0003265"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0003265&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0003265&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0003265"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663272"> <span class="rank ">22</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/60/12/221151(2).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0006012">검은사막</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=549">펄어비스</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/black_desert/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0006012"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0006012"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0006012&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0006012&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0006012"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663273"> <span class="rank ">23</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/38/07/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0003807">블레이드앤소울</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=74">엔씨소프트</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/bns/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0003807"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0003807"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0003807&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0003807&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0003807"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663274"> <span class="rank ">24</span>
+                        <span class="rankChange"><span class="icon up"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/46/71/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0004671">도타 2</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=289">밸브</a></span> |
+                            <span>AOS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0004671"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0004671"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0004671&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0004671&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0004671"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663275"> <span class="rank ">25</span>
+                        <span class="rankChange"><span class="icon up"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/71/85/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0007185">레인보우 식스: 시즈</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=148">유비소프트</a></span> |
+                            <span>FPS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0007185"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0007185"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0007185&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0007185&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0007185"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663276"> <span class="rank ">26</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/38/74/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0003874">스타크래프트 2: 자유의 날개</a>
+                        </div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>RTS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0003874"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0003874"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0003874&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0003874&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0003874"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663277"> <span class="rank ">27</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon"
+                             src="https://cdn.gamemeca.com/gmdb/g001/15/12/290514_191008-risell-yy7.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011512">영원회귀:블랙서바이벌</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=1938">님블뉴런</a></span> |
+                            <span>전략시뮬 슈팅</span>
+                            <span>오픈베타</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011512"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011512"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011512&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011512&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011512"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663278"> <span class="rank ">28</span>
+                        <span class="rankChange"><span class="icon down"></span>4</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/15/99/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001599">테일즈런너</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=598">라온엔터테인먼트</a></span> |
+                            <span>레이싱</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/talesrunner/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001599"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001599"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001599&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001599&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001599"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663279"> <span class="rank ">29</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/95/97/323805_aaa122.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0009597">엘리온</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=54">크래프톤</a></span> |
+                            <span>MMORPG</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/elyon/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0009597"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0009597"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0009597&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0009597&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0009597"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663280"> <span class="rank ">30</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/13/38/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001338">스페셜포스</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=24">드래곤플라이</a></span> |
+                            <span>FPS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001338"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001338"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001338&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001338&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001338"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663281"> <span class="rank ">31</span>
+                        <span class="rankChange"><span class="icon up"></span>6</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/09/77/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0000977">천하제일상 거상</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=620">에이케이인터랙티브</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/gersang/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0000977"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0000977"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0000977&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0000977&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0000977"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663282"> <span class="rank ">32</span>
+                        <span class="rankChange"><span class="icon down"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/52/53/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0005253">카운터 스트라이크: 글로벌 오펜시브</a>
+                        </div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=289">밸브</a></span> |
+                            <span>FPS</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0005253"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0005253"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0005253&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0005253&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0005253"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663283"> <span class="rank ">33</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g001/18/01/910456_aaa55.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011801">콜 오브 듀티: 워존</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=334">인피니티워드</a></span> |
+                            <span>FPS</span>
+                            <span>무료</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011801"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011801"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011801&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011801&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011801"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663284"> <span class="rank ">34</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/27/72/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002772">테라</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=54">크래프톤</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/teraon/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002772"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002772"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002772&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002772&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002772"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663285"> <span class="rank ">35</span>
+                        <span class="rankChange"><span class="icon up"></span>8</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/21/89/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002189">엘소드</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=6">KOG</a></span> |
+                            <span>액션 RPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/elsword/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002189"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002189"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002189&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002189&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002189"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663286"> <span class="rank ">36</span>
+                        <span class="rankChange"><span class="icon down"></span>2</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/46/55/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0004655">마인크래프트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=150">모장</a></span> |
+                            <span>어드벤쳐</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/minecraft/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0004655"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0004655"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0004655&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0004655&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0004655"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663287"> <span class="rank ">37</span>
+                        <span class="rankChange"><span class="icon new"></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g001/19/02/267754_aaa226.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011902">바이오하자드 빌리지</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=101">캡콤</a></span> |
+                            <span>액션</span>
+                            <span>개발중</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011902"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011902"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011902&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011902&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011902"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663288"> <span class="rank ">38</span>
+                        <span class="rankChange"><span class="icon down"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/09/75/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0000975">크레이지 아케이드 비엔비</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=19">넥슨</a></span> |
+                            <span>액션</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/cabnb/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0000975"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0000975"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0000975&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0000975&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0000975"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663289"> <span class="rank ">39</span>
+                        <span class="rankChange"><span class="icon up"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/14/50/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001450">겟앰프드</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=58">사이버스텝</a></span> |
+                            <span>대전액션</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001450"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001450"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001450&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001450&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001450"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663290"> <span class="rank ">40</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/54/58/12877(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0005458">히어로즈 오브 더 스톰</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>AOS</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/heroesofthestorm/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0005458"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0005458"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0005458&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0005458&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0005458"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663291"> <span class="rank ">41</span>
+                        <span class="rankChange"><span class="icon down"></span>2</span>
+                    </td>
+                    <td><img class="game-icon"
+                             src="https://cdn.gamemeca.com/gmdb/g001/19/61/791312_200714-risell-pp4.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011961">어몽 어스</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=1790">이너슬로스</a></span> |
+                            <span>액션 기타</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011961"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011961"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011961&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011961&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011961"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663292"> <span class="rank ">42</span>
+                        <span class="rankChange"><span class="icon down"></span>4</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/84/00/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0008400">데드 바이 데이라이트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=913">비헤이비어</a></span> |
+                            <span>액션</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0008400"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0008400"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0008400&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0008400&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0008400"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663293"> <span class="rank ">43</span>
+                        <span class="rankChange"><span class="icon down"></span>7</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g001/18/04/219044_aaa116.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011804">원신</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=1706">miHoYo</a></span> |
+                            <span>액션 어드벤쳐</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/genshin/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011804"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011804"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011804&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011804&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011804"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663294"> <span class="rank ">44</span>
+                        <span class="rankChange"><span class="icon down"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/62/81/12877(0).jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0006281">하스스톤</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>TCG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue"
+                           href="https://trees.gamemeca.com/hearthstone/" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0006281"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0006281"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0006281&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0006281&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0006281"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663295"> <span class="rank ">45</span>
+                        <span class="rankChange"><span class="icon up"></span>4</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/09/67/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0000967">뮤 온라인</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=83">웹젠</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0000967"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0000967"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0000967&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0000967&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0000967"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663296"> <span class="rank ">46</span>
+                        <span class="rankChange"><span class="icon down"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g001/12/79/765821_600335로블록스.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0011279">로블록스</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=1974">로블록스 코퍼레이션</a></span> |
+                            <span>롤플레잉</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0011279"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0011279"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0011279&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0011279&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0011279"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663297"> <span class="rank ">47</span>
+                        <span class="rankChange"><span class="icon down"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/25/28/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0002528">파이널 판타지 14</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=104">스퀘어에닉스</a></span> |
+                            <span>MMORPG</span>
+                            <span>정액제</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/ff14/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0002528"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0002528"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0002528&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0002528&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0002528"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663298"> <span class="rank ">48</span>
+                        <span class="rankChange"><span class=""></span></span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/88/44/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0008844">포트나이트</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=171">에픽게임즈</a></span> |
+                            <span>액션</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/fortnite/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0008844"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0008844"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0008844&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0008844&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0008844"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663299"> <span class="rank ">49</span>
+                        <span class="rankChange"><span class="icon up"></span>1</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/10/43/221151.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0001043">마비노기</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=330">데브캣스튜디오</a></span> |
+                            <span>MMORPG</span>
+                            <span>부분유료화</span>
+                        </div>
+                    </td>
+                    <td><a class="ranking-static-img ranking-static-issue" href="https://trees.gamemeca.com/mabinogi/"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0001043"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0001043"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0001043&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0001043&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0001043"
+                           target="_blank"></a></td>
+                </tr>
+                <tr class="ranking-table-rows">
+                    <td>
+                        <input type="checkbox" class="rankSeq" value="663300"> <span class="rank ">50</span>
+                        <span class="rankChange"><span class="icon down"></span>3</span>
+                    </td>
+                    <td><img class="game-icon" src="https://cdn.gamemeca.com/gmdb/g000/03/25/12877.jpg"
+                             alt="icon 75*46"></td>
+                    <td><span class="ranking-static-img ranking-static-list"></span></td>
+                    <td>
+                        <div class="game-name"><a href="/game.php?rts=gmview&amp;gmid=g0000325">디아블로 2</a></div>
+                        <div class="game-info">
+                            <span class="company"><a href="/game.php?rts=company&amp;gmcid=56">블리자드</a></span> |
+                            <span>액션 RPG</span>
+                            <span></span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td><a class="ranking-static-img ranking-static-news" href="/news.php?gmid=g0000325"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-review" href="/review.php?gmid=g0000325"
+                           target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-movie"
+                           href="/game.php?rts=gmview&amp;gmid=g0000325&amp;tab=movie" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-sshot"
+                           href="/game.php?rts=gmview&amp;gmid=g0000325&amp;tab=sshot" target="_blank"></a></td>
+                    <td><a class="ranking-static-img ranking-static-site" href="/game.php?rts=gmview&amp;gmid=g0000325"
+                           target="_blank"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="ranking-poll">
+                <div class="ranking-poll-area">
+                    <div class="pollinfo_txt"
+                    "=""><span class="pollinfo_ico"></span>집계된 결과는 다음주 게임순위에 반영됩니다.
+                </div>
+                <button class="poll-action-btn"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    jQuery(function () {
+        jQuery('.before-ranking').on('change', function () {
+            if (jQuery(this).val() == "N") {
+                location.href = '?scode=' + 'O';
+            } else if (jQuery(this).val() != "") {
+                location.href = '?rid=' + jQuery(this).val();
+            }
+            // console.log(jQuery(this).val())
+        });
+
+        jQuery('.poll-action-btn').on('click', function () {
+            var params = {};
+            var selectPoll = jQuery('.rankSeq:checked').length;
+
+            if (selectPoll != 3) {
+                alert('3개의 게임을 선택 해주세요.');
+                return false;
+            }
+            params.seq = [];
+            jQuery(jQuery('.rankSeq:checked')).each(function (i, v) {
+                params.seq[i] = jQuery(this).val();
+            });
+            params.scode = 'O';
+//			params.seq =
+            jQuery.post('?rts=article/ranking/poll', params, function (response) {
+                console.log(response);
+                alert(response.msg);
+                if (response.error == 0) {
+                    location.reload();
+                }
+            }, 'json');
+        });
+        jQuery('.rankSeq').on('click', function () {
+            var selectPoll = jQuery('.rankSeq:checked').length;
+            if (selectPoll > 3) {
+                alert('3개의 게임만 선택 하실수 있습니다.');
+                jQuery(this).attr('checked', false);
+            }
+        });
+
+        var rankingPosition = jQuery('.ranking_list').nodeInfo()
+        jQuery(document).scroll(function () {
+            var scrollTop = jQuery(document).scrollTop();
+            if (scrollTop + rankingPosition.screenY > rankingPosition.bottom) {
+                jQuery('.ranking-poll').css('position', 'static');
+            } else {
+                jQuery('.ranking-poll').css('position', 'fixed');
+            }
+        });
+        // console.log(jQuery('.ranking_list').nodeInfo());
+    });
+</script>
+<div class="google_ad_bottom_728x90" style="text-align:center; border-top: 1px solid #E4E4E4;background-color:#f3f3f3">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-2639901077908883";
+    /* Main_bottom_728x90 */
+    google_ad_slot = "1110976251";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    <ins id="aswift_0_expand"
+         style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"
+         data-ad-slot="1110976251">
+        <ins id="aswift_0_anchor"
+             style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins>
+    </ins>
+</div>
+
+<script type="text/javascript">
+
+    function getOption(arg1) {
+        if (!arg1) {
+            return null;
+        }
+
+        var option = {
+            id: arg1.getAttribute('id'),
+            adUnit: arg1.getAttribute('data-ad-unit'),
+            width: arg1.getAttribute('data-ad-width'),
+            height: arg1.getAttribute('data-ad-height')
+        }
+
+        return option;
+    }
+
+    function callBackFunc(arg1) {
+
+        var option = getOption(arg1), newDiv = document.createElement('div');
+
+        if (option.adUnit == 'DAN-s0xamtkdryw4') {
+            jQuery('.google_ad_bottom_728x90').hide();
+        } else if (option.adUnit == 'DAN-1hvbj8qs3vy3l') {
+            jQuery('.ads_title_bottom').hide();
+        }
+        arg1.appendChild(newDiv);
+    }
+
+</script>
+
+<div id="footer">
+    <script>
+        function pop_url(url, wid, hei) {
+            window.open(url, "pop", 'status=no,scrollbars=no,width=' + wid + ',height=' + hei + '');
+        }
+    </script>
+    <div class="partner">
+        <div class="title">
+            <ins class="mark"></ins>
+            게임메카에서 제공하는 콘텐츠를 함께 열람하실 수 있습니다.
+        </div>
+        <div class="list2">
+
+            <a class="hg" target="_blank" href="http://news.naver.com/main/list.nhn?mode=LPOD&amp;mid=sec&amp;oid=356"
+               title="네이버" rel="nofollow"><span class="footlog-img pt1"></span></a>
+
+
+            <a class="hg" target="_blank"
+               href="https://play.google.com/store/apps/details?id=com.google.android.apps.magazines&amp;hl=ko"
+               title="구글" rel="nofollow"><span class="footlog-img pt2"></span></a>
+
+
+            <a class="hg" target="_blank"
+               href="http://search.daum.net/search?w=news&amp;q=%EA%B2%8C%EC%9E%84%EB%A9%94%EC%B9%B4" title="다음"
+               rel="nofollow"><span class="footlog-img pt3"></span></a>
+
+
+            <a class="hg" target="_blank"
+               href="http://search.daum.net/nate?thr=sbma&amp;w=tot&amp;q=%EA%B2%8C%EC%9E%84%EC%88%9C%EC%9C%84"
+               title="네이트" rel="nofollow"><span class="footlog-img pt4"></span></a>
+
+
+            <a target="_blank" href="http://news.zum.com/list?c=08&amp;sc=57" title="줌" rel="nofollow"><span
+                    class="footlog-img pt5"></span></a>
+
+
+            <a target="_blank" href="http://news.chol.com/list.php?paper=GAMEMECA" title="천리안" rel="nofollow"><span
+                    class="footlog-img pt6"></span></a>
+
+
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nexon.nxplay" title="NEXON PLAY"
+               rel="nofollow"><span class="footlog-img pt8"></span></a>
+
+
+            <a target="_blank" href="http://www.ndsoft.co.kr/internet/nd_members.php" title="NDsoft"
+               rel="nofollow"><span class="footlog-img pt9"></span></a>
+
+
+            <a target="_blank" href="http://news.danawa.com/list?companySeq=79" title="다나와" rel="nofollow"><span
+                    class="footlog-img pt10"></span></a>
+
+
+            <a target="_blank" href="http://enuri.com/short/u7g4q" title="에누리" rel="nofollow"><span
+                    class="footlog-img pt11"></span></a>
+
+
+            <a target="_blank" href="https://news.joins.com/article/23390118" title="중앙일보" rel="nofollow"><span
+                    class="footlog-img pt13"></span></a>
+
+        </div>
+        <div class="list2">
+            <a target="_blank" href="http://sports.hankooki.com/Game/ArticleList.php" title="스포츠한국" rel="nofollow"><span
+                    class="footlog-img pt14"></span></a>
+
+
+            <a target="_blank" href="http://isplus.live.joins.com/news/article/article.asp?total_id=23390118&amp;ctg=16"
+               title="일간스포츠" rel="nofollow"><span class="footlog-img pt15"></span></a>
+
+
+            <a target="_blank" href="http://news.dreamx.com/cp/list.asp?providerno=202&amp;classno=05&amp;by=cat"
+               title="DreamX" rel="nofollow"><span class="footlog-img pt17"></span></a>
+
+
+            <a target="_blank" href="http://trade.itembay.com/gamePlus/gameMecaInfoView" title="itemBay" rel="nofollow"><span
+                    class="footlog-img pt18"></span></a>
+
+
+            <a target="_blank"
+               href="http://www.maximkorea.net/cms/contents_view.php?contents_uid=11399&amp;contents_cate=&amp;key=&amp;keyfield="
+               title="MAXIM" rel="nofollow"><span class="footlog-img pt19"></span></a>
+
+
+            <a target="_blank" href="http://www.maxq.kr/" title="maxq" rel="nofollow"><span
+                    class="footlog-img pt20"></span></a>
+
+
+            <a target="_blank"
+               href="http://news.dreamwiz.com/?uid=https%3A%2F%2Fwww.gamemeca.com%2Fmv.php%3Fgid%3D1659323" title="드림위즈"
+               rel="nofollow"><span class="footlog-img pt21"></span></a>
+
+
+            <a target="_blank" href="http://www.gametrics.com/news/News01_List.aspx" title="gametrics"
+               rel="nofollow"><span class="footlog-img pt22"></span></a>
+
+
+            <a target="_blank" href="http://www.mitemmania.com/portal/gamemeca/news/index.html" title="아이템매니아"
+               rel="nofollow"><span class="footlog-img pt23"></span></a>
+
+
+            <a target="_blank" href="http://kr.ifeng.com/a/20171214/6228335_0.shtml" title="봉황망" rel="nofollow"><span
+                    class="footlog-img pt25"></span></a>
+
+
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=start.FoodTime&amp;hl=ko" title="김급식"
+               rel="nofollow"><span class="footlog-img pt27"></span></a>
+
+        </div>
+        <div class="list2">
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.buzzvil.adhours&amp;hl=ko"
+               title="허니스크린" rel="nofollow"><span class="footlog-img pt28"></span></a>
+
+
+            <a target="_blank"
+               href="http://www.huvle.com/search/news_view.asp?getCategoryNum=29001&amp;getRegnum=19480&amp;setNewsNum=5"
+               title="허블" rel="nofollow"><span class="footlog-img pt29"></span></a>
+
+
+            <a target="_blank" href="http://www.newspic.kr/list.html?category=CA0122" title="뉴스픽" rel="nofollow"><span
+                    class="footlog-img pt31"></span></a>
+
+
+            <a target="_blank" href="https://flipboard.com/@gamemeca" title="플립보드" rel="nofollow"><span
+                    class="footlog-img pt32"></span></a>
+
+
+            <a target="_blank" href="https://www.cashfeed.co.kr/tabs/chuizone/sub_fun" title="캐시피드" rel="nofollow"><span
+                    class="footlog-img pt33"></span></a>
+
+
+            <a target="_blank" href="https://gall.dcinside.com/board/lists?id=gamemeca" title="디시인사이드"
+               rel="nofollow"><span class="footlog-img pt34"></span></a>
+
+        </div>
+    </div>
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".listsns_s").mouseover(function () {
+                jQuery(".snslayer").hide();
+                jQuery(this).find(".snslayer").show();
+            });
+            jQuery(".listsns_s").mouseout(function () {
+                jQuery(".snslayer").hide();
+            });
+        });
+
+    </script>
+    <div class="partnersns">
+        <div class="listsns">
+            <div class="listsns_s">
+                <a target="_blank" href="https://www.youtube.com/channel/UC-ccBpZCfLHiqFQSVfXfoxg" title="유튜브"><span
+                        class="footsnslog-img pt1"></span></a>
+                <div class="snslayer">
+                    <span><a target="_blank"
+                             href="https://www.youtube.com/channel/UC-ccBpZCfLHiqFQSVfXfoxg?sub_confirmation=1"
+                             title="유튜브 구독"><span class="footsnslog-img ptadd1"></span></a></span>
+                </div>
+            </div>
+            <div class="listsns_s">
+                <a target="_blank" href="https://twitter.com/game_meca" title="트위터"><span
+                        class="footsnslog-img pt2"></span></a>
+                <div class="snslayer">
+				<span>
+					<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true"
+                            allowfullscreen="true" class="twitter-follow-button twitter-follow-button-rendered"
+                            title="Twitter Follow Button"
+                            src="https://platform.twitter.com/widgets/follow_button.06c6ee58c3810956b7509218508c7b56.ko.html#dnt=false&amp;id=twitter-widget-0&amp;lang=ko&amp;screen_name=game_meca&amp;show_count=false&amp;show_screen_name=false&amp;size=m&amp;time=1620899707439"
+                            data-screen-name="game_meca"
+                            style="position: static; visibility: visible; width: 1px; height: 1px;"></iframe><script
+                        async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</span>
+                </div>
+            </div>
+            <div class="listsns_s">
+                <a target="_blank" href="https://www.facebook.com/gamemeca" title="페이스북"><span
+                        class="footsnslog-img pt3"></span></a>
+                <div class="snslayer">
+				<span>
+					<div id="fb-root" class=" fb_reset"><div
+                            style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+					<script async="" defer="" crossorigin="anonymous"
+                            src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&amp;version=v7.0"></script>
+					<div class="fb-like fb_iframe_widget" data-href="https://www.gamemeca.com/" data-width=""
+                         data-layout="button" data-action="like" data-size="large" data-show-faces="false"
+                         data-share="false" fb-xfbml-state="rendered"
+                         fb-iframe-plugin-query="action=like&amp;app_id=1238320742883088&amp;container_width=0&amp;href=https%3A%2F%2Fwww.gamemeca.com%2F&amp;layout=button&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large&amp;width="><span
+                            style="vertical-align: bottom; width: 72px; height: 28px;"><iframe name="f2daa352906b7a8"
+                                                                                               width="1000px"
+                                                                                               height="1000px"
+                                                                                               data-testid="fb:like Facebook Social Plugin"
+                                                                                               title="fb:like Facebook Social Plugin"
+                                                                                               frameborder="0"
+                                                                                               allowtransparency="true"
+                                                                                               allowfullscreen="true"
+                                                                                               scrolling="no"
+                                                                                               allow="encrypted-media"
+                                                                                               src="https://www.facebook.com/v7.0/plugins/like.php?action=like&amp;app_id=1238320742883088&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df4b4be1ea70e5c%26domain%3Dwww.gamemeca.com%26origin%3Dhttps%253A%252F%252Fwww.gamemeca.com%252Fffff141d6b64f4%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.gamemeca.com%2F&amp;layout=button&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large&amp;width="
+                                                                                               class=""
+                                                                                               style="border: none; visibility: visible; width: 72px; height: 28px;"></iframe></span></div>
+				</span>
+                </div>
+            </div>
+            <div class="listsns_s">
+                <a target="_blank" href="https://post.naver.com/my.nhn?memberNo=10582936" title="포스트"><span
+                        class="footsnslog-img pt4"></span></a>
+            </div>
+            <div class="listsns_s">
+                <a target="_blank" href="https://newsstand.naver.com/356" title="네이버 뉴스스탠드"><span
+                        class="footsnslog-img pt6"></span></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('e23ec1423f1f6e549707712f12954a86');
+        // 플러스친구 친구추가 버튼을 생성합니다.
+        Kakao.PlusFriend.createAddFriendButton({
+            container: '#kakao-addfriend',
+            plusFriendId: '_xgUGtj' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
+        });
+        //]]>
+    </script>
+    <div class="foot">
+        <div class="foot-menu">
+            <ul>
+                <li class="at_a"><a href="/company.php?rts=company01">회사소개</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/company.php?rts=company02">제휴문의</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/biz/index.php" target="_blank">광고안내</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/company.php?rts=cscenter01">이용약관</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/company.php?rts=cscenter02" class="fc-b9">개인정보취급방침</a>
+                </li>
+                <li class="at_a"><span class="at_bar"></span><a href="/r-report.php">독자권익보호</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/company.php?rts=cscenter03">고객센터</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/member.php?rts=join_step02">회원정보</a></li>
+                <li class="at_a"><span class="at_bar"></span><a href="/sitemap.php?rts=map">서비스전체</a></li>
+            </ul>
+            <div class="address">
+                (주)제우미디어 | 등록번호: 서울아00762 | 등록일자: 2009.02.02 | 제호: 게임메카 | 발행인: 서인석 | 편집인: 손대현<br>
+                청소년보호책임자: 남장우 | 발행소: 서울 마포구 독막로 76-1 한주빌딩 6층 | 발행일자: 2000.04.22 | 전화번호: 02-3142-6841
+            </div>
+        </div>
+        <div class="at-ban"><a href="https://trees.gamemeca.com" target="_blank"></a></div>
+        <div class="foot-menu">
+            <div class="addbt_txt">
+                『열린보도원칙』 당 매체는 독자와 취재원 등 뉴스 이용자의 권리 보장을 위해 반론이나 정정보도, 추후보도를 요청할 수 있는 창구를 열어두고 있음을 알려드립니다.<br>
+                고충처리인 류종화 02-3142-6846 mecadesk@gamemeca.com
+            </div>
+            <div class="at_cr">ⓒ JEUMEDIA Corp.</div>
+        </div>
+        <div class="association">
+            <a href="http://www.k-gma.com/" target="_blank"><img
+                    src="https://cdn.gamemeca.com/g17/images/common/int_news_banner1.jpg"></a>
+            <a href="https://www.inc.or.kr/" target="_blank"><img
+                    src="https://cdn.gamemeca.com/g17/images/common/int_news_banner2.jpg"></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-32032537-1', 'gamemeca.com');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "c3e61342b1d8fc";
+    wcs_do();
+</script>
+<div class="toastBanner"
+     style="z-index: 1000; position: fixed; bottom: 0px; right: 0px; width: 220px; height: 155px; display: none;">
+    <script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_toast"></script>
+</div>
+<script>
+    setTimeout(function () {
+        if (jQuery(".toastBanner").find("img").length == 0) jQuery(".toastBanner").hide();
+    }, 3000);
+
+    var agent = navigator.userAgent.toLowerCase();
+    if (agent.indexOf("chrome") != -1) {
+        jQuery(".adFlashSet_img").show();
+//		jQuery(".tiCloseBtnDiv").show();
+    } else {
+        jQuery(".adFlashSet_flash").show();
+//		jQuery(".tiCloseBtnDiv").hide();
+    }
+    //	if(!jQuery("#tiAdLoadDiv > div").hasClass("adFlashSet_img")) jQuery(".tiCloseBtnDiv").hide();
+
+
+    // 토스트 배너 (오른쪽 하단 따라다니는 배너) 닫기
+    var R_toastClose = function () {
+        jQuery(".toastBanner").hide();
+        jQuery.cookie("GMA_TOAST", "1");
+    };
+
+    // 탑 스크록 배너 (페이지 상단 따라다니는 배너) 닫기
+    var topScrollBannerClose = function () {
+        jQuery(".ad-topscroll").remove();
+        jQuery("#ad_topScroll").remove(); // 2017년 6월 이전 배너
+        body_background_top_adjust();
+        jQuery.cookie("GMA_TOP_SCROLL", "1");
+    };
+    jQuery(function () {
+        body_background_top_adjust();
+    });
+
+    //
+
+    // 스크롤 광고 출력시 백그라운드 bg위치 수정
+    var body_background_top_adjust = function () {
+//		var gnb_offset = jQuery('#gnb').offset();
+//		jQuery('body').css('background-position-y', gnb_offset.top);
+    }
+</script>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true"
+        src="https://platform.twitter.com/widgets/widget_iframe.06c6ee58c3810956b7509218508c7b56.html?origin=https%3A%2F%2Fwww.gamemeca.com"
+        title="Twitter settings iframe" style="display: none;"></iframe>
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;">
+    <ins id="aswift_1_expand"
+         style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"
+         tabindex="0" title="Advertisement" aria-label="Advertisement">
+        <ins id="aswift_1_anchor"
+             style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;">
+            <iframe id="aswift_1" name="aswift_1"
+                    style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+                    sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                    frameborder="0"
+                    src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2639901077908883&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1620899707&amp;plat=1%3A16809992%2C2%3A16809992%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwww.gamemeca.com%2Franking.php&amp;ea=0&amp;flash=0&amp;pra=7&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwXzE1XzciLCJ4ODYiLCIiLCI5MC4wLjQ0MzAuOTMiLFtdXQ..&amp;dt=1620899707406&amp;bpp=1&amp;bdt=746&amp;idt=1&amp;shv=r20210510&amp;cbv=%2Fr20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D8074a0501fd65e83-22c4646cd4c70047%3AT%3D1620346922%3ART%3D1620346922%3AS%3DALNI_MbmouJTq7I9Jw0230NAMARflbAF5g&amp;nras=1&amp;correlator=6602377888120&amp;frm=20&amp;pv=2&amp;ga_vid=338197573.1620346919&amp;ga_sid=1620899707&amp;ga_hid=2103108733&amp;ga_fc=0&amp;ga_cid=383420864.1620815532&amp;u_tz=540&amp;u_his=5&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1415&amp;bih=737&amp;scr_x=0&amp;scr_y=0&amp;eid=31060981%2C31061033&amp;oid=3&amp;pvsid=1146369437454709&amp;pem=929&amp;ref=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php&amp;eae=2&amp;fc=1920&amp;brdim=20%2C25%2C20%2C25%2C1440%2C25%2C1415%2C816%2C1415%2C737&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=17"
+                    marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                    allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!2"
+                    data-load-complete="true"></iframe>
+        </ins>
+    </ins>
+</ins>
+<iframe id="google_osd_static_frame_724428108360" name="google_osd_static_frame"
+        style="display: none; width: 0px; height: 0px;"></iframe>
+<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"
+        style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;"
+        title="Twitter analytics iframe"></iframe>
+</body>
+<iframe id="google_esf" name="google_esf"
+        src="https://googleads.g.doubleclick.net/pagead/html/r20210510/r20190131/zrt_lookup.html"
+        style="display: none;"></iframe>
+</html>

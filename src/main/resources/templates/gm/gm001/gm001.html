@@ -1,827 +1,198 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
     <meta charset="UTF-8">
-    <link href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_16x16.ico" rel="shortcut icon">
-    <link rel="apple-touch-icon-precomposed" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_120x120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.gamemeca.com/g17/images/icon/gamemeca_180x180.png">
-    <!--<title>라이브러리 오브 루이나 - 게임메카</title>-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="title" content="라이브러리 오브 루이나 - 게임메카">
-    <meta name="description" content="라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.">
-    <meta name="keywords" content="라이브러리 오브 루이나 - 게임메카">
-    <meta name="news_keywords" content="라이브러리 오브 루이나 - 게임메카">
-    <meta name="subject" content="라이브러리 오브 루이나 - 게임메카">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@game_meca">
-    <meta name="twitter:creator" content="@game_meca">
-    <meta name="twitter:image" content="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg">
-    <meta name="twitter:title" content="라이브러리 오브 루이나 - 게임메카">
-    <meta name="twitter:description" content="라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.">
-
-    <meta property="og:url" content="https://www.gamemeca.com/game.php?rts=gmview&amp;gmid=g0012305">
-    <meta property="og:title" content="라이브러리 오브 루이나 - 게임메카">
-    <meta property="og:description" content="라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.">
-    <meta property="og:image" content="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="480">
-    <meta property="og:type" content="article">
-    <meta property="og:article:author" content="게임메카">
-    <meta property="og:locale" content="ko_KR">
-
-
-    <meta property="kakao:title" content="라이브러리 오브 루이나 - 게임메카">
-    <meta property="kakao:description" content="라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.">
-    <meta name="resource-type" content="article">
-    <meta name="image" content="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg">
-    <link rel="image_src" href="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg">
-
-    <link rel="canonical" href="https://www.gamemeca.com/game.php?rts=gmview&amp;gmid=g0012305">
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.gamemeca.com/game.php?rts=gmview&amp;gmid=g0012305">
     <link rel="stylesheet" type="text/css" href="https://cdn.gamemeca.com/g17/css/common.css?v=21050818">
-
     <th:block th:include="common/base"></th:block>
-
     <script layout:fragment="script" type="text/javascript" th:src="@{/assets/js/gm/gm001/gm001.js}"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.gamemeca.com/g17/css/gameinfo.css?v=21050818?v=21050818">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-161YMYELG0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-161YMYELG0');
-    </script>
-    <meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="preload" href="https://adservice.google.co.kr/adsid/integrator.js?domain=www.gamemeca.com" as="script"><script type="text/javascript" src="https://adservice.google.co.kr/adsid/integrator.js?domain=www.gamemeca.com"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.gamemeca.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.gamemeca.com"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
-.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
-.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_new_ui_mobile_overlay_active{overflow:hidden}@keyframes fb_mpn_landing_page_slide_in{0%{border-radius:50%;margin:0 24px;width:60px}40%{border-radius:18px}100%{margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_in_from_left{0%{border-radius:50%;left:12px;margin:0 24px;width:60px}40%{border-radius:18px}100%{left:12px;margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style><script charset="utf-8" src="https://platform.twitter.com/js/button.5573c974dc31bbdab5ea7923a0bd5cf3.js"></script><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+</head>
 <body>
-<div class="ad-topscroll"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_topscroll"></script><div class="topScrollBanner" style="background-color: #1d293f;"><div class="topScrollClose"><a onclick="topScrollBannerClose()"><img src="//cdn.gamemeca.com/design/images/btn/btn_tad_close.png"></a></div><div><a href="https://ads.gamemeca.com/adver/click/?id=73&amp;adn=344&amp;amn=448&amp;adurl=https%3A%2F%2Fwww.gamemeca.com%2Fevent%2F2021%2F21th%2F" target="_blank" class="topScrollLink"><img src="https://adcdn.gamemeca.com/adver/2021/04/18/3413617/913c54f333bd0fcecebdeb80c26eba82.jpg" width="1041" height="55" border="0"></a></div>
-</div><div class="topScrollHeight"></div>
+<div class="ad-topscroll">
+    <div class="topScrollHeight"></div>
 </div>
-<div class="header-background"><div></div></div>
-<div class="background-ad"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/common/common_backskin"></script><style>body { background: none; }
-.backgroundAdClick { position: absolute; width: 500px; min-height: 500px; height: 1024px; }
-.backgroundAdClick.Left { left: -500px; }
-.backgroundAdClick.Right { right: -500px; }
-#bg_ad { overflow: hidden; position: absolute; width: 100%; margin-top: 31px; }
-#bg_ad > div { width: 1041px; margin: auto; height: 1024px; background-color: #fff; position: relative; }
-</style>
-    <div id="bg_ad" style="background: url('https://adcdn.gamemeca.com/adver/2021/04/20/3413617/4f20dc78c8d4ba852f4483767e3b7116.jpg') no-repeat center top;"><div>
-        <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=301&amp;amn=379&amp;adurl=http%3A%2F%2Fog.kingkongsoft.kr%2Fintro.html%3FPartnerID%3Doggamemeca" target="_blank"><span class="backgroundAdClick Left"></span></a>
-        <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=301&amp;amn=379&amp;adurl=http%3A%2F%2Fog.kingkongsoft.kr%2Fintro.html%3FPartnerID%3Doggamemeca" target="_blank"><span class="backgroundAdClick Right"></span></a>
-    </div></div>
+<div class="header-background">
+    <div></div>
+</div>
+<div class="background-ad">
+    <style>
+        body {
+            background: none;
+        }
+        .backgroundAdClick {
+            position: absolute;
+            width: 500px;
+            min-height: 500px;
+            height: 1024px;
+        }
+        .backgroundAdClick.Left {
+            left: -500px;
+        }
+        .backgroundAdClick.Right {
+            right: -500px;
+        }
+        #bg_ad {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            margin-top: 31px;
+        }
+        #bg_ad > div {
+            width: 1041px;
+            margin: auto;
+            height: 1024px;
+            background-color: #fff;
+            position: relative;
+        }
+    </style>
+    <div id="bg_ad"
+         style="background: url('https://adcdn.gamemeca.com/adver/2021/05/03/3413617/7c8c3c8436015c8abcf5f6d1b62c41d7.jpg') no-repeat center top;">
+        <div>
+            <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=365&amp;amn=517&amp;adurl=https%3A%2F%2Fdekaron.co.kr%2F"
+               target="_blank"><span class="backgroundAdClick Left"></span></a>
+            <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=365&amp;amn=517&amp;adurl=https%3A%2F%2Fdekaron.co.kr%2F"
+               target="_blank"><span class="backgroundAdClick Right"></span></a>
+        </div>
+    </div>
 </div>
 <th:block th:include="fragments/header"></th:block>
 <div id="main">
-    <input type="hidden" th:value="${gameId}" th:attr="id='gameId'"/>
     <th:block th:include="common/aside"></th:block>
     <div id="content">
-        <div class="content-top-ad"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_big"></script><div id="meca_ads_31"><iframe src="https://ads.gamemeca.com/adver/html/?id=31" width="1041" height="80" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
-        <div class="content-left">
-            <!-- intro -->
-            <!--기본 정보-->
-            <div class="gm_info_area">
-                <div class="gm_info">
-                    <div class="GmaeInfoTxt">
-                        <h2 class="h_gm" data-ax-path="gameName"></h2>
-                        <ul>
-                            <li class="leftA">플랫폼</li>
-                            <li class="rightA">
-                                <a class="f_link" href="/game.php?platform=37" data-ax-path="platform"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">장르</li>
-                            <li class="rightA">
-                                <a class="f_link" href="/game.php?genre=71" data-ax-path="genre"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">제작사</li>
-                            <li class="rightA"><a class="f_link" data-ax-path="producer" ></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">제공업체</li>
-                            <li class="rightA"><a class="f_link" data-ax-path="provider"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">이용등급</li>
-                            <li class="rightA" data-ax-path="useCount"></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">출시년도</li>
-                            <li class="rightA release_date"  data-ax-path="yearRelase"><br></li>
-                        </ul>
-                        <div class="db_spthum">
-                            <ul>
-                            </ul>
-                        </div>
-                        <p class="btmSocial"><a href="http://www.projectmoon.kr/games/games.php?str_no=2" target="_blank"></a></p>
-                    </div>
-                    <div class="gameThumb"><img src="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg"></div>
+        <div class="content-top-ad">
+            <script type="text/javascript"
+                    src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_big"></script>
+            <div id="meca_ads_31">
+                <iframe src="https://ads.gamemeca.com/adver/html/?id=31" width="1041" height="80" scrolling="no"
+                        style="margin: 0; padding: 0; border: none;"></iframe>
+            </div>
+        </div>
+        <!--//게임 DB 선택-->
+        <div class="dbSchbox">
+            <div class="Bs1">
+                <div class="leftTit">플랫폼</div>
+                <div class="cont" id="platform">
+                    <dd><p><a class="select-platform" data-key="36">온라인</a></p></dd>
+                    <dd><p><a class="select-platform" data-key="37">PC</a></p></dd>
+                    <dd><p><a class="select-platform" data-key="38">비디오</a></p></dd>
+                    <dd><p><a class="select-platform" data-key="39">웹게임</a></p></dd>
+                    <dd><p><a class="select-platform" data-key="250">VR</a></p></dd>
                 </div>
             </div>
-            <div class="gadatabtn">
-                <a href="/g-report.php?gmid=g0012305" class="btndatamodi">게임정보 수정요청</a>
+            <div class="BsLine"></div>
+            <div class="Bs1">
+                <div class="wrapMenu">
+                    <div class="leftTit">장르</div>
+                    <div class="cont" id="genre">
+                        <dd><p><a class="select-genre" data-key="66">MMORPG</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="67">MORPG</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="68">액션 RPG</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="69">SRPG</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="70">롤플레잉</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="71">전략시뮬</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="72">시뮬레이션</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="73">비행액션</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="74">비행시뮬</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="75">육성시뮬</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="76">연애시뮬</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="77">경영시뮬</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="78">FPS</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="79">RTS</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="80">액션</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="81">대전액션</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="82">리듬액션</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="83">스포츠</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="84">레이싱</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="85">TCG</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="86">TPS</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="87">어드벤쳐</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="88">비주얼노벨</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="89">기능성게임</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="90">AOS</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="179">슈팅</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="180">소셜게임</a></p></dd>
+                        <dd><p><a class="select-genre" data-key="186">기타</a></p></dd>
+                    </div>
+                </div>
+            </div>
+            <div class="BsLine"></div>
+            <div class="Bs1">
+                <div class="leftTit">상태</div>
+                <div class="cont" id="status">
+                    <dd><p><a class="select-status" data-key="24">개발중</a></p></dd>
+                    <dd><p><a class="select-status" data-key="25">클로즈베타</a></p></dd>
+                    <dd><p><a class="select-status" data-key="31">오픈베타</a></p></dd>
+                    <dd><p><a class="select-status" data-key="32">부분유료화</a></p></dd>
+                    <dd><p><a class="select-status" data-key="33">정액제</a></p></dd>
+                    <dd><p><a class="select-status" data-key="34">무료</a></p></dd>
+                    <dd><p><a class="select-status" data-key="35">서비스종료</a></p></dd>
+                </div>
             </div>
 
-            <!--게임정보 탭-->
-            <div class="db-sub-menu">
+            <div class="BsLine"></div>
+
+            <div class="Bs2">
+                <div class="leftTit"><span class="spim"></span> 게임검색</div>
+                <div class="cont">
+                    <input type="text" placeholder="통합검색" name="gm_search_text"
+                           onkeyup="if(event.keyCode==13) { jQuery('a#gm_search_text').click(); }" value="">
+                    <a class="searchBtn" id="gm_search_text"></a>
+                    <a class="initBtn" id="gm_search_init">초기화</a>
+                </div>
+            </div>
+        </div>
+        <!--//게임 DB 선택-->
+
+        <!--게임 DB 리스트-->
+        <div class="dblist_st">
+            <div class="dbnum h2" id="dblist-total"><span id="totalGameCnt"></span>개의 게임 정보가 있습니다.</div>
+            <div class="listst">
                 <ul>
-                    <li class="on">
-                        <a href="#">주요정보</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">뉴스</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">프리뷰/리뷰</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">스크린샷</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">동영상</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">공략</a>
-                    </li>
-                    <li>
-                        <a href="#" rel="nofollow">히스토리</a>
+                    <li class="list-type-change dbtap1 on" data-type="T"></li>
+                    <li class="list-type-change dbtap2" data-type="L"></li>
+                </ul>
+            </div>
+        </div>
+        <!--//게임 DB 리스트-->
+
+        <!--gmdb list -->
+            <div class="dblist_area" id="gmdb-list-box">
+                <ul class="dblist_gallery" id="ulEmpty">
+                    <li style="display: none;">
+                        <a class="move_gmdb" data-gmid="g0012299"><img
+                                src="https://cdn.gamemeca.com/gmdb/g001/22/99/gm709764_210504-2.jpg"><span class="tit_name">파밍 시뮬레이터 22</span></a>
+                        <div class="webg_txt">플랫폼: <span class="green">PC</span></div>
+                        <div class="webg_txt">장르: <span class="green">시뮬레이션</span></div>
+                        <div class="webg_txt">서비스 상태: <span class="green">-</span></div>
                     </li>
                 </ul>
             </div>
-            <!--//게임정보 탭 -->	<!--// intro -->
+        <!--// gmdb list -->
 
-            <!-- tab contents -->
-
-            <!--게임소개-->
-            <div id="gmInfo" style="display: none">
-                <div class="db-cont1">
-                    <div class="title ">게임소개</div>
-                    <div class="db-cont1-left">라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.</div>
-                </div>
-                <!--//게임소개-->
-
-                <!--시리즈-->
-                <div class="db-cont1">
-                    <div class="title ">시리즈</div>
-                    <div class="db-cont1-left">
-                        <span class="no-contents">관련 정보가 없습니다</span>    </div>
-                </div>
-
-                <!-- 뉴스 -->
-                <div class="db-cont2">
-                    <div class="title">뉴스</div>
-                    <ul class="list_news">
-                        <li class="list-hot">
-                            <a href="/view.php?gid=1659610" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/659/610/gm223481_210507-risell-pp6451.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><span class="static-img-btn icon-article-hot"></span><a href="/view.php?gid=1659610">로보토미 코퍼레이션 개발사 신작, 28일 스팀 정식 출시</a></strong>
-                            </div>
-                            <div class="desc_thumb">국내 인디게임 개발사 프로젝트 문 신작 라이브러리 오브 루이나가 오는 28일 스팀을 통해 정식 출시된다. 프로젝트 문은 전작 로보토미 코퍼레이션으로 국내외 게이머 이목을 집중시킨 바 있으며, 라이브러리 오브 루이나는 앞서 해보기에서 유저 평점 ‘매우 긍정적’을 기록 중이다</div>
-                            <div class="day_news">2021.05.07 13:56</div>
-                        </li>
-                    </ul>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=news">+뉴스 더보기</a></div>
-                </div>
-                <!--//뉴스 -->
-
-                <!-- 프리뷰/리뷰 -->
-                <div class="db-cont2">
-                    <div class="title">프리뷰/리뷰</div>
-                    <ul class="list_news">
-                        <span class="no-contents">관련 정보가 없습니다</span>	</ul>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=review">+프리뷰/리뷰 더보기</a></div>
-                </div>
-                <!--//프리뷰/리뷰 -->
-
-                <!-- 스크린샷 -->
-
-                <div class="db-cont2">
-                    <div class="title">스크린샷</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
-                    </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=sshot">+스크린샷 더보기</a></div>
-                </div><!--//스크린샷 -->
-
-                <!-- 동영상 -->
-
-                <div class="db-cont2">
-                    <div class="title">동영상</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
-                    </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=movie">+동영상 더보기</a></div>
-                </div><!--//동영상 -->
-
-                <!-- 공략 -->
-
-                <div class="db-cont2">
-                    <div class="title">공략</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
-                    </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=guide">+공략 더보기</a></div>
-                </div><!--//공략 -->	<!--// tab contents -->
-            </div>
-            <div id="gmNews" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 17개의 뉴스가 있습니다.</div>
-                </div>
-                <div class="news-list">
-                    <ul class="list_news">
-                        <li class="">
-                            <a href="/view.php?gid=1443806" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/443/806/161051_LSB2017032201.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1443806">페르시아 왕자 호위에서 주인공으로, 어쌔신 크리드의 10년</a></strong>
-                            </div>
-                            <div class="desc_thumb">하나의 전통 있는 프랜차이즈를 확립하기란 대단히 힘든 일이다. 그렇기에 2007년 첫 발매 이래 유명세를 잃지 않는 것은 물론이요, 그 인기가 계속 커지고 있기까지 한 ‘어쌔신 크리드’는 매우 특별한 프랜차이즈라고 할 수 있다. 이처럼 오랜 세월 동안 흔들리지 않고 가치를 키워온 게임 프랜차이즈는 매우 드물기 때문이다</div>
-                            <div class="day_news">2018.03.22 15:33</div>
-                        </li>
-                        <li class="">
-                            <a href="/view.php?gid=1436168" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/168/670210_KHS_180219_999AC.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1436168">세계 역사, 어쌔신 크리드에서 배워라</a></strong>
-                            </div>
-                            <div class="desc_thumb">고대 이집트를 완벽하게 재현했다는 평가를 받는 유비소프트 ‘어쌔신 크리드: 오리진’이 이젠 역사 교육에도 쓰인다. 오는 20일, 무료 업데이트를 통해 ‘어쌔신 크리드: 오리진’에 ‘디스커버리 투어’ 콘텐츠가 추가된다. ‘디스커버리 투어’는 게임 속에 구현된 이집트를 자유로이 돌아 다니며, 당시의 역사와 일상 생활에 대해 배울 수 있는 일종의 교육 모드다</div>
-                            <div class="day_news">2018.02.19 10:51</div>
-                        </li>
-                        <li class="">
-                            <a href="/view.php?gid=1430392" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/392/909466_KHS_180123_999AC.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1430392">무대는 시나이 반도, '어쌔신 크리드: 오리진' 확장팩 발매</a></strong>
-                            </div>
-                            <div class="desc_thumb">인트라게임즈는 23일, 유비소프트와 협력하여 ‘어쌔신 크리드: 오리진’ 첫 번째 확장팩 ‘더 히든 원즈’를 출시했다. '더 히든 원즈'는 형제단이 결성된지 몇 년 후, 바예크의 여정을 담고 있다. 플레이어는 시나이 반도를 여행하면서 로마 정복군과 반란 세력 사이의 분쟁에 대해 조사하고, 암살단의 신조를 정립하여 초기의 형제단을 규합해야 한다</div>
-                            <div class="day_news">2018.01.23 19:10</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong><a class="num_box" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2">2</a><a class="num_next" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2"></a></div>
-            </div>
-            <div id="gmReview" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 프리뷰/리뷰가 있습니다.</div>
-                </div>
-                <div class="news-list">
-                    <ul class="list_news">
-                        <li class="">
-                            <a href="/view.php?gid=1405166" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/405/166/588744_cooladsl_thumb_1094.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1405166">어쌔신 크리드: 오리진, 유비소프트가 일 냈다</a></strong>
-                            </div>
-                            <div class="desc_thumb">탄탄한 세계관 설정은 좋은 게임의 가장 중요한 조건이다. 사실상 게임의 토대라고 할 수 있는 부분으로, 만들어진 세계관과 콘텐츠가 잘 맞물리지 않는다면, 몰입감이 떨어질 수 밖에 없다. 이런 점에서, 최근 나오는 게임들이 더 완성도 높은 세계관 구현에 집중하는 이유도 어느 정도 납득이 된다. ‘어쌔신 크리드’ 시리즈는 이런 세계관 구현에 독보적인 게임이다</div>
-                            <div class="day_news">2017.11.02 12:43</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong></div>
-            </div>
-            <div id="gmSshot" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 1개의 스크린샷이 있습니다.</div>
-                </div>
-                <div class="db-cont2">
-                    <div class="db_thumlist">
-                        <ul>        	<li>
-                            <a class="loadThumbView" data-gid="1355175"><span class="iconsc"></span><img src="https://cdn.gamemeca.com/gmdata/0001/355/175/thumb1239.jpg"></a>
-                            <a class="title">어쌔신 크리드: 오리진, 이집트에서 암살자의 원전을 만나다</a>
-                        </li>
-                        </ul></div>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong>
-                </div>
-            </div>
-            <div id="gmMovie" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 10개의 동영상이 있습니다.</div>
-                </div>
-                <div class="db-cont2">
-                    <div class="db_thumlist">
-                        <ul>
-                            <li>
-                                <a class="loadThumbView" data-gid="1438059"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/438/059/815280_thumb1618.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 초자연의 영역 넘나드는 DLC가 온다</a>
-                            </li>
-                            <li>
-                                <a class="loadThumbView" data-gid="1436752"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/752/443898_thumb1614.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 교육 모드로 새로운 지평을 열다</a>
-                            </li>
-                            <li>
-                                <a class="loadThumbView" data-gid="1430371"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/371/148862_thumb1571.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 시나이 반도로 향한 암살단</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong></div>
-            </div>
-            <div id="gmGuide" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 공략이 있습니다.</div>
-                </div>
-                <div class="gmview-tab-guide-thumb">
-                    <div class="db_thumlist">
-                        <ul>			<li>
-                            <a class="select-guide-main" data-gid="1409015"><img src="https://cdn.gamemeca.com/gmdata/0001/409/015/913394_cooladsl_thumb_1109.jpg"></a>
-                            <a class="title">[PC] 어쌔신 크리드: 오리진 3부</a>
-                        </li>
-                            <li>
-                                <a class="select-guide-main" data-gid="1407413"><img src="https://cdn.gamemeca.com/gmdata/0001/407/413/121431_cooladsl_thumb_1105.jpg"></a>
-                                <a class="title">[PC] 어쌔신 크리드: 오리진 2부</a>
-                            </li>
-                            <li>
-                                <a class="select-guide-main" data-gid="1405619"><img src="https://cdn.gamemeca.com/gmdata/0001/405/619/330125_cooladsl_thumb_1096.jpg"></a>
-                                <a class="title">[PC] 어쌔신 크리드: 오리진 1부</a>
-                            </li>
-                        </ul></div>
-                </div>
-            </div>
-            <div id="gmHistory" style="display: none">
-                <div class="historyWrap">
-                    <div class="history">
-                        <dl class="leftA">
-                            <dd class="year">2017</dd>
-                        </dl>
-                        <dl class="rightA">
-                            <dd>
-                                <span class="month">10</span>
-                                어쌔신 크리드: 오리진 한국어판 정식 발매				<span class="mDay">(10/27 ~ 10/27)</span>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- right section -->
-        <div class="content-right">
-            <div class="gmview-section-right"><div class="section-right">
-                <!--특별페이지 / 메카 파워진 금~월-->
-                <style>
-                    .special-right .mecazine a{
-                        width: 260px;
-                        height: 337px;
-                        display: inline-block;
-                        background: url('https://cdn.gamemeca.com/gmdata/0001/659/653/gm263281_20210507shg1.jpg') center;
-                        background-size: 260px 337px;
-                    }
-                </style>
-                <div class="special-right">
-                    <ul>
-                        <li class="mecazine"><a href="/view.php?gid=1659653" target="_blank"></a></li>
-                    </ul>
-                </div>	<!--//특별페이지-->
-                <!--많이본 뉴스-->
-                <div class="rank_wrap">
-                    <div class="tab_enter">
-                        <a class="link_tab on" onclick="return false;">많이본 뉴스</a>
-                        <a class="link_tab " onclick="return false;">SNS 화제</a>
-                    </div>
-                    <div class="rank_list">
-                        <ul data-ranking="1" style="display:block;">
-                            <li><a href="/view.php?gid=1659570"><span class="rank_num num1"></span>블리자드 게임 월간 이용자, 3개월 간 200만 명 감소했다</a></li>
-                            <li><a href="/view.php?gid=1659391"><span class="rank_num num2"></span>모여봐요 동물의 숲 도용한 게임이 MS 스토어에 올라왔다</a></li>
-                            <li><a href="/view.php?gid=1659375"><span class="rank_num num3"></span>2,800개 리뷰 중 92%가 비추, 스팀 ‘압도적 부정적' 나왔다</a></li>
-                            <li><a href="/view.php?gid=1659461"><span class="rank_num num4"></span>카카오게임즈, 우마무스메 올해 안에 국내 출시한다</a></li>
-                            <li><a href="/view.php?gid=1659473"><span class="rank_num num5"></span>데바데 개발자가 한국에서 사기 당했다? 개발사에 물으니</a></li>
-                            <li><a href="/view.php?gid=1659364"><span class="rank_num num6"></span>고산 등정하는 로그라이크 게임 스팀에 나왔다</a></li>
-                            <li><a href="/view.php?gid=1659401"><span class="rank_num num7"></span>GS25 혐오 논란에, 그랑사가 도시락 쿠폰 이벤트 중단</a></li>
-                            <li><a href="/view.php?gid=1659650"><span class="rank_num num8"></span>[세계기행] 로보토미 코퍼레이션, 미친 기업들의 도시</a></li>
-                            <li><a href="/view.php?gid=1659513"><span class="rank_num num9"></span>디아블로 이모탈, 올해 연말 글로벌 출시한다</a></li>
-                            <li><a href="/view.php?gid=1659610"><span class="rank_num num10"></span>로보토미 코퍼레이션 개발사 신작, 28일 스팀 정식 출시</a></li>
-                        </ul>
-                        <ul data-ranking="2" style="display:none;">
-                            <li><a href="/view.php?gid=1659610"><span class="rank_num num1"></span>로보토미 코퍼레이션 개발사 신작, 28일 스팀 정식 출시</a></li>
-                            <li><a href="/view.php?gid=1659570"><span class="rank_num num2"></span>블리자드 게임 월간 이용자, 3개월 간 200만 명 감소했다</a></li>
-                            <li><a href="/view.php?gid=1659401"><span class="rank_num num3"></span>GS25 혐오 논란에, 그랑사가 도시락 쿠폰 이벤트 중단</a></li>
-                            <li><a href="/view.php?gid=1659461"><span class="rank_num num4"></span>카카오게임즈, 우마무스메 올해 안에 국내 출시한다</a></li>
-                            <li><a href="/view.php?gid=1659386"><span class="rank_num num5"></span>스마일게이트, 역대 최대 규모 경력 개발자 공채 시작</a></li>
-                            <li><a href="/view.php?gid=1659460"><span class="rank_num num6"></span>바이와 징크스의 과거, 롤 애니메이션 올 가을 넷플릭스 방영</a></li>
-                            <li><a href="/view.php?gid=1659473"><span class="rank_num num7"></span>데바데 개발자가 한국에서 사기 당했다? 개발사에 물으니</a></li>
-                            <li><a href="/view.php?gid=1659391"><span class="rank_num num8"></span>모여봐요 동물의 숲 도용한 게임이 MS 스토어에 올라왔다</a></li>
-                            <li><a href="/view.php?gid=1659536"><span class="rank_num num9"></span>컴퓨팅 사고 기른다, '차근차근 게임코딩' 6월 스위치 출시</a></li>
-                            <li><a href="/view.php?gid=1659364"><span class="rank_num num10"></span>고산 등정하는 로그라이크 게임 스팀에 나왔다</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <script>
-                    jQuery(function(){
-
-                        jQuery(".link_tab").on('mouseover', function(){
-                            jQuery(".link_tab").removeClass("on");
-                            jQuery(this).addClass("on");
-                            var index = jQuery(this).index();
-                            jQuery('.rank_list > ul').css("display","none");
-                            jQuery('.rank_list > ul').eq(index).css("display","block");
-
-                        });
-                    });
-
-
-                </script>	<!--//많이본 뉴스-->
-                <div class="right_ad"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_ss"></script><div id="meca_ads_32"><iframe src="https://ads.gamemeca.com/adver/html/?id=32" width="260" height="277" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
-                <!--이벤트-->
-                <style>
-                    .event-right { height:380px; border-top: 4px solid #e7e5e9; padding-top: 25px; margin-bottom: 25px; display: block; overflow:hidden; }
-                </style>
-                <div class="event-right">
-                    <span class="magazine-title"><a href="/event.php">이벤트</a></span>
-                    <button class="erarrowR sliderActionE"></button><button class="erarrowL sliderActionE"></button>
-                    <div id="sliderBox2">
-                        <div class="event-loc-slider" style="width:1300px;">
-                            <dl>
-                                <dd>
-                                    <a href="https://www.gamemeca.com/event/2021/21th/?ev=big1" target="_blank"><img src="https://cdn.gamemeca.com/gmevent/000/010/06/gm718656_ev_list_banner.jpg"></a>				</dd>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="https://www.gamemeca.com/event/2021/21th/?ev=big4" target="_blank"><img src="https://cdn.gamemeca.com/gmevent/000/010/13/gm128468_ev_list_banner.jpg"></a>				</dd>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="https://www.gamemeca.com/event/2021/21th/?ev=big4" target="_blank"><img src="https://cdn.gamemeca.com/gmevent/000/010/14/gm641138_ev_list_banner.jpg"></a>				</dd>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="https://www.gamemeca.com/event/2021/21th/?ev=big3" target="_blank"><img src="https://cdn.gamemeca.com/gmevent/000/010/08/gm766861_ev_list_banner.jpg"></a>				</dd>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="https://www.gamemeca.com/event/2021/21th/?ev=big2" target="_blank"><img src="https://cdn.gamemeca.com/gmevent/000/010/07/gm759562_ev_list_banner.jpg"></a>				</dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    /* for slider var */
-                    var $sliderQueE = 0;
-                    var $fullSizeIndexE = 0;
-                    var $silderSizeE = 260;
-                    jQuery(document).ready(function(){
-                        $fullSizeIndexE = jQuery("div.event-loc-slider > dl").length - 1;
-
-                        /* siwpeAction btn */
-                        jQuery('button.sliderActionE').on('click', function(){
-                            if(jQuery(this).hasClass("erarrowL")){
-                                if($sliderQueE > 0) $sliderQueE -= 1;
-                                else $sliderQueE = $fullSizeIndexE;
-                            }
-                            if(jQuery(this).hasClass("erarrowR")){
-                                if($sliderQueE < $fullSizeIndexE) $sliderQueE += 1;
-                                else $sliderQueE = 0;
-                            }
-                            setAnimateE();
-                            return false;
-                        });
-
-                        /* setting animated */
-                        function setAnimateE(){
-                            var left = -($sliderQueE * $silderSizeE);
-                            jQuery("div.event-loc-slider").animate({"left": left}, "slow");
-                        }
-
-                    });
-                </script>
-                <!--//이벤트-->
-                <!--게임잡지-->
-                <div class="magazine_r">
-                    <span class="magazine-title"><a href="/magazine/?mgz=cartoon" target="_blank">만평동산</a></span>
-                    <button class="rkarrowR sliderActionM"></button><button class="rkarrowL sliderActionM"></button>
-                    <div id="sliderBox2">
-                        <div class="app-loc-slider" style="width:1300px;">
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2018-2020" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2018-2020" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2018~2020</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2015-2017" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2015-2017" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2015~2017</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2011-2014" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2011-2014" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2011~2014</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2006-2010" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2006-2010" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2006~2010</span></dl>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    /* for slider var */
-                    var $sliderQueM = 0;
-                    var $fullSizeIndexM = 0;
-                    var $silderSizeM = 260;
-                    jQuery(document).ready(function() {
-                        $fullSizeIndexM = jQuery("div.app-loc-slider > dl").length - 1;
-
-                        /* siwpeAction btn */
-                        jQuery('button.sliderActionM').on('click', function() {
-                            if(jQuery(this).hasClass("rkarrowL")) {
-                                if($sliderQueM > 0) $sliderQueM -= 1;
-                                else $sliderQueM = $fullSizeIndexM;
-                            }
-                            if(jQuery(this).hasClass("rkarrowR")) {
-                                if($sliderQueM < $fullSizeIndexM) $sliderQueM += 1;
-                                else $sliderQueM = 0;
-                            }
-                            setAnimateM();
-                            return false;
-                        });
-
-                        /* setting animated */
-                        function setAnimateM() {
-                            var left = -($sliderQueM * $silderSizeM);
-                            jQuery("div.app-loc-slider").animate({"left": left}, "slow");
-                        }
-                    });
-                </script>	<!--//게임잡지-->
-                <!--일정-->
-
-                <div class="game-schedule">
-                    <div class="title">게임일정<span class="caico"></span></div>
-
-                    <div class="gameCal">
-                        <div>
-                            <div class="date">
-                                <div><span class="year">2021</span>년</div>
-                                <div><span class="month">05</span>월</div>
-                                <div>
-                                    <button class="scheduleIcoarrowL" data-ym="2021-04"></button><button class="scheduleIcoarrowR" data-ym="2021-06"></button>
-                                </div>
-                            </div>
-                            <div class="calender">
-                                <!--달력-->
-                                <table border="0" cellspacing="0" class="calender-table">
-                                    <caption></caption>
-                                    <colgroup>
-                                        <col width="25px">
-                                        <col width="25px">
-                                        <col width="25px">
-                                        <col width="25px">
-                                        <col width="25px">
-                                        <col width="25px">
-                                        <col width="25px">
-                                    </colgroup>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">일</th>
-                                        <th scope="col">월</th>
-                                        <th scope="col">화</th>
-                                        <th scope="col">수</th>
-                                        <th scope="col">목</th>
-                                        <th scope="col">금</th>
-                                        <th scope="col">토</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105"></a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">1</a></td></tr><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105">2</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">3</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">4</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">5</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">6</a></td><td class="day selected"><a href="/game.php?rts=schedule&amp;ym=202105">7</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">8</a></td></tr><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105">9</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">10</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">11</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">12</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">13</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">14</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">15</a></td></tr><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105">16</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">17</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">18</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">19</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">20</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">21</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">22</a></td></tr><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105">23</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">24</a></td><td class="day selected"><a href="/game.php?rts=schedule&amp;ym=202105">25</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">26</a></td><td class="day selected"><a href="/game.php?rts=schedule&amp;ym=202105">27</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">28</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">29</a></td></tr><tr><td class="sun"><a href="/game.php?rts=schedule&amp;ym=202105">30</a></td><td class="day"><a href="/game.php?rts=schedule&amp;ym=202105">31</a></td><td class="nextMonth"><a href="/game.php?rts=schedule&amp;ym=202105">1</a></td><td class="nextMonth"><a href="/game.php?rts=schedule&amp;ym=202105">2</a></td><td class="nextMonth"><a href="/game.php?rts=schedule&amp;ym=202105">3</a></td><td class="nextMonth"><a href="/game.php?rts=schedule&amp;ym=202105">4</a></td><td class="nextMonth"><a href="/game.php?rts=schedule&amp;ym=202105">5</a></td></tr></tbody>
-                                </table>
-                                <!--//달력-->
-
-                                <div class="calLayer" style="display: none;z-index:1;"></div>
-                            </div>
-                        </div>
-                        <div class="btmAllDate">
-                            <a href="/g-report.php" class="schedule-contact">게임일정등록</a>
-                            <a href="/game.php?rts=schedule" class="schedule-view">일정전체보기</a>
-                        </div>
-                    </div>
-
-                </div>
-                <script>
-                    jQuery(function() {
-
-                        function loadData(ym) {
-                            var params = {'json': 'schedule'};
-                            if (ym) params.ym = ym;
-                            jQuery.getJSON('/17/json.php', params, function (rs) {
-                                printSchedule(rs);
-                            });
-                        }
-
-                        function printSchedule(rs) {
-                            var tbody = jQuery('.calender-table tbody');
-                            tbody.empty();
-                            var tr = [];
-                            var trCnt = 0;
-
-                            jQuery('.date div span.year').text(rs.info.year);
-                            jQuery('.date div span.month').text(rs.info.month);
-                            jQuery('.scheduleIcoarrowL').attr('data-ym', rs.info.prev);
-                            jQuery('.scheduleIcoarrowR').attr('data-ym', rs.info.next);
-
-                            jQuery.each(rs.data, function(i, v){
-                                var td = jQuery('<td>');
-                                if (i%7==0) {
-                                    if (i!=0) trCnt +=1;
-                                    tr[trCnt] = jQuery('<tr>');
-                                    td.addClass('sun');
-                                }
-                                if (v.nday) {
-                                    v.day = v.nday;
-                                    td.addClass('nextMonth');
-                                } else {
-                                    if (!td.hasClass('sun'))
-                                        td.addClass('day');
-                                }
-
-                                if (v.row=='on') {
-                                    td.addClass('selected');
-                                    td.data(v.rows);
-                                }
-                                td.append(jQuery('<a>').text(v.day).attr('href', '/game.php?rts=schedule&ym='+rs.info.ym));
-                                tr[trCnt].append(td);
-                            });
-                            jQuery.each(tr, function(i,v){
-                                tbody.append(v);
-                            });
-                        }
-                        loadData();
-
-                        jQuery('.calender-table tbody').on('mouseover', 'td.selected', function (){
-                            var rows = jQuery(this).data();
-                            jQuery('.calLayer').empty();
-                            jQuery.each(rows, function(i, v){
-                                var layerCalender = jQuery('<a>');
-                                if (v.gm_status==25) layerCalender.append(jQuery('<ins class="blue"></ins>'));
-                                else if (v.gm_status==31) layerCalender.append(jQuery('<ins class="red"></ins>'));
-                                else layerCalender.append(jQuery('<ins class="black"></ins>'));
-
-                                layerCalender.append(v.title);
-
-                                jQuery('.calLayer').append(layerCalender);
-                            });
-                            jQuery('div.calLayer').show().css('top', (jQuery(this).offsetParent().prevObject["0"].offsetTop+22));
-                        });
-
-                        jQuery('.game-schedule').on('mouseleave', '.gameCal', function(){
-                            jQuery('div.calLayer').hide();
-                        });
-
-                        jQuery('.scheduleIcoarrowL, .scheduleIcoarrowR').on('click', function(){
-                            console.log(jQuery(this).attr('data-ym'));
-                            loadData(jQuery(this).attr('data-ym'));
-                        });
-
-
-                    });
-
-                </script>
-                <!--//일정-->
-                <!-- 인기 게임 순위 -->
-
-                <div class="ranking">
-                    <div class="title">인기게임순위</div>
-                    <div class="ranking-left">
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <span class="rknum1">1</span><span class="icork"></span><span class="iconum"></span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/26/18/199120.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0002618">리그 오브 레전드</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum1">2</span><span class="icork1"></span><span class="iconum">1</span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/72/97/221151.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0007297">로스트아크</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum1">3</span><span class="icork2"></span><span class="iconum">1</span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/88/08/221151.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0008808">플레이어언노운스 배틀그라운드</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">4</span><span class="icork1"></span><span class="iconum">1</span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/18/23/199120.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0001823">서든어택</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">5</span><span class="icork1"></span><span class="iconum">1</span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/96/37/692068_221151.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0009637">피파 온라인 4</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">6</span><span class="icork2"></span><span class="iconum">2</span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/72/94/199120.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0007294">오버워치</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">7</span><span class="icork"></span><span class="iconum"></span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g001/17/93/538821_200302-risell-uu5.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0011793">발로란트</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">8</span><span class="icork"></span><span class="iconum"></span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/42/53/199120.jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0004253">아이온: 영원의 탑</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">9</span><span class="icork"></span><span class="iconum"></span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/10/53/221151(0).jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0001053">메이플스토리</a></span>
-                                </li>
-                                <li>
-                                    <span class="rknum2">10</span><span class="icork"></span><span class="iconum"></span><span class="icogam"><img src="https://cdn.gamemeca.com/gmdb/g000/04/35/199120(0).jpg" width="16" height="16"> <a href="/game.php?rts=gmview&amp;gmid=g0000435">스타크래프트</a></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="pollbtn">
-                        <a class="pollrank" href="/ranking.php?rid=2104"></a>
-                        <a class="addpoll" href="/ranking.php"></a>
-                    </div>
-                </div>	<!-- //인기 게임 순위 -->
-                <div class="right_ad2"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_box"></script><div id="meca_ads_33"><iframe src="https://ads.gamemeca.com/adver/html/?id=33" width="260" height="185" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
-                <script type="text/javascript" src="//ad.xc.netinsight.co.kr/xc/j/HSUDDM8V/x/fst"></script><script async="async" type="text/javascript" src="https://static.criteo.net/js/ld/publishertag.js"></script><div id="criteo_slot_3531"><iframe id="criteo_slot_3531_iframe" frameborder="0" allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" width="250" height="250"></iframe></div>
-                <script>
-                    !function(){
-                        var criteoZoneId = 1338557;
-                        var criteoSlotId = "criteo_slot_3531";
-                        var passback = function () {
-                            var width = "250", height = "250";
-                            var div = document.getElementById(criteoSlotId);
-                            if (div) { var ifr = document.createElement('iframe'); ifr.setAttribute("id", criteoSlotId+"_iframe"), ifr.setAttribute("frameborder","0"), ifr.setAttribute("allowtransparency","true"), ifr.setAttribute("hspace","0"), ifr.setAttribute("marginwidth","0"), ifr.setAttribute("marginheight","0"), ifr.setAttribute("scrolling","no"), ifr.setAttribute("vspace","0"), ifr.setAttribute("width", width), ifr.setAttribute("height", height);
-                                div.appendChild(ifr);
-                                var htmlcode = "<html><head></head><body><iframe src='https://ad.xc.netinsight.co.kr/xc/h/HSUDDM8V/x/cpd' frameborder='0' marginwidth='0' marginheight='0' allowtransparency='true' scrolling='no' width='250' height='250'></iframe></body></html>";
-                                var ifrd = ifr.contentWindow.document; ifrd.open(); ifrd.write(htmlcode); ifrd.close(); }
-                        };
-
-                        var CriteoAdUnits = { "placements": [{ "slotid": criteoSlotId, "zoneid": criteoZoneId }]};
-                        window.Criteo = window.Criteo || {}; window.Criteo.events = window.Criteo.events || [];
-                        var processCdbBid = function() {
-                            var bids = Criteo.GetBidsForAdUnit(criteoSlotId);
-                            if (bids.length > 0) {
-                                var bidFound = bids[0]; Criteo.RenderAd({ bidId: bidFound.id, containerId: bidFound.impressionId });
-                            } else { passback(); }
-                        };
-                        Criteo.events.push(function() { Criteo.RequestBids(CriteoAdUnits, processCdbBid, 2000);});
-                    }();
-                </script>
-
-            </div>
-            </div>
-        </div>
-        <!--// right section -->			</div>
+        <!--        gmdb nav -->
+        <div id="list-page-nav" class="pagingNav" ></div>
+    </div>
 </div>
 <div class="google_ad_bottom_728x90" style="text-align:center; border-top: 1px solid #E4E4E4;background-color:#f3f3f3">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-2639901077908883";
-    /* Main_bottom_728x90 */
-    google_ad_slot = "1110976251";
-    google_ad_width = 728;
-    google_ad_height = 90;
-    //-->
-    </script>
-    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;" data-ad-slot="1110976251" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2639901077908883&amp;output=html&amp;h=90&amp;slotname=1110976251&amp;adk=608371669&amp;adf=2523551987&amp;pi=t.ma~as.1110976251&amp;w=728&amp;lmt=1620466532&amp;url=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php%3Frts%3Dgmview%26gmid%3Dg0012305&amp;flash=0&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjkwLjAuNDQzMC45MyIsW11d&amp;dt=1620466532080&amp;bpp=12&amp;bdt=349&amp;idt=41&amp;shv=r20210505&amp;cbv=%2Fr20190131&amp;ptt=5&amp;saldr=sa&amp;abxe=1&amp;cookie=ID%3D3a557beb04348c5e-22bf1d0ee8c70083%3AT%3D1620466519%3ART%3D1620466519%3AS%3DALNI_MYzRd6hDkOGdN_nR33QVb_dNHNZlw&amp;correlator=267302832312&amp;frm=20&amp;pv=2&amp;ga_vid=1993439177.1620466526&amp;ga_sid=1620466532&amp;ga_hid=1422719&amp;ga_fc=0&amp;u_tz=540&amp;u_his=5&amp;u_java=0&amp;u_h=1050&amp;u_w=1680&amp;u_ah=1010&amp;u_aw=1680&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=468&amp;ady=3250&amp;biw=1663&amp;bih=882&amp;scr_x=0&amp;scr_y=0&amp;eid=44739521&amp;oid=3&amp;pvsid=939528936888264&amp;pem=144&amp;ref=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php&amp;eae=0&amp;fc=640&amp;brdim=0%2C0%2C0%2C0%2C1680%2C0%2C1680%2C1010%2C1680%2C882&amp;vis=1&amp;rsz=%7C%7CeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;btvi=1&amp;fsb=1&amp;xpc=FtW9UmD8Fl&amp;p=https%3A//www.gamemeca.com&amp;dtd=50" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!1" data-google-query-id="CP_Ml5vkufACFUd6vQoddqYBBw" data-load-complete="true"></iframe></ins></ins>
+
+    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    <ins id="aswift_0_expand"
+         style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"
+         data-ad-slot="1110976251" tabindex="0" title="Advertisement" aria-label="Advertisement">
+        <ins id="aswift_0_anchor"
+             style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;">
+            <iframe id="aswift_0" name="aswift_0"
+                    style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;"
+                    sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                    width="728" height="90" frameborder="0"
+                    src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2639901077908883&amp;output=html&amp;h=90&amp;slotname=1110976251&amp;adk=608371669&amp;adf=2523551987&amp;pi=t.ma~as.1110976251&amp;w=728&amp;lmt=1620180068&amp;url=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php&amp;flash=0&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwXzE1XzciLCJ4ODYiLCIiLCI5MC4wLjQ0MzAuOTMiLFtdXQ..&amp;dt=1620180067843&amp;bpp=20&amp;bdt=534&amp;idt=408&amp;shv=r20210429&amp;cbv=%2Fr20190131&amp;ptt=5&amp;saldr=sa&amp;abxe=1&amp;cookie=ID%3D0fae4b5f7a617862-22c36fe41cc700d5%3AT%3D1618114697%3ART%3D1618114697%3AS%3DALNI_MZWn_H6YLzBrdL817VNfbm5PI2a-w&amp;correlator=5698186492419&amp;frm=20&amp;pv=2&amp;ga_vid=148354976.1618114693&amp;ga_sid=1620180068&amp;ga_hid=1271198845&amp;ga_fc=0&amp;ga_cid=1596197753.1620178930&amp;u_tz=540&amp;u_his=19&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=344&amp;ady=2133&amp;biw=1415&amp;bih=680&amp;scr_x=0&amp;scr_y=37&amp;oid=3&amp;pvsid=2967438512864316&amp;pem=258&amp;ref=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php%3Frts%3Dguide&amp;eae=0&amp;fc=640&amp;brdim=0%2C25%2C0%2C25%2C1440%2C25%2C1415%2C816%2C1415%2C680&amp;vis=1&amp;rsz=%7C%7CeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;btvi=1&amp;fsb=1&amp;xpc=RUCPHMAUu7&amp;p=https%3A//www.gamemeca.com&amp;dtd=439"
+                    marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                    allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!1"
+                    data-google-query-id="COjgzIu5sfACFdTSlgodJqYFMA" data-load-complete="true"></iframe>
+        </ins>
+    </ins>
 </div>
-
-<script type="text/javascript">
-
-    function getOption(arg1) {
-        if (!arg1) {
-            return null;
-        }
-
-        var option = {
-            id: arg1.getAttribute('id'),
-            adUnit: arg1.getAttribute('data-ad-unit'),
-            width: arg1.getAttribute('data-ad-width'),
-            height: arg1.getAttribute('data-ad-height')
-        }
-
-        return option;
-    }
-    function callBackFunc(arg1) {
-
-        var option = getOption(arg1), newDiv = document.createElement('div');
-
-        if (option.adUnit == 'DAN-s0xamtkdryw4') {
-            jQuery('.google_ad_bottom_728x90').hide();
-        } else if (option.adUnit == 'DAN-1hvbj8qs3vy3l') {
-            jQuery('.ads_title_bottom').hide();
-        }
-        arg1.appendChild(newDiv);
-    }
-
-</script>
 
 <th:block th:include="fragments/footer"></th:block>
 
 </body>
-
 </html>

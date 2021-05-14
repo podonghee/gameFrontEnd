@@ -41,13 +41,13 @@ $(function(){
         initEvent : function(){
             $(".db-sub-menu ul li a").click(function(){
             });
-            $(".on").click(function(){
-                alert('1');
-            })
+            // $(".on").click(function(){
+            //     alert('1');
+            // })
         },
         search : function(){
             //상세 게임 백앤드 호출
-            controller.Game.game.detail({gameId :fnObj.tabView.gameId},function(res){
+            controller.Game.g001.g002({gameId :fnObj.tabView.gameId},function(res){
                 if(undefined !=  res.list && 0 != res.list) {
                     common.setData(res.list[0],fnObj.tabView.targetId);
                 }
