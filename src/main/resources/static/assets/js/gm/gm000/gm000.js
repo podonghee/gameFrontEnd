@@ -8,6 +8,7 @@ $(function(){
         common.loadController("Game");
         _this.tabView.initView();
     };
+
     fnObj.tabView = {
         targetId : ".gm_info",
         gmTabNm : $("#gmTabNm").val(),

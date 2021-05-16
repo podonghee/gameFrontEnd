@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * Date : 2021.05.14
  */
 @Controller
-public class GM000Controller {
+public class Gm000Controller {
     @RequestMapping(value="/gm/gm000/gm000", method= {RequestMethod.GET, RequestMethod.POST})
     public String view(HttpServletRequest request, Model model){
         String gameId = request.getParameter("gameId");

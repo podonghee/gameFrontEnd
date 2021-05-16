@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.podong.game.gamefrontend.game.gm006.dao.Gm006Mapper">
+
+    <select id="getRankYear" resultType="java.util.Map" statementType="PREPARED">
+        SELECT GAME_RANK_YEAR
+        FROM   GM_GAME_RANK
+        GROUP BY GAME_RANK_YEAR
+        ORDER BY GAME_RANK_YEAR DESC
+    </select>
+    <select id="getRankOneWeek" resultType="java.util.Map" parameterType="java.lang.String" statementType="PREPARED">
+        SELECT GAME_RANK_ONEWEEK
+        FROM GM_GAME_RANK
+        WHERE USE_YN ='Y'
+        <if test='null != value  '>
+            AND    GAME_RANK_YEAR = #{value, jdbcType=VARCHAR}
+        </if>
+        ORDER BY GAME_LEVEL DESC
+    </select>
+
+</mapper>

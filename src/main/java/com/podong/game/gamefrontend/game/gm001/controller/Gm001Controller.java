@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Date : 2021.05.14
  */
 @Controller
-public class GM001Controller {
+public class Gm001Controller {
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String view(Model model){
         return "gm/gm001/gm001";

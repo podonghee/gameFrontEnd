@@ -6,9 +6,8 @@ $(function(){
     fnObj.pageStart = function () {
         var _this = this;
         common.loadController("Game");
+        _this.mainView.initView();
         _this.formView.initView();
-        _this.templateView.initView();
-        _this.templateView2.initView();
     };
     //ToDo 진행해야함
     fnObj.formView = {
@@ -16,25 +15,46 @@ $(function(){
             this.initEvent();
         },
         initEvent : function() {
+            $("#selectWeeks").change(function(){
+               alert('1');
+            });
+            $("#selectYears").change(function(){
+                $.get("/gm/gm006/gm006/flgch?Year="+$("#selectYears").select().val(),function() {
+                }).done(function (fragment) {
+                    $("#selectWeeks").replaceWith(fragment);
+                });
+            });
+        },
+        initDisplay : function(){
 
         },
         getData : function(){
-            var list = {
-                genre : $(".select-genre.on").text()
-                , serviceStatus : $(".select-status.on").text()
+            var rankYear = undefined;
+            var rankOneWeek = undefined;
+            if($("#selectYears").select().val() == ''){
+                rankYear = $("#selectYears option:eq(1)").val();
             }
-
+            else
+            {
+                rankYear = $("#selectYears").select().val();
+            }
+            if($("#selectWeeks").select().val() == '')
+            {
+                rankOneWeek = $("#selectWeeks option:eq(1)").val();
+            }
+            else
+            {
+                rankOneWeek = $("#selectWeeks").select().val();
+            }
+            var list = {
+                rankYear : rankYear
+                , rankOneWeek : rankOneWeek
+            }
             return list;
         }
     }
     //게임 리스트를 뿌려주기 위한 뷰
     fnObj.mainView = {
-        page: {
-            currentPage: 0,
-            pageSize: 25,
-            totalElements: 0,
-            totalPages: 0,
-        },
         initView: function () {
             this.initDisplay();
             this.initEvent();
@@ -47,9 +67,10 @@ $(function(){
         },
         search : function(){
             //백앤드 호출
-            controller.Game.g006.g001(fnObj.menuView.getData(),function(res){
+            controller.Game.g006.g001(fnObj.formView.getData(),function(res){
                 if(undefined !=  res.list && 0 != res.list) {
-                    common.paging(res.page)
+                    console.log(res);
+                   // fnObj.formView.initDisplay();
                 }
             });
         }
