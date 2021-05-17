@@ -1,0 +1,490 @@
+
+
+.ranking-static-img {background: url('../images/common/ico_rank.png') no-repeat; display: inline-block;}
+.ranking-static-list {background-position: 7px -30px; width: 20px; height: 16px;}
+.ranking-static-issue {background-position: 0 -209px; height: 25px;padding-left:28px;padding-top:4px;}
+.ranking-static-news {background-position: 0 -68px; width: 25px; height: 25px;}
+.ranking-static-review {background-position: 0 -97px; width: 25px; height: 25px;}
+.ranking-static-movie {background-position: 0 -126px; width: 25px; height: 25px;}
+.ranking-static-sshot {background-position: 0 -154px; width: 25px; height: 25px;}
+.ranking-static-site {background-position: 0 -182px; width: 25px; height: 25px;}
+.ranking-static-poll {background-position: 0 -182px; width: 25px; height: 25px;}
+
+/*���� ���̺� 210507*/
+.ranking-static-more {background-position: -31px -209px; height: 25px;padding-left:28px;padding-top:4px;}
+.ranking-static-close {background-position: -60px -209px; height: 25px;padding-left:28px;padding-top:4px;}
+.ranking-static-up {background-position: -33px -244px;}
+.ranking-static-down {background-position: -49px -244px;}
+
+.rank-list {
+    margin-top: 10px;
+    overflow: hidden;
+    width: 1041px;
+}
+.rank-list .content-left {
+    border: none;
+    float: left;
+    width: 584px;
+}
+.rank-list .content-right {
+    float: right;
+    width: 402px;
+}
+
+
+
+
+
+.ranking_list {
+
+}
+.ranking-title-tab {
+    font-size: 0;
+}
+.ranking-title-tab a {
+    width: 50%;
+    display: inline-block;
+    border: 1px solid #ADACB1;
+    background:#F4F4F4;
+    color:#B9B9B9;
+    font-size: 16px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: bolder;
+}
+
+.ranking-title-tab a:first-child {
+    border-right: none;
+}
+
+.ranking-title-tab a.on {
+    border-bottom: none;
+    background:#FFF;
+    color:#000;
+}
+
+.ranking-header {
+    height: 52px;
+    padding: 5px 0;
+}
+.ranking-header .ranking-date {
+    font-size: 24px;
+}
+
+.ranking-header .ranking-description {
+    color:#5F5F5F;
+}
+.ranking-header .ranking-complete-select {
+    float:right;
+    margin-left: 6px;
+}
+.ranking-header .ranking-complete-select select {
+    margin-top: 5px;
+    height: 32px;
+    border-color: #e7e7e7;
+    padding: 0 7px;
+}
+
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ranking-table tr td:nth-of-type(1) {width:94px; text-align: center;}
+.ranking-table tr td:nth-of-type(2) {width:80px; text-align: center;}
+.ranking-table tr td:nth-of-type(3) {width:20px; text-align: center;}
+.ranking-table tr td:nth-of-type(4) {}
+.ranking-table tr td:nth-of-type(5) {width:50px; text-align: center;}
+.ranking-table tr td:nth-of-type(6) {width:50px; text-align: center;}
+.ranking-table tr td:nth-of-type(7) {width:50px; text-align: center;}
+.ranking-table tr td:nth-of-type(8) {width:50px; text-align: center;}
+.ranking-table tr td:nth-of-type(9) {width:50px; text-align: center;}
+.ranking-table tr td:nth-of-type(10) {width:50px; text-align: center;}
+
+.ranking-table-header {
+    border-top: 2px solid #4C4C4C;
+    height: 40px;
+}
+.ranking-table-header th {
+    /*border-bottom: 1px solid #EFEFEF;*/
+    /*font-weight: normal;*/
+}
+
+.ranking-table-rows:first-child {
+    border-top: 1px solid #94DACF;
+}
+.ranking-table-rows {
+    border-bottom: 1px #E6E6E6 solid;
+    height: 65px;
+}
+.ranking-table-rows .rank {
+    font-size: 20px;
+    font-weight: bolder;
+    color:#919D93;
+}
+.ranking-table-rows .rank.red {
+    color:#FC478E;
+}
+
+.ranking-table-rows .game-icon {
+    width: 75px;
+    height: 45px;
+}
+
+.ranking-table-rows .game-name {
+    font-weight: bolder;
+    font-size: 13px;
+    padding-left: 5px;
+}
+.ranking-table-rows .game-info {
+    padding: 5px 0;
+    color: #67845A;
+}
+.ranking-table-rows .game-info span {
+    margin: 0 5px;
+}
+.ranking-table-rows .game-info span.company {
+    color:#2F3E28;
+}
+.ranking-table-rows .game-info span.company a {
+    color:#2F3E28;
+}
+
+
+.rankChange {display: inline-block;width: 35px;}
+.rankChange span.icon {background: url('../images/common/ico_ver1.png') no-repeat;}
+.rankChange span { width: 20px; height: 12px; display: inline-block;}
+.rankChange span.up {background-position:10px -244px;}
+.rankChange span.down {background-position: -8px -244px;}
+.rankChange span.new {background-position: -36px -244px; width: 23px;}
+
+
+.ranking-poll {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 10px;
+}
+
+.ranking-poll-area {
+    width: 1041px;
+    margin: auto;
+    height: 79px;
+    background: #fff;
+    text-align: center;
+}
+
+
+.pollinfo_txt span.pollinfo_ico {
+    width: 23px;
+    height: 18px;
+    background: url(../images/common/ico_rank.png)0px -330px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.poll-action-btn {
+    width: 115px;
+    height: 43px;
+    cursor: pointer;
+    background: url('../images/common/ico_rank.png')0px -266px;
+    border: 0;
+    margin: 1px 0;
+}
+
+
+/*���� ���� 210507*/
+
+.rnews_r {
+    border-top: 4px solid #e7e5e9;
+    padding-top: 25px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.rnews_r span.rnews-title {
+    width: 90px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    color: #000;
+}
+
+.jradius {
+    background-color: orange;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    display: inline-flex;
+    margin: 0 0 3px 5px;
+}
+
+.rnews_r .view-top-right {
+    float: left;
+    text-align: justify;
+    width: 402px;
+    margin:15px 0 0;
+}
+.rnews_r .view-top-right a img {
+    width: 402px;
+}
+
+.rknews_block {
+    margin-bottom: 36px;
+    display: block;
+}
+
+.rnews_r .view-top-right a span.newstx {
+    display: block;
+    word-break: break-all;
+    font-size: 16px;
+    margin:10px 0 0;
+}
+.rnews_r .view-top-right a span.newsdate {
+    display: inline-block;
+    padding-left: 1px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    font-family: verdana,sans-serif;
+}
+
+.rnews_r .view-top-right a span.viewdate1 {
+    display: inline-block;
+    padding-left: 1px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #86A5CE;
+    margin-top: 9px;
+    font-family: verdana,sans-serif;
+}
+.rnews_r .view-top-right a span.viewdate2 {
+    display: inline-block;
+    padding-left: 1px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #C7878A;
+    margin-top: 9px;
+    font-family: verdana,sans-serif;
+}
+
+.viewdate_ico {
+    background: url(../images/common/ico_rank.png) no-repeat;
+    display: inline-block;
+}
+.rkdatetx {
+    margin: 4px 6px 0;
+    height: 15px;
+    vertical-align: bottom;
+}
+
+.viewdate_ico.snsv {
+    background-position: 0 -312px;
+    width: 51px;
+    height: 15px;
+    vertical-align: bottom;
+}
+.viewdate_ico.mecav {
+    background-position: -58px -312px;
+    width: 60px;
+    height: 15px;
+    vertical-align: bottom;
+}
+.rkmore_area{
+    text-align: center;
+}
+.rkmore{
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+}
+.viewdate_ico.more {
+    background-position: -129px -306px;
+    width: 25px;
+    height: 18px;
+}
+
+/*���� ���̾� 210507*/
+.rlayer_pop_box {
+    width: 402px;
+    border: 1px solid #9C0000;
+    padding-bottom: 20px;
+    position: absolute;
+    background-color: #FFFFFF;
+    display: none;
+}
+
+.rdbbox {
+    display: flow-root;
+    padding: 2px 10px 0;
+    font-size: 13px;
+}
+.rdbtxt {
+    float: left;
+    width: 58%;
+}
+.rdbtxt li {
+    margin-bottom: 10px;
+}
+.rdbtxt li a {
+    color: #206DE0;
+}
+.rdbimg {
+    float: right;
+}
+
+
+.rdbtitbox{
+    border-bottom: 1px solid rgb(240, 240, 240);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+div.rlayer_pop_box h2.rh_gm {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 49px;
+    letter-spacing: -3px;
+    word-break: break-all;
+    color: rgb(0, 0, 0);
+    margin: 0px 0px 3px;
+}
+
+div.rlayer_pop_box a.rbclose{
+    background-position: -90px -209px;
+    height: 25px;
+    padding-left: 26px;
+    margin-top: 11px;
+    float:right;
+    cursor: pointer;
+}
+
+div.rlayer_pop_box p.btmSocial {
+    padding-top: 7px;
+    background: url(../images/common/ico_ver1.png) no-repeat 0 -970px;
+    width: 86px;
+    height: 32px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.rkdbnews{
+
+}
+
+.rkmoretit {
+    padding: 2px 0 3px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #101010;
+    line-height: 38px;
+    border: 1px solid #f2f2f2;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    display: block;
+    margin: 20px 0 15px 0;
+}
+
+.rklist_news {
+    padding: 0 10px 0 10px
+
+}
+
+.rklist_news li {
+    display: inline-block;
+    margin: 0 0 19px 0;
+    width: 380px;
+}
+
+.rklist_news .rklink_thumb {
+    float: right;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.rklist_news .rkcont_thumb {
+    padding-right: 16px;
+}
+.rklist_news .rktit_thumb {
+    letter-spacing: -0.05em;
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 76px;
+    margin: 6px 0 1px;
+    font-size: 16px;
+    line-height: 22px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: inherit;
+    white-space: normal;
+}
+
+.rklist_news .rkday_news {
+    display: inline-block;
+    padding-left: 4px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    font-family: verdana,sans-serif;
+}
+.rklist_news .rkrv_news {
+    display: inline-block;
+    padding-left: 4px;
+    font-weight: normal;
+    font-size: 13px;
+    color: #5571ff;
+    margin-top: 4px;
+}
+
+.rkdbnews .morview{
+    padding: 12px 10px 13px;
+    margin-bottom: 19px;
+}
+
+.rkdbnews a.rkmore-btn {
+    float: right;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.rkdb-more{
+    position: relative;
+    text-align: center;
+    width: 335px;
+}
+.rkdb-more .btn_more button {
+    background-color: transparent;
+    border: 0;
+}
+.rkdb-more .btn_more{
+    position: absolute;
+    margin: 16px 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.rkdb-more .btn_more .ico_more {
+    background-position: -124px -193px;
+    height: 69px;
+    width: 64px;
+    margin-top: -27px;
+}
+
+.rkdb-more .btn_more .ico_tx{
+    margin-left: -14px;
+    margin-top: -12px;
+    display: block;
+    color: #666;
+    letter-spacing: -1px;
+}
