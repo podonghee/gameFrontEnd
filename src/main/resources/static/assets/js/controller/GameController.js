@@ -6,13 +6,16 @@ var GameController = function () {
             _this.request("g001", "se001", {contents: data}, callback);
         },
         g002 : function (data, callback) {
-            _this.request("g001", "dt002", {contents: data}, callback);
+            _this.request("g001", "dt001", {contents: data}, callback);
         },
     };
     //g002 업체 페이지
     this.g002 = {
         g001 : function (data, callback) {
             _this.request("g002", "se001", {contents: data}, callback);
+        },
+        g002 : function (data, callback) {
+            _this.request("g002", "dt001", {contents: data}, callback);
         },
     };
     //g006 랭킹 페이지

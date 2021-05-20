@@ -7,53 +7,6 @@
     <script layout:fragment="script" type="text/javascript" th:src="@{/assets/js/gm/gm001/gm001.js}"></script>
 </head>
 <body>
-<div class="ad-topscroll">
-    <div class="topScrollHeight"></div>
-</div>
-<div class="header-background">
-    <div></div>
-</div>
-<div class="background-ad">
-    <style>
-        body {
-            background: none;
-        }
-        .backgroundAdClick {
-            position: absolute;
-            width: 500px;
-            min-height: 500px;
-            height: 1024px;
-        }
-        .backgroundAdClick.Left {
-            left: -500px;
-        }
-        .backgroundAdClick.Right {
-            right: -500px;
-        }
-        #bg_ad {
-            overflow: hidden;
-            position: absolute;
-            width: 100%;
-            margin-top: 31px;
-        }
-        #bg_ad > div {
-            width: 1041px;
-            margin: auto;
-            height: 1024px;
-            background-color: #fff;
-            position: relative;
-        }
-    </style>
-    <div id="bg_ad"
-         style="background: url('https://adcdn.gamemeca.com/adver/2021/05/03/3413617/7c8c3c8436015c8abcf5f6d1b62c41d7.jpg') no-repeat center top;">
-        <div>
-            <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=365&amp;amn=517&amp;adurl=https%3A%2F%2Fdekaron.co.kr%2F"
-               target="_blank"><span class="backgroundAdClick Left"></span></a>
-            <a href="https://ads.gamemeca.com/adver/click/?id=72&amp;adn=365&amp;amn=517&amp;adurl=https%3A%2F%2Fdekaron.co.kr%2F"
-               target="_blank"><span class="backgroundAdClick Right"></span></a>
-        </div>
-    </div>
-</div>
 <th:block th:include="fragments/header"></th:block>
 <div id="main">
     <th:block th:include="common/aside"></th:block>
@@ -155,6 +108,7 @@
         <!--//게임 DB 리스트-->
 
         <!--gmdb list -->
+        <form action="/gm/gm000/gm000" id="gameListForm" method="post">
             <div class="dblist_area" id="gmdb-list-box">
                 <ul class="dblist_gallery" id="ulEmpty">
                     <li style="display: none;">
@@ -166,6 +120,7 @@
                     </li>
                 </ul>
             </div>
+<!--        </form>-->
         <!--// gmdb list -->
 
         <!--        gmdb nav -->

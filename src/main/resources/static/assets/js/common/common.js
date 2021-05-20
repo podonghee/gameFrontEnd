@@ -31,14 +31,32 @@ common.setData = function(data,target)
             targetTag.val(data[key]);
         else
             targetTag.text(data[key]);
+
+        if("a" == targetTag.prop("tagName").toLowerCase())
+            targetTag.attr("href",data[key])
+
+        if("img" == targetTag.prop("tagName").toLowerCase())
+            targetTag.attr("src",data[key])
     }
 }
+common.formData = function(list,form){
+    var hiddenField = undefined;
+    if(undefined !== list) {
+        for (var key in list) {
+            hiddenField = document.createElement('input');
+            hiddenField.setAttribute('type', 'hidden');
+            hiddenField.setAttribute('name', key);
+            hiddenField.setAttribute('value', list[key]);
+            fnObj.mainView.formTarget[0].appendChild(hiddenField);
+        }
+    }
+    form.submit();
+}
+//파일 다운로드 할때 쓰는걸로 ㅎㅎ 만들자 동희야 .
 common.formSub = function(method,url,param)
 {
     var form = document.createElement('form');
     var hiddenField = undefined;
-    form.setAttribute('method', method);
-    form.setAttribute('action', url);
     document.charset = "utf-8";
     if(undefined !== param) {
         for (var key in param) {
@@ -51,6 +69,23 @@ common.formSub = function(method,url,param)
         document.body.appendChild(form);
     }
     form.submit();
+}
+//Paging 번호 클릭시 들어오는 함수
+common.pagingNumClick = function(element,currPag){
+    var item = element
+    var id = item.attr('id');
+    if(undefined == id) {
+        var className = item.attr('class');
+        if(className.includes('num_next'))
+        {
+            id = ++currPag;
+        }
+        if(className.includes('num_pre'))
+        {
+            id = --currPag;
+        }
+    }
+    return id;
 }
 common.paging = function(page)
 {

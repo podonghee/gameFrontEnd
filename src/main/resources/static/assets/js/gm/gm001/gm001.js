@@ -79,6 +79,7 @@ $(function(){
     }
     //게임 리스트를 뿌려주기 위한 뷰
     fnObj.mainView = {
+        formTarget : $("#gameListForm"),
         page: {
             currentPage: 0,
             pageSize: 25,
@@ -145,26 +146,14 @@ $(function(){
         initEvent : function() {
             //Paging 번호 클릭시 들어오는 함수
             $(document).on("click",'#list-page-nav a',function(){
-                var item = $(this);
-                var id = item.attr('id');
-                if(undefined == id) {
-                    var className = $(this).attr('class');
-                    if(className.includes('num_next'))
-                    {
-                        id = ++fnObj.mainView.page.currentPage;
-                    }
-                    if(className.includes('num_pre'))
-                    {
-                        id = --fnObj.mainView.page.currentPage;
-                    }
-                }
+               var id =  common.pagingNumClick($(this),fnObj.mainView.page.currentPage);
                 //paging 에 currentPage 페이지 셋팅 해주고 다시 조회
                 fnObj.mainView.paging(id)
             });
             //게임 이미지 클릭시  상세페이지
             $(document).on("click",'.dblist_gallery a',function(){
                 var list = {"gameId" : $(this).attr("gameId") , "gmTabNm" : "gmInfo"};
-                common.formSub("POST","gm/gm000/gm000",list);
+                common.formData(list,fnObj.mainView.formTarget);
             });
         },
     }
