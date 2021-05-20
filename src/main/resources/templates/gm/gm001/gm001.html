@@ -86,8 +86,7 @@
             <div class="Bs2">
                 <div class="leftTit"><span class="spim"></span> 게임검색</div>
                 <div class="cont">
-                    <input type="text" placeholder="통합검색" name="gm_search_text"
-                           onkeyup="if(event.keyCode==13) { jQuery('a#gm_search_text').click(); }" value="">
+                    <input type="text" placeholder="통합검색" id="gm_search">
                     <a class="searchBtn" id="gm_search_text"></a>
                     <a class="initBtn" id="gm_search_init">초기화</a>
                 </div>
@@ -100,8 +99,8 @@
             <div class="dbnum h2" id="dblist-total"><span id="totalGameCnt"></span>개의 게임 정보가 있습니다.</div>
             <div class="listst">
                 <ul>
-                    <li class="list-type-change dbtap1 on" data-type="T"></li>
-                    <li class="list-type-change dbtap2" data-type="L"></li>
+                    <li class="list-type-change dbtap1 on" id="GL_1"></li>
+                    <li class="list-type-change dbtap2" id="GK_1"></li>
                 </ul>
             </div>
         </div>
@@ -110,17 +109,32 @@
         <!--gmdb list -->
         <form action="/gm/gm000/gm000" id="gameListForm" method="post">
             <div class="dblist_area" id="gmdb-list-box">
-                <ul class="dblist_gallery" id="ulEmpty">
+                <ul class="dblist_gallery" id="ulEmptyBox">
                     <li style="display: none;">
-                        <a class="move_gmdb" data-gmid="g0012299"><img
-                                src="https://cdn.gamemeca.com/gmdb/g001/22/99/gm709764_210504-2.jpg"><span class="tit_name">파밍 시뮬레이터 22</span></a>
-                        <div class="webg_txt">플랫폼: <span class="green">PC</span></div>
-                        <div class="webg_txt">장르: <span class="green">시뮬레이션</span></div>
-                        <div class="webg_txt">서비스 상태: <span class="green">-</span></div>
+                        <a class="move_gmdb" data-ax-path="gameId"><img data-ax-path="img"
+                                src=""><span class="tit_name" data-ax-path="gameName"></span></a>
+                        <div class="webg_txt">플랫폼: <span class="green" data-ax-path="platform">-</span></div>
+                        <div class="webg_txt">장르: <span class="green" data-ax-path="genre">-</span></div>
+                        <div class="webg_txt">서비스 상태: <span class="green" data-ax-path="serviceStatus">-</span></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="dblist_area" id="gmdb-list-list">
+                <ul class="dblist_news" style="display: none" id="ulEmptyList">
+                    <li style="display: none">
+                        <a class="link_thumb move_gmdb" data-ax-path="gameId"><img
+                                src="" data-ax-path="img"
+                                style="width: 150px; height: 85px;"></a>
+                        <div class="cont_thumb"><a href="#" data-ax-path="gameId"><strong class="tit_thumb" data-ax-path="gameName">
+                        </strong></a></div>
+                        <div class="flp-txt">· 플렛폼: <span data-ax-path="platform"></span> · 장르:<span data-ax-path="genre"></span></div>
+                        <div class="desc_thumb"></div>
                     </li>
                 </ul>
             </div>
-<!--        </form>-->
+        </form>
+            <!--        </form>-->
         <!--// gmdb list -->
 
         <!--        gmdb nav -->

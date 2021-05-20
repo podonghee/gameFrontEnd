@@ -7,6 +7,7 @@ $(function(){
         var _this = this;
         //서버에 태울 Ajax 공통 컨트롤러 선언.
         common.loadController("Game");
+        common.headerLoad();
         _this.formView.initView();
         _this.mainView.initView();
     };
@@ -17,18 +18,34 @@ $(function(){
         },
         initEvent : function (){
             $("#com_search").click(function(){
+                fnObj.mainView.resetPage();
                 fnObj.mainView.search();
             });
             $("#com_q").keyup(function (event){
                if(event.keyCode == 13){
+                   fnObj.mainView.resetPage();
                    fnObj.mainView.search();
                }
             });
-
+            $(".tab-type a").click(function(){
+                if('cn_1'==$(this).attr('id'))
+                {
+                    $(this).attr('class','company-order-state on');
+                    $("#cn_2").attr('class','company-order-state');
+                }
+                else if('cn_2' == $(this).attr('id'))
+                {
+                    $(this).attr('class','company-order-state on');
+                    $("#cn_1").attr('class','company-order-state');
+                }
+                fnObj.mainView.search();
+            })
         },
         //이벤트 함수. 메뉴에 대한 공통 이벤트 처리
         getData : function(){
-            var list = { keyword : $("#com_q").val()}
+            var list = { keyword : $("#com_q").val(),
+                         rankNst : $(".tab-type a.on").attr('id')
+                       }
             return list;
         }
     }
@@ -52,9 +69,16 @@ $(function(){
             fnObj.mainView.page.currentPage = pagingData;
             fnObj.mainView.search();
         },
+        resetPage: function () {
+            fnObj.mainView.page.currentPage = 0;
+        },
         //js 호출시 데이터 리스트 가져오기 위함.
         initDisplay : function() {
             fnObj.mainView.search();
+        },
+        clear : function(){
+            $( '.list_gallery' ).remove();
+            $("span[data-ax-path='companyCnt']").text(0);
         },
         //게임 리스트를 가져와서 html 셋팅
         companyList : function(data){
@@ -100,6 +124,11 @@ $(function(){
                     common.paging(res.page);
                     fnObj.mainView.companyList(res.list);
                     $("span[data-ax-path='companyCnt']").text(res.page.totalElements.toLocaleString('ko-KR'));
+                }
+                else
+                {
+                    common.paging(res.page);
+                    fnObj.mainView.clear()
                 }
             });
         },

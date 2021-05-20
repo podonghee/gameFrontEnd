@@ -1,7 +1,6 @@
-
-$(document).ready(function(){
-
-    $("#header").load("common/header.html");
-})
-
-
+$(function(){
+    $(".lnb-sub-left li").click(function(){
+        $(".dbSchbox").find('a.on').removeClass();
+        $(this).addClass('on');
+    });
+});

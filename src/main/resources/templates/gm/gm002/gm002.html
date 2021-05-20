@@ -91,32 +91,33 @@
                     <div class="tab-type">
                         <ul class="tab-order-state">
                             <li class="tab-li-new">
-                                <a class="company-order-state on" data-os="N"><!--최신순--></a></li>
+                                <a class="company-order-state on"  id="cn_1"><!--최신순--></a></li>
                             <li><img src="https://cdn.gamemeca.com/design/images/news/tab_line.gif"></li>
                             <li class="tab-li-name">
-                                <a class="company-order-state" data-os="K"><!--가나다순--></a></li>
+                                <a class="company-order-state" id="cn_2"><!--가나다순--></a></li>
                         </ul>
                     </div>
                     <!--//tab-->
                 </div>
             </div>
             <form action="/gm/gm002/gm002-01" id="gameCompanyForm" method="post">
-            <div class="company-list">
-                <ul class="list_gallery" id="ulCmpy_1" style="display: none;">
-                    <li style="display: none" id="liCmpy_1">
-                        <a href="#" class="static-thumbnail" data-ax-path="gameCompanyCid">
-                            <span class="static-thumbnail-style"></span>
-                            <img src="https://cdn.gamemeca.com/gmcdb/000/021/15/gm396177_210428-5.jpg" data-ax-path="gameCompanyImg" >
-                        </a>
-                        <span class="tit_name" data-ax-path="gameCompanyName" ></span>
-                        <div class="webg_txt">개발게임: <span class="green"></span></div>
-                        <div class="webg_txt">서비스게임: <span class="green"></span></div>
-                    </li>
-                </ul>
-            </div>
+                <div class="company-list">
+                    <ul class="list_gallery" id="ulCmpy_1" style="display: none;">
+                        <li style="display: none" id="liCmpy_1">
+                            <a href="#" class="static-thumbnail" data-ax-path="gameCompanyCid">
+                                <span class="static-thumbnail-style"></span>
+                                <img src="https://cdn.gamemeca.com/gmcdb/000/021/15/gm396177_210428-5.jpg" data-ax-path="gameCompanyImg" >
+                            </a>
+                            <span class="tit_name" data-ax-path="gameCompanyName" ></span>
+                            <div class="webg_txt">개발게임: <span class="green" data-ax-path="gameMakeCnt"></span></div>
+                            <div class="webg_txt">서비스게임: <span class="green" data-ax-path="gameServiceCnt"></span></div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
             <!-- paging -->
             <div id="list-page-nav" class="pagingNav" ></div>
-        </div>
+            </div>
             <!-- right section -->
             <div class="content-right">
                 <div class="gmview-section-right">

@@ -7,6 +7,7 @@ $(function(){
         var _this = this;
         //서버에 태울 Ajax 공통 컨트롤러 선언.
         common.loadController("Game");
+        common.headerLoad();
         _this.mainView.initView();
         _this.menuView.initView();
     };
@@ -34,10 +35,49 @@ $(function(){
                     _this.attr('class', element);
                 }
             }
+            fnObj.mainView.resetPage();
             fnObj.mainView.search();
         },
         //이벤트 함수. 메뉴에 대한 공통 이벤트 처리
         initEvent : function() {
+            //게임 리스트 형태 체크 함수
+            $(".dblist_st li").click(function(){
+                if('GL_1' == $(this).attr('id'))
+                {
+                    $(this).attr('class','list-type-change dbtap1 on');
+                    $("#GK_1").attr('class','list-type-change dbtap2');
+                    $("#ulEmptyBox").show();
+                    $("#ulEmptyList").hide();
+
+                }
+                else if('GK_1' == $(this).attr('id'))
+                {
+                    $(this).attr('class','list-type-change dbtap2 on');
+                    $("#GL_1").attr('class','list-type-change dbtap1');
+                    $("#ulEmptyList").show();
+                    $("#ulEmptyBox").hide();
+                }
+                fnObj.mainView.search();
+            });
+            //게임 검색 버튼 클릭 시
+            $("#gm_search_text").click(function(){
+                fnObj.mainView.resetPage();
+                fnObj.mainView.search();
+            });
+            //게임검색 엔터 클릭 시
+            $("#gm_search").keyup(function (event){
+                if(event.keyCode == 13){
+                    fnObj.mainView.resetPage();
+                    fnObj.mainView.search();
+                }
+            });
+            //검색 초기화 시
+            $("#gm_search_init").click(function(){
+                $(".dbSchbox").find('a.on').removeClass();
+                $("#gm_search").val('');
+                fnObj.mainView.resetPage();
+                fnObj.mainView.search();
+            });
             //플랫폼 메뉴를 클릭 시.
             $("#platform a").click(function(){
                 if($(this).attr('class') == 'select-platform')
@@ -48,6 +88,7 @@ $(function(){
                 {
                     $(this).attr('class','select-platform');
                 }
+                fnObj.mainView.resetPage();
                 fnObj.mainView.search();
             });
             // 장르 메뉴를 클릭 시
@@ -72,6 +113,7 @@ $(function(){
                 platform : platform
                 , genre :  $(".select-genre.on").text()
                 , serviceStatus : $(".select-status.on").text()
+                , keyword : $("#gm_search").val()
             }
 
             return list;
@@ -97,37 +139,65 @@ $(function(){
             fnObj.mainView.page.currentPage = pagingData;
             fnObj.mainView.search();
         },
+        resetPage: function () {
+            fnObj.mainView.page.currentPage = 0;
+        },
         //js 호출시 데이터 리스트 가져오기 위함.
         initDisplay : function() {
             fnObj.mainView.search();
         },
-        // 리스트에 대한 플랫폼 장르 상태 값이 null 인경우 - 로 뿌려주기.
-        isNullChange : function (data){
-            if(undefined == data || "" == data)
-            {
-                data = "-";
-            }
-            return data;
+        clear : function(){
+            $( '.dblist_gallery' ).not( '#ulEmptyBox' ).remove();
+            $( '.dblist_news' ).not( "#ulEmptyList" ).remove();
+            $("#totalGameCnt").text(0);
         },
         //게임 리스트를 가져와서 html 셋팅
         gameList : function(data){
-            $( '.dblist_gallery' ).not( '#ulEmpty' ).remove();
+            var type = $(".dblist_st li.on").attr('id');
+            var ulTag = undefined;
+            var ulClass = undefined;
+            var divTag = undefined;
+            $( '.dblist_gallery' ).not( "#ulEmptyBox" ).remove();
+            $( '.dblist_news' ).not( "#ulEmptyList" ).remove();
+            //메인 박스 리스트
+            if("GL_1" == type)
+            {
+                ulClass = "dblist_gallery"
+                divTag = "gmdb-list-box"
+            }
+            //메인 ToList
+            else if("GK_1" == type)
+            {
+                ulClass = "dblist_news"
+                divTag = "gmdb-list-list"
+            }
             var _data = data;
-            var gameDivTag = $("#gmdb-list-box");
+            var gameDivTag = $("#"+divTag);
             var gameUlTag = $("<ul>");
-            gameUlTag.attr('class','dblist_gallery');
+            gameUlTag.attr('class',ulClass);
             var liTag = undefined;
-            for(var i=0; i < _data.length; i++){
+            $.each(_data, function(index, item) {
                 liTag = gameDivTag.find('ul > li').clone();
                 liTag.css("display","");
-                liTag.find('a').attr('gameId',_data[i]['gameId']).find('img').attr('src',_data[i]['img']);
-                liTag.find('a').find(".tit_name").text(fnObj.mainView.isNullChange(_data[i]['gameName']));
-                liTag.find('div').eq(0).find('span').text(fnObj.mainView.isNullChange(_data[i]['platform']));
-                liTag.find('div').eq(1).find('span').text(fnObj.mainView.isNullChange(_data[i]['genre']));
-                liTag.find('div').eq(2).find('span').text(fnObj.mainView.isNullChange(_data[i]['serviceStatus']));
+                //ToDo li length 를 비교하여 작업
+                for(var key in item) {
+                    if(key == "gameId")
+                    {
+                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
+                    }
+                    else if(key == "img")
+                    {
+                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
+                    }
+                    else
+                    {
+                        item[key] = item[key] == undefined ? '-' : item[key];
+                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
+                    }
+                }
                 gameUlTag.append(liTag);
                 liTag = undefined;
-            }
+            });
             gameDivTag.append(gameUlTag);
         },
         search : function(){
@@ -140,6 +210,11 @@ $(function(){
                     fnObj.mainView.gameList(res.list);
                     $("#totalGameCnt").text(res.page.totalElements.toLocaleString('ko-KR'));
                 }
+                else
+                {
+                    common.paging(res.page);
+                    fnObj.mainView.clear()
+                }
             });
         },
         //메인 리스트 공통 이벤트 처리 함수
@@ -151,7 +226,7 @@ $(function(){
                 fnObj.mainView.paging(id)
             });
             //게임 이미지 클릭시  상세페이지
-            $(document).on("click",'.dblist_gallery a',function(){
+            $(document).on("click",'.dblist_area a',function(){
                 var list = {"gameId" : $(this).attr("gameId") , "gmTabNm" : "gmInfo"};
                 common.formData(list,fnObj.mainView.formTarget);
             });

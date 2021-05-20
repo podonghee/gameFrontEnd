@@ -6,6 +6,7 @@ $(function(){
     fnObj.pageStart = function () {
         var _this = this;
         common.loadController("Game");
+        common.headerLoad();
         _this.mainView.initView();
     };
     fnObj.mainView = {
@@ -52,6 +53,7 @@ $(function(){
                     }
                     else
                     {
+                        item[key] = item[key] == undefined ? '-' : item[key];
                         liTag.find("[data-ax-path='" + key + "']").text(item[key]);
                     }
                 }

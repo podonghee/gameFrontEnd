@@ -1,5 +1,4 @@
 var common = {};
-
 common.loadController = function (controllerName) {
     $.ajax({
         url: "/assets/js/controller/" + controllerName + "Controller.js",
@@ -13,6 +12,27 @@ common.loadController = function (controllerName) {
         }
     });
 },
+common.headerLoad = function(){
+    $(".dbSchbox").find('a.on').removeClass();
+    var path = $(location).attr('pathname');
+    switch (path){
+        case "/gm/gm002/gm002" : $("#he_2").addClass('on');
+            break;
+        case "/gm/gm003/gm003" : $("#he_3").addClass('on');
+            break;
+        case "/gm/gm004/gm004" : $("#he_4").addClass('on');
+            break;
+        case "/gm/gm005/gm005" : $("#he_5").addClass('on');
+            break;
+        case "/gm/gm006/gm006" : $("#he_6").addClass('on');
+            break;
+        case "/gm/gm007/gm007" : $("#he_7").addClass('on');
+            break;
+        case "/gm/gm008/gm008" : $("#he_8").addClass('on');
+            break;
+        default : $("#he_1").addClass('on');
+    }
+}
 common.setData = function(data,target)
 {
     var targetTag = undefined;

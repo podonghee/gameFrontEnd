@@ -6,6 +6,7 @@ $(function(){
     fnObj.pageStart = function () {
         var _this = this;
         common.loadController("Game");
+        common.headerLoad();
         _this.mainView.initView();
         _this.formView.initView();
     };
@@ -68,7 +69,7 @@ $(function(){
         //메인 리스트 공통 이벤트 처리 함수
         initEvent : function() {
         },
-        //게임 리스트를 가져와서 html 셋팅
+        //게임 랭킹 리스트를 가져와서 html 셋팅
         gameRankList : function(data){
             $( '.ranking-table-rows' ).not( '#rankTr' ).remove();
             var _data = data;
