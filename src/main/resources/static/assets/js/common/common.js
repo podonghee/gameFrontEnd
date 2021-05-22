@@ -95,6 +95,9 @@ common.pagingNumClick = function(element,currPag){
     var item = element
     var id = item.attr('id');
     if(undefined == id) {
+        if(currPag == 0){
+            currPag = 1;
+        }
         var className = item.attr('class');
         if(className.includes('num_next'))
         {

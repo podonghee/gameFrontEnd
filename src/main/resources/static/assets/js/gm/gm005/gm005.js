@@ -8,53 +8,42 @@ $(function(){
         //서버에 태울 Ajax 공통 컨트롤러 선언.
         common.loadController("Game");
         common.headerLoad();
-        _this.formView.initView();
+        _this.menuView.initView();
         _this.mainView.initView();
     };
     //게임 탭 메뉴를 뿌려주기 위한 뷰
-    fnObj.formView = {
+    fnObj.menuView = {
         initView: function () {
             this.initEvent();
         },
+        //탭메뉴 클릭시 이벤트 체인지 함수
         initEvent : function (){
-            $("#com_search").click(function(){
-                fnObj.mainView.resetPage();
-                fnObj.mainView.search();
-            });
-            $("#com_q").keyup(function (event){
-               if(event.keyCode == 13){
-                   fnObj.mainView.resetPage();
-                   fnObj.mainView.search();
-               }
-            });
-            $(".tab-type a").click(function(){
-                if('cn_1'==$(this).attr('id'))
-                {
-                    $(this).attr('class','company-order-state on');
-                    $("#cn_2").attr('class','company-order-state');
+            // 장르 메뉴를 클릭 시
+            $("#platform li").click(function(){
+                if("notX" !== $(this).attr("data-ax-path")) {
+                    $("#platform").find('li.on').removeClass();
+                    $(this).addClass('on');
+
+                    fnObj.mainView.resetPage();
+                    fnObj.mainView.search();
                 }
-                else if('cn_2' == $(this).attr('id'))
-                {
-                    $(this).attr('class','company-order-state on');
-                    $("#cn_1").attr('class','company-order-state');
-                }
-                fnObj.mainView.search();
-            })
+            });
         },
         //이벤트 함수. 메뉴에 대한 공통 이벤트 처리
         getData : function(){
-            var list = { keyword : $("#com_q").val(),
-                         rankNst : $(".tab-type a.on").attr('id')
-                       }
+            var list =
+            {
+                platform : $("#platform").find('li.on a').attr("data-ax-path")
+            }
             return list;
         }
     }
     //게임 리스트를 뿌려주기 위한 뷰
     fnObj.mainView = {
-        formTarget : $("#gameCompanyForm"),
+        formTarget : $("#gameForm"),
         page: {
             currentPage: 0,
-            pageSize: 48,
+            pageSize: 20,
             totalElements: 0,
             totalPages: 0,
         },
@@ -77,35 +66,37 @@ $(function(){
             fnObj.mainView.search();
         },
         clear : function(){
-            $( '.list_gallery' ).not( '#ulCmpy_1' ).remove();
-            $("span[data-ax-path='companyCnt']").text(0);
+            $( '.game-thumb-ul' ).not( '#ulVideo_1' ).remove();
+            $("em[data-ax-path='viCnt']").text(0);
         },
         //게임 리스트를 가져와서 html 셋팅
-        companyList : function(data){
-            $( '.list_gallery' ).not( '#ulCmpy_1' ).remove();
+        videoList : function(data){
+            $( '.game-thumb-ul' ).not( '#ulVideo_1' ).remove();
             var _data = data;
-            var gameDivTag = $(".company-list");
+            var gameDivTag = $(".game-thumb-box");
             var gameUlTag = $("<ul>");
-            gameUlTag.attr('class','list_gallery');
+            gameUlTag.attr('class','game-thumb-ul');
             var ulTag = undefined;
             var liTag = undefined;
             //ToDo ul 1개에 총 4개 li 들어가야함.
             $.each(_data, function(index, item) {
                 if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulCmpy_1').clone();
+                    ulTag = gameDivTag.find('#ulVideo_1').clone();
                     ulTag.css("display","");
                     ulTag.attr("id","");
                 }
-                    liTag = ulTag.find("#liCmpy_1").clone();
-                    liTag.css("display", "");
-                    liTag.attr("id", "");
-                    //ToDo li length 를 비교하여 작업
+                liTag = ulTag.find("#liVideo_1").clone();
+                liTag.css("display", "");
+                liTag.attr("id", "");
+                //ToDo li length 를 비교하여 작업
                 for(var key in item) {
-                    if(key == "gameCompanyCid")
+                    if(key == "gameId")
                     {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameCompanyCid",item[key]);
+                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
                     }
-
+                    if("gameVideoImgUrl" == key){
+                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
+                    }
                     else
                     {
                         liTag.find("[data-ax-path='" + key + "']").text(item[key]);
@@ -117,13 +108,13 @@ $(function(){
         },
         search : function(){
             //백앤드 호출
-            var reqData = $.extend({},{page: fnObj.mainView.getPagingData()},fnObj.formView.getData());
-            controller.Game.g002.g001(reqData,function(res){
+            var reqData = $.extend({},{page: fnObj.mainView.getPagingData()},fnObj.menuView.getData());
+            controller.Game.g005.g001(reqData,function(res){
                 if(undefined !=  res.list && 0 != res.list) {
                     //페이지에 페이징 셋팅 공통.
                     common.paging(res.page);
-                    fnObj.mainView.companyList(res.list);
-                    $("span[data-ax-path='companyCnt']").text(res.page.totalElements.toLocaleString('ko-KR'));
+                    fnObj.mainView.videoList(res.list);
+                    $("em[data-ax-path='viCnt']").text(res.page.totalElements.toLocaleString('ko-KR'));
                 }
                 else
                 {
@@ -141,7 +132,7 @@ $(function(){
                 fnObj.mainView.paging(id)
             });
             //게임 이미지 클릭시  상세페이지
-            $(document).on("click",'.company-list a',function(){
+            $(document).on("click",'.game-thumb-box a',function(){
                 var list = {"gameCompanyCid" : $(this).attr("gameCompanyCid") };
                 common.formData(list,fnObj.mainView.formTarget);
             });

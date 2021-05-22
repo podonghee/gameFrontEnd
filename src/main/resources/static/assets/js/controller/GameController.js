@@ -18,6 +18,24 @@ var GameController = function () {
             _this.request("g002", "dt001", {contents: data}, callback);
         },
     };
+    //g004 스크린샷 페이지
+    this.g004 = {
+        g001 : function (data, callback) {
+            _this.request("g004", "se001", {contents: data}, callback);
+        },
+        g002 : function (data, callback) {
+            _this.request("g004", "dt001", {contents: data}, callback);
+        },
+    };
+    //g005 동영상 페이지
+    this.g005 = {
+        g001 : function (data, callback) {
+            _this.request("g005", "se001", {contents: data}, callback);
+        },
+        g002 : function (data, callback) {
+            _this.request("g005", "dt001", {contents: data}, callback);
+        },
+    };
     //g006 랭킹 페이지
     this.g006 = {
         g001 : function (data, callback) {

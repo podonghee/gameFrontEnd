@@ -18,5 +18,8 @@ public class Gm001Controller {
     public String view(Model model){
         return "gm/gm001/gm001";
     }
-
+//    @RequestMapping(value="/", method= RequestMethod.GET)
+//    public String view(Model model){
+//        return "gm/test/test001";
+//    }
 }

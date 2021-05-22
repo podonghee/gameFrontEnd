@@ -94,7 +94,6 @@ $(function(){
             // 장르 메뉴를 클릭 시
             $("#genre a").click(function(){
                 fnObj.menuView.onClassChange('select-genre',$(this))
-
             });
             //상태 메뉴를 클릭 시
             $("#status a").click(function(){
