@@ -85,7 +85,7 @@
                         </div>
                         <p class="btmSocial"><a href="http://www.projectmoon.kr/games/games.php?str_no=2" target="_blank"></a></p>
                     </div>
-                    <div class="gameThumb"><img src="https://cdn.gamemeca.com/gmdb/g001/23/05/gm480458_210507-risell-pp4.jpg"></div>
+                    <div class="gameThumb"><img src="" data-ax-path="img"></div>
                 </div>
             </div>
             <div class="gadatabtn">
@@ -95,25 +95,25 @@
             <!--게임정보 탭-->
             <div class="db-sub-menu">
                 <ul>
-                    <li class="on">
+                    <li class="on" data-ax-path="gmInfo">
                         <a href="#">주요정보</a>
                     </li>
-                    <li>
+                    <li data-ax-path="gmNews">
                         <a href="#" rel="nofollow">뉴스</a>
                     </li>
-                    <li>
+                    <li data-ax-path="gmReview">
                         <a href="#" rel="nofollow">프리뷰/리뷰</a>
                     </li>
-                    <li>
+                    <li data-ax-path="gmSshot">
                         <a href="#" rel="nofollow">스크린샷</a>
                     </li>
-                    <li>
+                    <li data-ax-path="gmVideo">
                         <a href="#" rel="nofollow">동영상</a>
                     </li>
-                    <li>
+                    <li data-ax-path="gmAttack">
                         <a href="#" rel="nofollow">공략</a>
                     </li>
-                    <li>
+                    <li data-ax-path="">
                         <a href="#" rel="nofollow">히스토리</a>
                     </li>
                 </ul>
@@ -123,215 +123,219 @@
             <!-- tab contents -->
 
             <!--게임소개-->
-            <div id="gmInfo" style="display: none">
-                <div class="db-cont1">
-                    <div class="title ">게임소개</div>
-                    <div class="db-cont1-left">라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.</div>
-                </div>
-                <!--//게임소개-->
-
-                <!--시리즈-->
-                <div class="db-cont1">
-                    <div class="title ">시리즈</div>
-                    <div class="db-cont1-left">
-                        <span class="no-contents">관련 정보가 없습니다</span>    </div>
-                </div>
-
-                <!-- 뉴스 -->
-                <div class="db-cont2">
-                    <div class="title">뉴스</div>
-                    <ul class="list_news">
-                        <li class="list-hot">
-                            <a href="/view.php?gid=1659610" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/659/610/gm223481_210507-risell-pp6451.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><span class="static-img-btn icon-article-hot"></span><a href="/view.php?gid=1659610">로보토미 코퍼레이션 개발사 신작, 28일 스팀 정식 출시</a></strong>
-                            </div>
-                            <div class="desc_thumb">국내 인디게임 개발사 프로젝트 문 신작 라이브러리 오브 루이나가 오는 28일 스팀을 통해 정식 출시된다. 프로젝트 문은 전작 로보토미 코퍼레이션으로 국내외 게이머 이목을 집중시킨 바 있으며, 라이브러리 오브 루이나는 앞서 해보기에서 유저 평점 ‘매우 긍정적’을 기록 중이다</div>
-                            <div class="day_news">2021.05.07 13:56</div>
-                        </li>
-                    </ul>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=news">+뉴스 더보기</a></div>
-                </div>
-                <!--//뉴스 -->
-
-                <!-- 프리뷰/리뷰 -->
-                <div class="db-cont2">
-                    <div class="title">프리뷰/리뷰</div>
-                    <ul class="list_news">
-                        <span class="no-contents">관련 정보가 없습니다</span>
-                    </ul>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=review">+프리뷰/리뷰 더보기</a></div>
-                </div>
-                <!--//프리뷰/리뷰 -->
-
-                <!-- 스크린샷 -->
-
-                <div class="db-cont2">
-                    <div class="title">스크린샷</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
+            <div id="contentList">
+                <div id="gmInfo" style="display: none;">
+                    <div class="db-cont1">
+                        <div class="title ">게임소개</div>
+                        <div class="db-cont1-left">라이브러리 오브 루이나는 도서관 전투 시뮬레이션이다. 플레이어는 도서관 사서가 되어 방문하는 손님과 전투를 벌이고, 전투에서 패한 손님은 책이 된다. 책을 모아 도서관을 키우고, 이를 토대로 도시에 숨겨진 비밀을 풀어간다.</div>
                     </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=sshot">+스크린샷 더보기</a></div>
-                </div><!--//스크린샷 -->
+                    <!--//게임소개-->
 
-                <!-- 동영상 -->
-
-                <div class="db-cont2">
-                    <div class="title">동영상</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
+                    <!--시리즈-->
+                    <div class="db-cont1">
+                        <div class="title ">시리즈</div>
+                        <div class="db-cont1-left">
+                            <span class="no-contents">관련 정보가 없습니다</span>    </div>
                     </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=movie">+동영상 더보기</a></div>
-                </div><!--//동영상 -->
 
-                <!-- 공략 -->
-
-                <div class="db-cont2">
-                    <div class="title">공략</div>
-                    <div class="db_thumlist">
-                        <span class="no-contents">관련 정보가 없습니다</span>
-                    </div>
-                    <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=guide">+공략 더보기</a></div>
-                </div><!--//공략 -->	<!--// tab contents -->
-            </div>
-            <div id="gmNews" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 17개의 뉴스가 있습니다.</div>
-                </div>
-                <div class="news-list">
-                    <ul class="list_news">
-                        <li class="">
-                            <a href="/view.php?gid=1443806" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/443/806/161051_LSB2017032201.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1443806">페르시아 왕자 호위에서 주인공으로, 어쌔신 크리드의 10년</a></strong>
-                            </div>
-                            <div class="desc_thumb">하나의 전통 있는 프랜차이즈를 확립하기란 대단히 힘든 일이다. 그렇기에 2007년 첫 발매 이래 유명세를 잃지 않는 것은 물론이요, 그 인기가 계속 커지고 있기까지 한 ‘어쌔신 크리드’는 매우 특별한 프랜차이즈라고 할 수 있다. 이처럼 오랜 세월 동안 흔들리지 않고 가치를 키워온 게임 프랜차이즈는 매우 드물기 때문이다</div>
-                            <div class="day_news">2018.03.22 15:33</div>
-                        </li>
-                        <li class="">
-                            <a href="/view.php?gid=1436168" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/168/670210_KHS_180219_999AC.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1436168">세계 역사, 어쌔신 크리드에서 배워라</a></strong>
-                            </div>
-                            <div class="desc_thumb">고대 이집트를 완벽하게 재현했다는 평가를 받는 유비소프트 ‘어쌔신 크리드: 오리진’이 이젠 역사 교육에도 쓰인다. 오는 20일, 무료 업데이트를 통해 ‘어쌔신 크리드: 오리진’에 ‘디스커버리 투어’ 콘텐츠가 추가된다. ‘디스커버리 투어’는 게임 속에 구현된 이집트를 자유로이 돌아 다니며, 당시의 역사와 일상 생활에 대해 배울 수 있는 일종의 교육 모드다</div>
-                            <div class="day_news" >2018.02.19 10:51</div>
-                        </li>
-                        <li class="">
-                            <a href="/view.php?gid=1430392" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/392/909466_KHS_180123_999AC.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1430392">무대는 시나이 반도, '어쌔신 크리드: 오리진' 확장팩 발매</a></strong>
-                            </div>
-                            <div class="desc_thumb">인트라게임즈는 23일, 유비소프트와 협력하여 ‘어쌔신 크리드: 오리진’ 첫 번째 확장팩 ‘더 히든 원즈’를 출시했다. '더 히든 원즈'는 형제단이 결성된지 몇 년 후, 바예크의 여정을 담고 있다. 플레이어는 시나이 반도를 여행하면서 로마 정복군과 반란 세력 사이의 분쟁에 대해 조사하고, 암살단의 신조를 정립하여 초기의 형제단을 규합해야 한다</div>
-                            <div class="day_news">2018.01.23 19:10</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong><a class="num_box" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2">2</a><a class="num_next" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2"></a></div>
-            </div>
-            <div id="gmReview" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 프리뷰/리뷰가 있습니다.</div>
-                </div>
-                <div class="news-list">
-                    <ul class="list_news">
-                        <li class="">
-                            <a href="/view.php?gid=1405166" class="link_thumb static-thumbnail">
-                                <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/405/166/588744_cooladsl_thumb_1094.jpg" width="150" height="85">
-                            </a>
-                            <div class="cont_thumb">
-                                <strong class="tit_thumb"><a href="/view.php?gid=1405166">어쌔신 크리드: 오리진, 유비소프트가 일 냈다</a></strong>
-                            </div>
-                            <div class="desc_thumb">탄탄한 세계관 설정은 좋은 게임의 가장 중요한 조건이다. 사실상 게임의 토대라고 할 수 있는 부분으로, 만들어진 세계관과 콘텐츠가 잘 맞물리지 않는다면, 몰입감이 떨어질 수 밖에 없다. 이런 점에서, 최근 나오는 게임들이 더 완성도 높은 세계관 구현에 집중하는 이유도 어느 정도 납득이 된다. ‘어쌔신 크리드’ 시리즈는 이런 세계관 구현에 독보적인 게임이다</div>
-                            <div class="day_news">2017.11.02 12:43</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong></div>
-            </div>
-            <div id="gmSshot" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 1개의 스크린샷이 있습니다.</div>
-                </div>
-                <div class="db-cont2">
-                    <div class="db_thumlist">
-                        <ul>        	<li>
-                            <a class="loadThumbView" data-gid="1355175"><span class="iconsc"></span><img src="https://cdn.gamemeca.com/gmdata/0001/355/175/thumb1239.jpg"></a>
-                            <a class="title">어쌔신 크리드: 오리진, 이집트에서 암살자의 원전을 만나다</a>
-                        </li>
-                        </ul></div>
-                </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong>
-                </div>
-            </div>
-            <div id="gmMovie" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 10개의 동영상이 있습니다.</div>
-                </div>
-                <div class="db-cont2">
-                    <div class="db_thumlist">
-                        <ul>
-                            <li>
-                                <a class="loadThumbView" data-gid="1438059"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/438/059/815280_thumb1618.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 초자연의 영역 넘나드는 DLC가 온다</a>
+                    <!-- 뉴스 -->
+                    <div class="db-cont2">
+                        <div class="title">뉴스</div>
+                        <ul class="list_news">
+                            <li class="list-hot">
+                                <a href="/view.php?gid=1659610" class="link_thumb static-thumbnail">
+                                    <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/659/610/gm223481_210507-risell-pp6451.jpg" width="150" height="85">
+                                </a>
+                                <div class="cont_thumb">
+                                    <strong class="tit_thumb"><span class="static-img-btn icon-article-hot"></span><a href="/view.php?gid=1659610">로보토미 코퍼레이션 개발사 신작, 28일 스팀 정식 출시</a></strong>
+                                </div>
+                                <div class="desc_thumb">국내 인디게임 개발사 프로젝트 문 신작 라이브러리 오브 루이나가 오는 28일 스팀을 통해 정식 출시된다. 프로젝트 문은 전작 로보토미 코퍼레이션으로 국내외 게이머 이목을 집중시킨 바 있으며, 라이브러리 오브 루이나는 앞서 해보기에서 유저 평점 ‘매우 긍정적’을 기록 중이다</div>
+                                <div class="day_news">2021.05.07 13:56</div>
                             </li>
-                            <li>
-                                <a class="loadThumbView" data-gid="1436752"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/752/443898_thumb1614.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 교육 모드로 새로운 지평을 열다</a>
+                        </ul>
+                        <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=news">+뉴스 더보기</a></div>
+                    </div>
+                    <!--//뉴스 -->
+
+                    <!-- 프리뷰/리뷰 -->
+                    <div class="db-cont2">
+                        <div class="title">프리뷰/리뷰</div>
+                        <ul class="list_news">
+                            <span class="no-contents">관련 정보가 없습니다</span>
+                        </ul>
+                        <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=review">+프리뷰/리뷰 더보기</a></div>
+                    </div>
+                    <!--//프리뷰/리뷰 -->
+
+                    <!-- 스크린샷 -->
+
+                    <div class="db-cont2">
+                        <div class="title">스크린샷</div>
+                        <div class="db_thumlist">
+                            <span class="no-contents">관련 정보가 없습니다</span>
+                        </div>
+                        <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=sshot">+스크린샷 더보기</a></div>
+                    </div><!--//스크린샷 -->
+
+                    <!-- 동영상 -->
+
+                    <div class="db-cont2">
+                        <div class="title">동영상</div>
+                        <div class="db_thumlist">
+                            <span class="no-contents">관련 정보가 없습니다</span>
+                        </div>
+                        <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=movie">+동영상 더보기</a></div>
+                    </div><!--//동영상 -->
+
+                    <!-- 공략 -->
+
+                    <div class="db-cont2">
+                        <div class="title">공략</div>
+                        <div class="db_thumlist">
+                            <span class="no-contents">관련 정보가 없습니다</span>
+                        </div>
+                        <div><a class="more-btn" href="/game.php?rts=gmview&amp;gmid=g0012305&amp;tab=guide">+공략 더보기</a></div>
+                    </div><!--//공략 -->	<!--// tab contents -->
+                </div>
+                <div id="gmNews" style="display: none">
+                    <div class="dblist_st">
+                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 17개의 뉴스가 있습니다.</div>
+                    </div>
+                    <div class="news-list">
+                        <ul class="list_news">
+                            <li class="">
+                                <a href="/view.php?gid=1443806" class="link_thumb static-thumbnail">
+                                    <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/443/806/161051_LSB2017032201.jpg" width="150" height="85">
+                                </a>
+                                <div class="cont_thumb">
+                                    <strong class="tit_thumb"><a href="/view.php?gid=1443806">페르시아 왕자 호위에서 주인공으로, 어쌔신 크리드의 10년</a></strong>
+                                </div>
+                                <div class="desc_thumb">하나의 전통 있는 프랜차이즈를 확립하기란 대단히 힘든 일이다. 그렇기에 2007년 첫 발매 이래 유명세를 잃지 않는 것은 물론이요, 그 인기가 계속 커지고 있기까지 한 ‘어쌔신 크리드’는 매우 특별한 프랜차이즈라고 할 수 있다. 이처럼 오랜 세월 동안 흔들리지 않고 가치를 키워온 게임 프랜차이즈는 매우 드물기 때문이다</div>
+                                <div class="day_news">2018.03.22 15:33</div>
                             </li>
-                            <li>
-                                <a class="loadThumbView" data-gid="1430371"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/371/148862_thumb1571.jpg"></a>
-                                <a class="title">어쌔신 크리드: 오리진, 시나이 반도로 향한 암살단</a>
+                            <li class="">
+                                <a href="/view.php?gid=1436168" class="link_thumb static-thumbnail">
+                                    <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/168/670210_KHS_180219_999AC.jpg" width="150" height="85">
+                                </a>
+                                <div class="cont_thumb">
+                                    <strong class="tit_thumb"><a href="/view.php?gid=1436168">세계 역사, 어쌔신 크리드에서 배워라</a></strong>
+                                </div>
+                                <div class="desc_thumb">고대 이집트를 완벽하게 재현했다는 평가를 받는 유비소프트 ‘어쌔신 크리드: 오리진’이 이젠 역사 교육에도 쓰인다. 오는 20일, 무료 업데이트를 통해 ‘어쌔신 크리드: 오리진’에 ‘디스커버리 투어’ 콘텐츠가 추가된다. ‘디스커버리 투어’는 게임 속에 구현된 이집트를 자유로이 돌아 다니며, 당시의 역사와 일상 생활에 대해 배울 수 있는 일종의 교육 모드다</div>
+                                <div class="day_news" >2018.02.19 10:51</div>
+                            </li>
+                            <li class="">
+                                <a href="/view.php?gid=1430392" class="link_thumb static-thumbnail">
+                                    <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/392/909466_KHS_180123_999AC.jpg" width="150" height="85">
+                                </a>
+                                <div class="cont_thumb">
+                                    <strong class="tit_thumb"><a href="/view.php?gid=1430392">무대는 시나이 반도, '어쌔신 크리드: 오리진' 확장팩 발매</a></strong>
+                                </div>
+                                <div class="desc_thumb">인트라게임즈는 23일, 유비소프트와 협력하여 ‘어쌔신 크리드: 오리진’ 첫 번째 확장팩 ‘더 히든 원즈’를 출시했다. '더 히든 원즈'는 형제단이 결성된지 몇 년 후, 바예크의 여정을 담고 있다. 플레이어는 시나이 반도를 여행하면서 로마 정복군과 반란 세력 사이의 분쟁에 대해 조사하고, 암살단의 신조를 정립하여 초기의 형제단을 규합해야 한다</div>
+                                <div class="day_news">2018.01.23 19:10</div>
                             </li>
                         </ul>
                     </div>
+                    <div class="pagingNav">
+                        <strong class="cur_num">1</strong><a class="num_box" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2">2</a><a class="num_next" href="/game.php?rts=gmview&amp;gmid=g0009054&amp;tab=news&amp;p=2"></a></div>
                 </div>
-                <div class="pagingNav">
-                    <strong class="cur_num">1</strong></div>
-            </div>
-            <div id="gmGuide" style="display: none">
-                <div class="dblist_st">
-                    <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 공략이 있습니다.</div>
-                </div>
-                <div class="gmview-tab-guide-thumb">
-                    <div class="db_thumlist">
-                        <ul>			<li>
-                            <a class="select-guide-main" data-gid="1409015"><img src="https://cdn.gamemeca.com/gmdata/0001/409/015/913394_cooladsl_thumb_1109.jpg"></a>
-                            <a class="title">[PC] 어쌔신 크리드: 오리진 3부</a>
-                        </li>
-                            <li>
-                                <a class="select-guide-main" data-gid="1407413"><img src="https://cdn.gamemeca.com/gmdata/0001/407/413/121431_cooladsl_thumb_1105.jpg"></a>
-                                <a class="title">[PC] 어쌔신 크리드: 오리진 2부</a>
+                <div id="gmReview" style="display: none">
+                    <div class="dblist_st">
+                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 프리뷰/리뷰가 있습니다.</div>
+                    </div>
+                    <div class="news-list">
+                        <ul class="list_news">
+                            <li class="">
+                                <a href="/view.php?gid=1405166" class="link_thumb static-thumbnail">
+                                    <span class="static-thumbnail-style"></span><img src="https://cdn.gamemeca.com/gmdata/0001/405/166/588744_cooladsl_thumb_1094.jpg" width="150" height="85">
+                                </a>
+                                <div class="cont_thumb">
+                                    <strong class="tit_thumb"><a href="/view.php?gid=1405166">어쌔신 크리드: 오리진, 유비소프트가 일 냈다</a></strong>
+                                </div>
+                                <div class="desc_thumb">탄탄한 세계관 설정은 좋은 게임의 가장 중요한 조건이다. 사실상 게임의 토대라고 할 수 있는 부분으로, 만들어진 세계관과 콘텐츠가 잘 맞물리지 않는다면, 몰입감이 떨어질 수 밖에 없다. 이런 점에서, 최근 나오는 게임들이 더 완성도 높은 세계관 구현에 집중하는 이유도 어느 정도 납득이 된다. ‘어쌔신 크리드’ 시리즈는 이런 세계관 구현에 독보적인 게임이다</div>
+                                <div class="day_news">2017.11.02 12:43</div>
                             </li>
-                            <li>
-                                <a class="select-guide-main" data-gid="1405619"><img src="https://cdn.gamemeca.com/gmdata/0001/405/619/330125_cooladsl_thumb_1096.jpg"></a>
-                                <a class="title">[PC] 어쌔신 크리드: 오리진 1부</a>
-                            </li>
-                        </ul></div>
+                        </ul>
+                    </div>
+                    <div class="pagingNav">
+                        <strong class="cur_num">1</strong></div>
                 </div>
-            </div>
-            <div id="gmHistory" style="display: none">
-                <div class="historyWrap">
-                    <div class="history">
-                        <dl class="leftA">
-                            <dd class="year">2017</dd>
-                        </dl>
-                        <dl class="rightA">
-                            <dd>
-                                <span class="month">10</span>
-                                어쌔신 크리드: 오리진 한국어판 정식 발매				<span class="mDay">(10/27 ~ 10/27)</span>
-                            </dd>
-                        </dl>
+                <div id="gmSshot" style="display: none">
+                    <div class="dblist_st">
+                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 <span data-ax-path="shCnt"></span>개의 스크린샷이 있습니다.</div>
+                    </div>
+                    <div class="db-cont2">
+                        <div class="db_thumlist">
+                            <ul id="ulSshot_1" style="display: none;" class="ulssh">
+                                <li style="display: none" id="liSshot_1">
+                                    <a class="loadThumbView" ><span class="iconsc"></span><img src="#" data-ax-path="gameSshotImgUrl"></a>
+                                    <a class="title" data-ax-path="description"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pagingNav">
+                        <strong class="cur_num">1</strong>
+                    </div>
+                </div>
+                <div id="gmMovie" style="display: none">
+                    <div class="dblist_st">
+                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 10개의 동영상이 있습니다.</div>
+                    </div>
+                    <div class="db-cont2">
+                        <div class="db_thumlist">
+                            <ul>
+                                <li>
+                                    <a class="loadThumbView" data-gid="1438059"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/438/059/815280_thumb1618.jpg"></a>
+                                    <a class="title">어쌔신 크리드: 오리진, 초자연의 영역 넘나드는 DLC가 온다</a>
+                                </li>
+                                <li>
+                                    <a class="loadThumbView" data-gid="1436752"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/436/752/443898_thumb1614.jpg"></a>
+                                    <a class="title">어쌔신 크리드: 오리진, 교육 모드로 새로운 지평을 열다</a>
+                                </li>
+                                <li>
+                                    <a class="loadThumbView" data-gid="1430371"><span class="iconmv"></span><img src="https://cdn.gamemeca.com/gmdata/0001/430/371/148862_thumb1571.jpg"></a>
+                                    <a class="title">어쌔신 크리드: 오리진, 시나이 반도로 향한 암살단</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pagingNav">
+                        <strong class="cur_num">1</strong></div>
+                </div>
+                <div id="gmGuide" style="display: none">
+                    <div class="dblist_st">
+                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 3개의 공략이 있습니다.</div>
+                    </div>
+                    <div class="gmview-tab-guide-thumb">
+                        <div class="db_thumlist">
+                            <ul>			<li>
+                                <a class="select-guide-main" data-gid="1409015"><img src="https://cdn.gamemeca.com/gmdata/0001/409/015/913394_cooladsl_thumb_1109.jpg"></a>
+                                <a class="title">[PC] 어쌔신 크리드: 오리진 3부</a>
+                            </li>
+                                <li>
+                                    <a class="select-guide-main" data-gid="1407413"><img src="https://cdn.gamemeca.com/gmdata/0001/407/413/121431_cooladsl_thumb_1105.jpg"></a>
+                                    <a class="title">[PC] 어쌔신 크리드: 오리진 2부</a>
+                                </li>
+                                <li>
+                                    <a class="select-guide-main" data-gid="1405619"><img src="https://cdn.gamemeca.com/gmdata/0001/405/619/330125_cooladsl_thumb_1096.jpg"></a>
+                                    <a class="title">[PC] 어쌔신 크리드: 오리진 1부</a>
+                                </li>
+                            </ul></div>
+                    </div>
+                </div>
+                <div id="gmHistory" style="display: none">
+                    <div class="historyWrap">
+                        <div class="history">
+                            <dl class="leftA">
+                                <dd class="year">2017</dd>
+                            </dl>
+                            <dl class="rightA">
+                                <dd>
+                                    <span class="month">10</span>
+                                    어쌔신 크리드: 오리진 한국어판 정식 발매				<span class="mDay">(10/27 ~ 10/27)</span>
+                                </dd>
+                            </dl>
+                        </div>
                     </div>
                 </div>
             </div>

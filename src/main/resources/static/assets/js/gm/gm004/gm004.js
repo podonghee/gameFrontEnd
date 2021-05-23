@@ -132,7 +132,7 @@ $(function(){
             });
             //게임 이미지 클릭시  상세페이지
             $(document).on("click",'.game-thumb-box a',function(){
-                var list = {"gameCompanyCid" : $(this).attr("gameCompanyCid") };
+                var list = {"gameId" : $(this).parent().find('input').attr("gameId") , "gmTabNm" : "gmSshot"};
                 common.formData(list,fnObj.mainView.formTarget);
             });
         },
