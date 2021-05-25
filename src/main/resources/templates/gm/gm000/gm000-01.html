@@ -1,0 +1,48 @@
+<script  type="text/javascript" th:src="@{/assets/js/gm/gm000/gm000-01.js}"></script>
+
+<input type="hidden" th:value="${gameId}" th:attr="id='gameId'"/>
+    <input type="hidden" th:value="${gmTabNm}" th:attr="id='gmTabNm'"/>
+            <!-- intro -->
+            <!--기본 정보-->
+            <div class="gm_info_area">
+                <div class="gm_info">
+                    <div class="GmaeInfoTxt">
+                        <h2 class="h_gm" data-ax-path="gameName"></h2>
+                        <ul>
+                            <li class="leftA">플랫폼</li>
+                            <li class="rightA">
+                                <a class="f_link" href="/game.php?platform=37" data-ax-path="platform"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="leftA">장르</li>
+                            <li class="rightA">
+                                <a class="f_link" href="/game.php?genre=71" data-ax-path="genre"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="leftA">제작사</li>
+                            <li class="rightA"><a class="f_link" data-ax-path="producer" ></a></li>
+                        </ul>
+                        <ul>
+                            <li class="leftA">제공업체</li>
+                            <li class="rightA"><a class="f_link" data-ax-path="provider"></a></li>
+                        </ul>
+                        <ul>
+                            <li class="leftA">이용등급</li>
+                            <li class="rightA" data-ax-path="useCount"></li>
+                        </ul>
+                        <ul>
+                            <li class="leftA">출시년도</li>
+                            <li class="rightA release_date"  data-ax-path="yearRelase"><br></li>
+                        </ul>
+                        <div class="db_spthum">
+                            <ul>
+                            </ul>
+                        </div>
+                        <p class="btmSocial"><a href="http://www.projectmoon.kr/games/games.php?str_no=2" target="_blank"></a></p>
+                    </div>
+                    <div class="gameThumb"><img src="" data-ax-path="img"></div>
+                </div>
+            </div>
+            <div class="gadatabtn">
+                <a href="/g-report.php?gmid=g0012305" class="btndatamodi">게임정보 수정요청</a>
+            </div>

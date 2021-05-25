@@ -26,6 +26,9 @@ var GameController = function () {
         g002 : function (data, callback) {
             _this.request("g004", "dt001", {contents: data}, callback);
         },
+        g003 : function (data, callback) {
+            _this.request("g004", "dt002", {contents: data}, callback);
+        },
     };
     //g005 동영상 페이지
     this.g005 = {

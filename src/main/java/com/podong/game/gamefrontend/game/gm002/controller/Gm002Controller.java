@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 /**
- * 메인페이지
+ * 업체페이지
  * Author : Po dong hee
  * Date : 2021.05.14
  */

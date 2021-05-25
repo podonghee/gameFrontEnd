@@ -7,7 +7,7 @@ $(function(){
         var _this = this;
         common.loadController("Game");
         _this.mainTabView.initView();
-        _this.gmSshotView.initView();
+        fnObj.gmSshotView.initView();
     };
     //메인탭뷰
     fnObj.mainTabView = {
@@ -19,7 +19,6 @@ $(function(){
             this.initEvent();
         },
         initDisplay : function() {
-            fnObj.mainTabView.search();
             fnObj.mainTabView.switchTabList();
         },
         gmInfoSearch : function(){
@@ -69,20 +68,11 @@ $(function(){
             $(".db-sub-menu li.on").removeClass();
             $("li[data-ax-path='"+tab+"']").addClass("on");
             $("#contentList > div").hide();
-            fnObj.mainTabView.search(reqData);
             $("#"+tab).show();
         },
         initEvent : function(){
             $(".db-sub-menu ul li a").click(function(){
                 fnObj.mainTabView.switchTabList($(this).parent().attr("data-ax-path"))
-            });
-        },
-        search : function(){
-            //상세 게임 백앤드 호출
-            controller.Game.g001.g002({gameId :fnObj.mainTabView.gameId},function(res){
-                if(undefined !=  res.list && 0 != res.list) {
-                    common.setData(res.list[0],fnObj.mainTabView.targetId);
-                }
             });
         },
     }
@@ -136,7 +126,12 @@ $(function(){
                     {
                         liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
                     }
-                    if("gameSshotImgUrl" == key){
+                    else if(key == "gameSshotId")
+                    {
+                        liTag.find("#"+key).val(item[key]);
+                    }
+                    else if("gameSshotImgUrl" == key)
+                    {
                         liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
                     }
                     else
@@ -174,8 +169,12 @@ $(function(){
                 fnObj.gmSshotView.paging(id)
             });
             //게임 이미지 클릭시  상세페이지
-            $(document).on("click",'.game-thumb-box a',function(){
-                var list = {"gameId" : $(this).parent().find('input').attr("gameId") , "gmTabNm" : "gmSshot"};
+            $(document).on("click",'.db_thumlist a',function(){
+                var list = {
+                                gameId : fnObj.mainTabView.gameId
+                                , gmTabNm : "gmSshot"
+                                , gameSshotId : $(this).parent().find('#gameSshotId').val()
+                };
                 common.formData(list,fnObj.gmSshotView.formTarget);
             });
         },

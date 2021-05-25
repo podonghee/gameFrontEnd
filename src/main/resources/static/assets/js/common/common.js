@@ -67,7 +67,7 @@ common.formData = function(list,form){
             hiddenField.setAttribute('type', 'hidden');
             hiddenField.setAttribute('name', key);
             hiddenField.setAttribute('value', list[key]);
-            fnObj.mainView.formTarget[0].appendChild(hiddenField);
+            form[0].appendChild(hiddenField);
         }
     }
     form.submit();

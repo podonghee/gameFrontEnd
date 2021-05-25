@@ -43,54 +43,15 @@
 <div id="main">
     <input type="hidden" th:value="${gameId}" th:attr="id='gameId'"/>
     <input type="hidden" th:value="${gmTabNm}" th:attr="id='gmTabNm'"/>
+
     <th:block th:include="common/aside"></th:block>
     <div id="content">
         <div class="content-top-ad"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_big"></script><div id="meca_ads_31"><iframe src="https://ads.gamemeca.com/adver/html/?id=31" width="1041" height="80" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
         <div class="content-left">
             <!-- intro -->
             <!--기본 정보-->
-            <div class="gm_info_area">
-                <div class="gm_info">
-                    <div class="GmaeInfoTxt">
-                        <h2 class="h_gm" data-ax-path="gameName"></h2>
-                        <ul>
-                            <li class="leftA">플랫폼</li>
-                            <li class="rightA">
-                                <a class="f_link" href="/game.php?platform=37" data-ax-path="platform"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">장르</li>
-                            <li class="rightA">
-                                <a class="f_link" href="/game.php?genre=71" data-ax-path="genre"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">제작사</li>
-                            <li class="rightA"><a class="f_link" data-ax-path="producer" ></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">제공업체</li>
-                            <li class="rightA"><a class="f_link" data-ax-path="provider"></a></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">이용등급</li>
-                            <li class="rightA" data-ax-path="useCount"></li>
-                        </ul>
-                        <ul>
-                            <li class="leftA">출시년도</li>
-                            <li class="rightA release_date"  data-ax-path="yearRelase"><br></li>
-                        </ul>
-                        <div class="db_spthum">
-                            <ul>
-                            </ul>
-                        </div>
-                        <p class="btmSocial"><a href="http://www.projectmoon.kr/games/games.php?str_no=2" target="_blank"></a></p>
-                    </div>
-                    <div class="gameThumb"><img src="" data-ax-path="img"></div>
-                </div>
-            </div>
-            <div class="gadatabtn">
-                <a href="/g-report.php?gmid=g0012305" class="btndatamodi">게임정보 수정요청</a>
-            </div>
+            <th:block th:include="gm/gm000/gm000-01"></th:block>
+
 
             <!--게임정보 탭-->
             <div class="db-sub-menu">
@@ -259,24 +220,27 @@
                     <div class="pagingNav">
                         <strong class="cur_num">1</strong></div>
                 </div>
-                <div id="gmSshot" style="display: none">
-                    <div class="dblist_st">
-                        <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 <span data-ax-path="shCnt"></span>개의 스크린샷이 있습니다.</div>
-                    </div>
-                    <div class="db-cont2">
-                        <div class="db_thumlist">
-                            <ul id="ulSshot_1" style="display: none;" class="ulssh">
-                                <li style="display: none" id="liSshot_1">
-                                    <a class="loadThumbView" ><span class="iconsc"></span><img src="#" data-ax-path="gameSshotImgUrl"></a>
-                                    <a class="title" data-ax-path="description"></a>
-                                </li>
-                            </ul>
+                <form action="/gm/gm004/gm004-01" id="gameSshotForm" method="post">
+                    <div id="gmSshot" style="display: none">
+                        <div class="dblist_st">
+                            <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 <span data-ax-path="shCnt"></span>개의 스크린샷이 있습니다.</div>
                         </div>
+                        <div class="db-cont2">
+                            <div class="db_thumlist">
+                                <ul id="ulSshot_1" style="display: none;" class="ulssh">
+                                    <li style="display: none" id="liSshot_1">
+                                        <input type="hidden" id="gameSshotId"/>
+                                        <a class="loadThumbView" >
+                                            <span class="iconsc"></span>
+                                            <img src="#" data-ax-path="gameSshotImgUrl"></a>
+                                        <a class="title" data-ax-path="description"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="list-page-nav" class="pagingNav" ></div>
                     </div>
-                    <div class="pagingNav">
-                        <strong class="cur_num">1</strong>
-                    </div>
-                </div>
+                </form>
                 <div id="gmMovie" style="display: none">
                     <div class="dblist_st">
                         <div class="dbnum h2"><ins class="gmview-tab-guide-total"></ins>총 10개의 동영상이 있습니다.</div>
@@ -343,16 +307,6 @@
         <!-- right section -->
         <div class="content-right">
             <div class="gmview-section-right"><div class="section-right">
-                <!--특별페이지 / 메카 파워진 금~월-->
-                <style>
-                    .special-right .mecazine a{
-                        width: 260px;
-                        height: 337px;
-                        display: inline-block;
-                        background: url('https://cdn.gamemeca.com/gmdata/0001/659/653/gm263281_20210507shg1.jpg') center;
-                        background-size: 260px 337px;
-                    }
-                </style>
                 <div class="special-right">
                     <ul>
                         <li class="mecazine"><a href="/view.php?gid=1659653" target="_blank"></a></li>
@@ -391,21 +345,7 @@
                         </ul>
                     </div>
                 </div>
-                <script>
-                    jQuery(function(){
 
-                        jQuery(".link_tab").on('mouseover', function(){
-                            jQuery(".link_tab").removeClass("on");
-                            jQuery(this).addClass("on");
-                            var index = jQuery(this).index();
-                            jQuery('.rank_list > ul').css("display","none");
-                            jQuery('.rank_list > ul').eq(index).css("display","block");
-
-                        });
-                    });
-
-
-                </script>	<!--//많이본 뉴스-->
                 <div class="right_ad"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_ss"></script><div id="meca_ads_32"><iframe src="https://ads.gamemeca.com/adver/html/?id=32" width="260" height="277" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
                 <!--이벤트-->
                 <style>
@@ -439,107 +379,10 @@
                         </div>
                     </div>
                 </div>
-                <script type="text/javascript">
-                    /* for slider var */
-                    var $sliderQueE = 0;
-                    var $fullSizeIndexE = 0;
-                    var $silderSizeE = 260;
-                    jQuery(document).ready(function(){
-                        $fullSizeIndexE = jQuery("div.event-loc-slider > dl").length - 1;
 
-                        /* siwpeAction btn */
-                        jQuery('button.sliderActionE').on('click', function(){
-                            if(jQuery(this).hasClass("erarrowL")){
-                                if($sliderQueE > 0) $sliderQueE -= 1;
-                                else $sliderQueE = $fullSizeIndexE;
-                            }
-                            if(jQuery(this).hasClass("erarrowR")){
-                                if($sliderQueE < $fullSizeIndexE) $sliderQueE += 1;
-                                else $sliderQueE = 0;
-                            }
-                            setAnimateE();
-                            return false;
-                        });
-
-                        /* setting animated */
-                        function setAnimateE(){
-                            var left = -($sliderQueE * $silderSizeE);
-                            jQuery("div.event-loc-slider").animate({"left": left}, "slow");
-                        }
-
-                    });
-                </script>
                 <!--//이벤트-->
-                <!--게임잡지-->
-                <div class="magazine_r">
-                    <span class="magazine-title"><a href="/magazine/?mgz=cartoon" target="_blank">만평동산</a></span>
-                    <button class="rkarrowR sliderActionM"></button><button class="rkarrowL sliderActionM"></button>
-                    <div id="sliderBox2">
-                        <div class="app-loc-slider" style="width:1300px;">
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2018-2020" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2018-2020" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2018~2020</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2015-2017" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2015-2017" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2015~2017</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2011-2014" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2011-2014" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2011~2014</span></dl>
-                            </dl>
-                            <dl>
-                                <dd>
-                                    <a href="/magazine/index.php?mgz=cartoon&amp;ym=2006-2010" target="_blank">
-                                        <img src="/magazine/file.php?title=cartoon&amp;ym=2006-2010" style="width: 190px; height: 255px;">
-                                    </a>
-                                </dd>
-                                <dl class="grayBox"><span class="ztxt">2006~2010</span></dl>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    /* for slider var */
-                    var $sliderQueM = 0;
-                    var $fullSizeIndexM = 0;
-                    var $silderSizeM = 260;
-                    jQuery(document).ready(function() {
-                        $fullSizeIndexM = jQuery("div.app-loc-slider > dl").length - 1;
 
-                        /* siwpeAction btn */
-                        jQuery('button.sliderActionM').on('click', function() {
-                            if(jQuery(this).hasClass("rkarrowL")) {
-                                if($sliderQueM > 0) $sliderQueM -= 1;
-                                else $sliderQueM = $fullSizeIndexM;
-                            }
-                            if(jQuery(this).hasClass("rkarrowR")) {
-                                if($sliderQueM < $fullSizeIndexM) $sliderQueM += 1;
-                                else $sliderQueM = 0;
-                            }
-                            setAnimateM();
-                            return false;
-                        });
 
-                        /* setting animated */
-                        function setAnimateM() {
-                            var left = -($sliderQueM * $silderSizeM);
-                            jQuery("div.app-loc-slider").animate({"left": left}, "slow");
-                        }
-                    });
-                </script>	<!--//게임잡지-->
                 <!--일정-->
 
                 <div class="game-schedule">
@@ -592,85 +435,7 @@
                     </div>
 
                 </div>
-                <script>
-                    jQuery(function() {
 
-                        function loadData(ym) {
-                            var params = {'json': 'schedule'};
-                            if (ym) params.ym = ym;
-                            jQuery.getJSON('/17/json.php', params, function (rs) {
-                                printSchedule(rs);
-                            });
-                        }
-
-                        function printSchedule(rs) {
-                            var tbody = jQuery('.calender-table tbody');
-                            tbody.empty();
-                            var tr = [];
-                            var trCnt = 0;
-
-                            jQuery('.date div span.year').text(rs.info.year);
-                            jQuery('.date div span.month').text(rs.info.month);
-                            jQuery('.scheduleIcoarrowL').attr('data-ym', rs.info.prev);
-                            jQuery('.scheduleIcoarrowR').attr('data-ym', rs.info.next);
-
-                            jQuery.each(rs.data, function(i, v){
-                                var td = jQuery('<td>');
-                                if (i%7==0) {
-                                    if (i!=0) trCnt +=1;
-                                    tr[trCnt] = jQuery('<tr>');
-                                    td.addClass('sun');
-                                }
-                                if (v.nday) {
-                                    v.day = v.nday;
-                                    td.addClass('nextMonth');
-                                } else {
-                                    if (!td.hasClass('sun'))
-                                        td.addClass('day');
-                                }
-
-                                if (v.row=='on') {
-                                    td.addClass('selected');
-                                    td.data(v.rows);
-                                }
-                                td.append(jQuery('<a>').text(v.day).attr('href', '/game.php?rts=schedule&ym='+rs.info.ym));
-                                tr[trCnt].append(td);
-                            });
-                            jQuery.each(tr, function(i,v){
-                                tbody.append(v);
-                            });
-                        }
-                        loadData();
-
-                        jQuery('.calender-table tbody').on('mouseover', 'td.selected', function (){
-                            var rows = jQuery(this).data();
-                            jQuery('.calLayer').empty();
-                            jQuery.each(rows, function(i, v){
-                                var layerCalender = jQuery('<a>');
-                                if (v.gm_status==25) layerCalender.append(jQuery('<ins class="blue"></ins>'));
-                                else if (v.gm_status==31) layerCalender.append(jQuery('<ins class="red"></ins>'));
-                                else layerCalender.append(jQuery('<ins class="black"></ins>'));
-
-                                layerCalender.append(v.title);
-
-                                jQuery('.calLayer').append(layerCalender);
-                            });
-                            jQuery('div.calLayer').show().css('top', (jQuery(this).offsetParent().prevObject["0"].offsetTop+22));
-                        });
-
-                        jQuery('.game-schedule').on('mouseleave', '.gameCal', function(){
-                            jQuery('div.calLayer').hide();
-                        });
-
-                        jQuery('.scheduleIcoarrowL, .scheduleIcoarrowR').on('click', function(){
-                            console.log(jQuery(this).attr('data-ym'));
-                            loadData(jQuery(this).attr('data-ym'));
-                        });
-
-
-                    });
-
-                </script>
                 <!--//일정-->
                 <!-- 인기 게임 순위 -->
 
@@ -718,78 +483,13 @@
                     </div>
                 </div>	<!-- //인기 게임 순위 -->
                 <div class="right_ad2"><script type="text/javascript" src="https://ads.gamemeca.com/adver/js/?tag=gamemeca/gameinfo/gameinfo_box"></script><div id="meca_ads_33"><iframe src="https://ads.gamemeca.com/adver/html/?id=33" width="260" height="185" scrolling="no" style="margin: 0; padding: 0; border: none;"></iframe></div></div>
-                <script type="text/javascript" src="//ad.xc.netinsight.co.kr/xc/j/HSUDDM8V/x/fst"></script><script async="async" type="text/javascript" src="https://static.criteo.net/js/ld/publishertag.js"></script><div id="criteo_slot_3531"><iframe id="criteo_slot_3531_iframe" frameborder="0" allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" width="250" height="250"></iframe></div>
-                <script>
-                    !function(){
-                        var criteoZoneId = 1338557;
-                        var criteoSlotId = "criteo_slot_3531";
-                        var passback = function () {
-                            var width = "250", height = "250";
-                            var div = document.getElementById(criteoSlotId);
-                            if (div) { var ifr = document.createElement('iframe'); ifr.setAttribute("id", criteoSlotId+"_iframe"), ifr.setAttribute("frameborder","0"), ifr.setAttribute("allowtransparency","true"), ifr.setAttribute("hspace","0"), ifr.setAttribute("marginwidth","0"), ifr.setAttribute("marginheight","0"), ifr.setAttribute("scrolling","no"), ifr.setAttribute("vspace","0"), ifr.setAttribute("width", width), ifr.setAttribute("height", height);
-                                div.appendChild(ifr);
-                                var htmlcode = "<html><head></head><body><iframe src='https://ad.xc.netinsight.co.kr/xc/h/HSUDDM8V/x/cpd' frameborder='0' marginwidth='0' marginheight='0' allowtransparency='true' scrolling='no' width='250' height='250'></iframe></body></html>";
-                                var ifrd = ifr.contentWindow.document; ifrd.open(); ifrd.write(htmlcode); ifrd.close(); }
-                        };
-
-                        var CriteoAdUnits = { "placements": [{ "slotid": criteoSlotId, "zoneid": criteoZoneId }]};
-                        window.Criteo = window.Criteo || {}; window.Criteo.events = window.Criteo.events || [];
-                        var processCdbBid = function() {
-                            var bids = Criteo.GetBidsForAdUnit(criteoSlotId);
-                            if (bids.length > 0) {
-                                var bidFound = bids[0]; Criteo.RenderAd({ bidId: bidFound.id, containerId: bidFound.impressionId });
-                            } else { passback(); }
-                        };
-                        Criteo.events.push(function() { Criteo.RequestBids(CriteoAdUnits, processCdbBid, 2000);});
-                    }();
-                </script>
 
             </div>
             </div>
         </div>
         <!--// right section -->			</div>
 </div>
-<div class="google_ad_bottom_728x90" style="text-align:center; border-top: 1px solid #E4E4E4;background-color:#f3f3f3">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-2639901077908883";
-    /* Main_bottom_728x90 */
-    google_ad_slot = "1110976251";
-    google_ad_width = 728;
-    google_ad_height = 90;
-    //-->
-    </script>
-    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;" data-ad-slot="1110976251" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2639901077908883&amp;output=html&amp;h=90&amp;slotname=1110976251&amp;adk=608371669&amp;adf=2523551987&amp;pi=t.ma~as.1110976251&amp;w=728&amp;lmt=1620466532&amp;url=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php%3Frts%3Dgmview%26gmid%3Dg0012305&amp;flash=0&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjkwLjAuNDQzMC45MyIsW11d&amp;dt=1620466532080&amp;bpp=12&amp;bdt=349&amp;idt=41&amp;shv=r20210505&amp;cbv=%2Fr20190131&amp;ptt=5&amp;saldr=sa&amp;abxe=1&amp;cookie=ID%3D3a557beb04348c5e-22bf1d0ee8c70083%3AT%3D1620466519%3ART%3D1620466519%3AS%3DALNI_MYzRd6hDkOGdN_nR33QVb_dNHNZlw&amp;correlator=267302832312&amp;frm=20&amp;pv=2&amp;ga_vid=1993439177.1620466526&amp;ga_sid=1620466532&amp;ga_hid=1422719&amp;ga_fc=0&amp;u_tz=540&amp;u_his=5&amp;u_java=0&amp;u_h=1050&amp;u_w=1680&amp;u_ah=1010&amp;u_aw=1680&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=468&amp;ady=3250&amp;biw=1663&amp;bih=882&amp;scr_x=0&amp;scr_y=0&amp;eid=44739521&amp;oid=3&amp;pvsid=939528936888264&amp;pem=144&amp;ref=https%3A%2F%2Fwww.gamemeca.com%2Fgame.php&amp;eae=0&amp;fc=640&amp;brdim=0%2C0%2C0%2C0%2C1680%2C0%2C1680%2C1010%2C1680%2C882&amp;vis=1&amp;rsz=%7C%7CeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;btvi=1&amp;fsb=1&amp;xpc=FtW9UmD8Fl&amp;p=https%3A//www.gamemeca.com&amp;dtd=50" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!1" data-google-query-id="CP_Ml5vkufACFUd6vQoddqYBBw" data-load-complete="true"></iframe></ins></ins>
-</div>
 
-<script type="text/javascript">
-
-    function getOption(arg1) {
-        if (!arg1) {
-            return null;
-        }
-
-        var option = {
-            id: arg1.getAttribute('id'),
-            adUnit: arg1.getAttribute('data-ad-unit'),
-            width: arg1.getAttribute('data-ad-width'),
-            height: arg1.getAttribute('data-ad-height')
-        }
-
-        return option;
-    }
-    function callBackFunc(arg1) {
-
-        var option = getOption(arg1), newDiv = document.createElement('div');
-
-        if (option.adUnit == 'DAN-s0xamtkdryw4') {
-            jQuery('.google_ad_bottom_728x90').hide();
-        } else if (option.adUnit == 'DAN-1hvbj8qs3vy3l') {
-            jQuery('.ads_title_bottom').hide();
-        }
-        arg1.appendChild(newDiv);
-    }
-
-</script>
 
 <th:block th:include="fragments/footer"></th:block>
 
