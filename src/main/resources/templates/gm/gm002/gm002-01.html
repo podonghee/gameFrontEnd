@@ -98,25 +98,25 @@
                     총 <span id="makeGameCnt"></span>개의 개발된 게임이 있습니다.
                 </div>
             </div>
-            <form action="/gm/gm002/gm002-01" id="gameCompanyForm" method="post">
-                <div class="company-thumb-area" id="GameListDiv_1">
-                    <ul class="com_gallery" id="ulGame_1" style="display: none;">
-                        <li style="display: none" id="liCmpy_1">
-                            <a class="static-thumbnail" href="#" target="_blank" data-ax-path="gameId">
-                                <span class="static-thumbnail-style"></span>
-                                <img src="" data-ax-path="img">
-                            </a>
-                            <span class="tit_name" data-ax-path="gameName"></span>
-                            <div class="webg_txt">플렛폼: <span class="green" data-ax-path="platform">-</span></div>
-                            <div class="webg_txt">장르: <span class="green" data-ax-path="genre">-</span></div>
-                            <div class="webg_txt">서비스상태: <span class="green" data-ax-path="serviceStatus">-</span></div>
-                        </li>
-                    </ul>
-                </div>
-            <!--// gm_dev -->
+            <div class="company-thumb-area" id="GameListDiv_1">
+                <ul class="com_gallery" id="ulGame_1" style="display: none;">
+                    <li style="display: none" id="liCmpy_1">
+                        <input type="hidden" data-ax-path="gameId"/>
+                        <a class="static-thumbnail" href="#" target="_blank" >
+                            <span class="static-thumbnail-style"></span>
+                            <img src="" data-ax-path="img">
+                        </a>
+                        <span class="tit_name" data-ax-path="gameName"></span>
+                        <div class="webg_txt">플렛폼: <span class="green" data-ax-path="platform">-</span></div>
+                        <div class="webg_txt">장르: <span class="green" data-ax-path="genre">-</span></div>
+                        <div class="webg_txt">서비스상태: <span class="green" data-ax-path="serviceStatus">-</span></div>
+                    </li>
+                </ul>
+            </div>
+        <!--// gm_dev -->
 
 
-            <!-- gm_pub -->
+        <!-- gm_pub -->
             <div class="com-dev-intro-box">
                 <div class="dev-title h2">
                     <ins class="gmview-tab-guide-total"></ins>
@@ -127,7 +127,8 @@
             <div class="company-thumb-area"  id="GameListDiv_2">
                 <ul class="com_gallery" id="ulGame_2" style="display: none;">
                     <li style="display: none" id="liCmpy_2">
-                        <a class="static-thumbnail" href="#" target="_blank" data-ax-path="gameId">
+                        <input type="hidden" data-ax-path="gameId"/>
+                        <a class="static-thumbnail" href="#" target="_blank" >
                             <span class="static-thumbnail-style"></span>
                             <img src="" data-ax-path="img">
                         </a>
@@ -138,7 +139,6 @@
                     </li>
                 </ul>
             </div>
-        </form>
         </div>
         <!-- right section -->
         <div class="content-right">

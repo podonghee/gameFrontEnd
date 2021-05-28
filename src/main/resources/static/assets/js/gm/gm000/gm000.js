@@ -6,14 +6,15 @@ $(function(){
     fnObj.pageStart = function () {
         var _this = this;
         common.loadController("Game");
+        common.headerLoad();
         _this.mainTabView.initView();
         fnObj.gmSshotView.initView();
     };
     //메인탭뷰
     fnObj.mainTabView = {
         targetId : ".gm_info",
-        gmTabNm : $("#gmTabNm").val(),
-        gameId : $("#gameId").val(),
+        gmTabNm : $("#gmTabNm").val() == undefined ? getParameterByName('gmTabNm') : $("#gmTabNm").val(),
+        gameId : $("#gameId").val() == undefined ? getParameterByName('gameId') : $("#gameId").val(),
         initView: function () {
             this.initDisplay();
             this.initEvent();
@@ -35,18 +36,11 @@ $(function(){
         },
         switchTabList : function(tabName){
            var tab =  undefined;
-           if(undefined != tabName)
-           {
-               tab = tabName
-           }
-           else
-           {
-               tab = fnObj.mainTabView.gmTabNm;
-           }
-           var reqData = undefined;
+           tab = tabName == undefined ? fnObj.mainTabView.gmTabNm : tabName
+            $("#gmTabNm").val(tab);
            switch (tab){
                case  'gmInfo':
-                   fnObj.tabView.gmInfoSearch();
+                   fnObj.mainTabView.gmInfoSearch();
                    break;
                case  'gmNews':
                    fnObj.tabView.gmNewsSearch();
@@ -55,7 +49,6 @@ $(function(){
                    fnObj.tabView.gmReviewSearch();
                    break;
                case  'gmSshot':
-
                    fnObj.gmSshotView.gmSshotSearch();
                    break;
                case  'gmVideo':
@@ -72,7 +65,9 @@ $(function(){
         },
         initEvent : function(){
             $(".db-sub-menu ul li a").click(function(){
-                fnObj.mainTabView.switchTabList($(this).parent().attr("data-ax-path"))
+                fnObj.mainTabView.switchTabList($(this).parent().attr("data-ax-path"));
+                common.headerLoad();
+
             });
         },
     }
@@ -105,43 +100,8 @@ $(function(){
         },
         //게임 리스트를 가져와서 html 셋팅
         gmSshotList : function(data){
-            $( '.ulssh' ).not( '#ulSshot_1' ).remove();
             var _data = data;
-            var gameDivTag = $(".db_thumlist");
-            var ulTag = undefined;
-            var liTag = undefined;
-            //ToDo ul 1개에 총 4개 li 들어가야함.
-            $.each(_data, function(index, item) {
-                if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulSshot_1').clone();
-                    ulTag.css("display","");
-                    ulTag.attr("id","");
-                }
-                liTag = ulTag.find("#liSshot_1").clone();
-                liTag.css("display", "");
-                liTag.attr("id", "");
-                //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
-                    }
-                    else if(key == "gameSshotId")
-                    {
-                        liTag.find("#"+key).val(item[key]);
-                    }
-                    else if("gameSshotImgUrl" == key)
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
-                    }
-                    else
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                ulTag.append(liTag);
-                gameDivTag.append(ulTag);
-            });
+            common.dataList(_data,$(".db_thumlist"),"#ulSshot_1","#liSshot_1")
         },
         gmSshotSearch : function(){
             //백앤드 호출

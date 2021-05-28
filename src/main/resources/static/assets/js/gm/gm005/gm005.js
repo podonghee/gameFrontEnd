@@ -23,7 +23,6 @@ $(function(){
                 if("notX" !== $(this).attr("data-ax-path")) {
                     $("#platform").find('li.on').removeClass();
                     $(this).addClass('on');
-
                     fnObj.mainView.resetPage();
                     fnObj.mainView.search();
                 }
@@ -71,40 +70,8 @@ $(function(){
         },
         //게임 리스트를 가져와서 html 셋팅
         videoList : function(data){
-            $( '.game-thumb-ul' ).not( '#ulVideo_1' ).remove();
             var _data = data;
-            var gameDivTag = $(".game-thumb-box");
-            var gameUlTag = $("<ul>");
-            gameUlTag.attr('class','game-thumb-ul');
-            var ulTag = undefined;
-            var liTag = undefined;
-            //ToDo ul 1개에 총 4개 li 들어가야함.
-            $.each(_data, function(index, item) {
-                if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulVideo_1').clone();
-                    ulTag.css("display","");
-                    ulTag.attr("id","");
-                }
-                liTag = ulTag.find("#liVideo_1").clone();
-                liTag.css("display", "");
-                liTag.attr("id", "");
-                //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
-                    }
-                    if("gameVideoImgUrl" == key){
-                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
-                    }
-                    else
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                ulTag.append(liTag);
-                gameDivTag.append(ulTag);
-            });
+            common.dataList(_data,$(".game-thumb-box"),"#ulVideo_1","#liVideo_1")
         },
         search : function(){
             //백앤드 호출

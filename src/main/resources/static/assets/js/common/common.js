@@ -13,26 +13,116 @@ common.loadController = function (controllerName) {
     });
 },
 common.headerLoad = function(){
-    $(".dbSchbox").find('a.on').removeClass();
+    $("#ulTopTabMenu").find('li.on').removeClass('on');
     var path = $(location).attr('pathname');
+    var cnt = 0;
     switch (path){
-        case "/gm/gm002/gm002" : $("#he_2").addClass('on');
+        case "/gm/gm000/gm000" :
+            var tab = $("#gmTabNm").val() == undefined ? getParameterByName('gmTabNm') : $("#gmTabNm").val();
+            switch (tab){
+                case "gmInfo" : cnt = 1
+                    break;
+                case "gmSshot" : cnt = 4
+                    break;
+                case "gmVideo" : cnt = 5
+                    break;
+                case "gmAttack" : cnt = 6
+                    break;
+            }
             break;
-        case "/gm/gm003/gm003" : $("#he_3").addClass('on');
+        case "/gm/gm002/gm002" :
+        case "/gm/gm002/gm002-01" :
+            cnt = 2
             break;
-        case "/gm/gm004/gm004" : $("#he_4").addClass('on');
+        case "/gm/gm003/gm003" : cnt = 3
             break;
-        case "/gm/gm005/gm005" : $("#he_5").addClass('on');
+        case "/gm/gm004/gm004" :
+        case "/gm/gm004/gm004-01" :
+            cnt = 4
             break;
-        case "/gm/gm006/gm006" : $("#he_6").addClass('on');
+        case "/gm/gm005/gm005" : cnt = 5
             break;
-        case "/gm/gm007/gm007" : $("#he_7").addClass('on');
+        case "/gm/gm006/gm006" : cnt = 6
             break;
-        case "/gm/gm008/gm008" : $("#he_8").addClass('on');
+        case "/gm/gm007/gm007" : cnt = 7
             break;
-        default : $("#he_1").addClass('on');
+        case "/gm/gm008/gm008" : cnt = 8
+        default : cnt =1
+            break;
+    }
+    $("#he_"+cnt).addClass('on');
+}
+
+common.dataList = function(data,element,ulId,liId,ulClass){
+    var iData = data;
+    var ele = element;
+    var ulTagId = ulId;
+    var liTagId = liId;
+    var ulTag = undefined;
+    var liTag = undefined;
+    var targetTag = undefined;
+    var ulTagClass = ulClass;
+    var flag = liTagId == undefined ? false : true
+    if(!flag){
+        ulTag = $("<ul>");
+        ulTag.attr('class',ulTagClass);
+    }
+    else
+    {
+        $("." + ele.find("ul").prop('class')).not(ulTagId).remove();
+    }
+    $.each(iData, function(i, item) {
+        if(flag)
+        {
+            if (i % 4 == 0)
+            {
+                ulTag = ele.find(ulTagId).clone();
+                ulTag.css("display", "");
+                ulTag.attr("id", "");
+            }
+            liTag = ulTag.find(liTagId).clone();
+        }
+        else
+        {
+            liTag =  ele.find('ul > li').clone();
+        }
+
+        liTag.css("display", "");
+        liTag.attr("id", "");
+        for(var key in item) {
+            targetTag = liTag.find("[data-ax-path='" + key + "']");
+            if (targetTag.length < 1) {
+                targetTag = liTag.find("." + key + "");
+                if (targetTag.length < 1)
+                    targetTag = liTag.find("#" + key + "");
+                if (targetTag.length < 1)
+                    continue;
+            }
+            if ("input" == targetTag.prop("tagName").toLowerCase() || "select" == targetTag.prop("tagName").toLowerCase() || "textarea" == targetTag.prop("tagName").toLowerCase()
+            )
+                targetTag.val(item[key]);
+            else
+                targetTag.text(item[key]);
+
+            if("a" == targetTag.prop("tagName").toLowerCase())
+                targetTag.attr("href",item[key])
+
+            if("img" == targetTag.prop("tagName").toLowerCase())
+                targetTag.attr("src",item[key])
+        }
+        ulTag.append(liTag);
+        liTag = undefined;
+        if(flag) {
+            if (i % 4 == 0) {
+                ele.append(ulTag);
+            }
+        }
+    });
+    if(!flag){
+        ele.append(ulTag);
     }
 }
+
 common.setData = function(data,target)
 {
     var targetTag = undefined;

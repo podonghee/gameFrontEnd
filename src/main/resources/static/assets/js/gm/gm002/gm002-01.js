@@ -14,57 +14,34 @@ $(function(){
         gameCompanyCid : $("#gameCompanyCid").val(),
         initView: function () {
             this.initDisplay();
-           // this.initEvent();
+            this.initEvent();
         },
         initDisplay : function() {
             fnObj.mainView.search();
-           // fnObj.tabView.switchTabList();
         },
         initEvent : function(){
+            //게임 이미지 클릭시  상세페이지
+            $(document).on("click",'.company-thumb-area a',function(){
+                var url = window.location.origin;
+                window.open(url+'/gm/gm000/gm000?gameId=' +
+                    $(this).parent().find('input').val()+'&gmTabNm=gmInfo', '_blank');
+            });
         },
         //게임 리스트를 가져와서 html 셋팅
         gameList : function(data,cnt){
             $( '.com_gallery' ).not( '#ulGame_'+cnt ).remove();
             var _data = data;
             var gameDivTag = $("#GameListDiv_"+cnt);
-            var gameUlTag = $("<ul>");
-            gameUlTag.attr('class','com_gallery');
-            var ulTag = undefined;
-            var liTag = undefined;
-            //ToDo ul 1개에 총 4개 li 들어가야함.
-            $.each(_data, function(index, item) {
-                if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulGame_'+cnt).clone();
-                    ulTag.css("display","");
-                    ulTag.attr("id","");
-                }
-                liTag = ulTag.find("#liCmpy_"+cnt).clone();
-                liTag.css("display", "");
-                liTag.attr("id", "");
-                //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
-                    }
-                    else if(key == "img")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
-                    }
-                    else
-                    {
-                        item[key] = item[key] == undefined ? '-' : item[key];
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                ulTag.append(liTag);
-                gameDivTag.append(ulTag);
-            });
+            var ulTagId = "#ulGame_"+cnt;
+            var liTagId = "#liCmpy_"+cnt;
+            common.dataList(_data,gameDivTag,ulTagId,liTagId)
         },
         search : function(){
             controller.Game.g002.g002({gameCompanyCid :fnObj.mainView.gameCompanyCid},function(res){
                 if(undefined !=  res.list && 0 != res.list) {
+                    //업체 상세정보 셋팅.
                     common.setData(res.list[0],fnObj.mainView.targetId);
+                    //개발중인 게임이 있는경우
                     if(res.list[0]['makeGameList'].length > 0){
                         $("#makeGameCnt").text(res.list[0]['makeGameList'].length);
                         fnObj.mainView.gameList(res.list[0]['makeGameList'],1);
@@ -73,6 +50,7 @@ $(function(){
                     {
                         $("#makeGameCnt").text(0);
                     }
+                    //서비스중인 게임이 있는경우
                     if(res.list[0]['serviceGameList'].length > 0){
                         $("#serviceGameCnt").text(res.list[0]['serviceGameList'].length);
                         fnObj.mainView.gameList(res.list[0]['serviceGameList'],2);

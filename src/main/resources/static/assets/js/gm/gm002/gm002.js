@@ -82,38 +82,8 @@ $(function(){
         },
         //게임 리스트를 가져와서 html 셋팅
         companyList : function(data){
-            $( '.list_gallery' ).not( '#ulCmpy_1' ).remove();
             var _data = data;
-            var gameDivTag = $(".company-list");
-            var gameUlTag = $("<ul>");
-            gameUlTag.attr('class','list_gallery');
-            var ulTag = undefined;
-            var liTag = undefined;
-            //ToDo ul 1개에 총 4개 li 들어가야함.
-            $.each(_data, function(index, item) {
-                if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulCmpy_1').clone();
-                    ulTag.css("display","");
-                    ulTag.attr("id","");
-                }
-                    liTag = ulTag.find("#liCmpy_1").clone();
-                    liTag.css("display", "");
-                    liTag.attr("id", "");
-                    //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameCompanyCid")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameCompanyCid",item[key]);
-                    }
-
-                    else
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                ulTag.append(liTag);
-                gameDivTag.append(ulTag);
-            });
+            common.dataList(_data,$(".company-list"),"#ulCmpy_1","#liCmpy_1")
         },
         search : function(){
             //백앤드 호출
@@ -142,7 +112,7 @@ $(function(){
             });
             //게임 이미지 클릭시  상세페이지
             $(document).on("click",'.company-list a',function(){
-                var list = {"gameCompanyCid" : $(this).attr("gameCompanyCid") };
+                var list = {"gameCompanyCid" : $(this).parent().find('input').val() };
                 common.formData(list,fnObj.mainView.formTarget);
             });
         },

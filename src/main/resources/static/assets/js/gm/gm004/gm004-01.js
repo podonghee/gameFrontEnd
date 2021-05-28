@@ -8,9 +8,29 @@ $(function(){
         //서버에 태울 Ajax 공통 컨트롤러 선언.
         common.loadController("Game");
         common.headerLoad();
+        _this.mainTabView.initView();
         _this.potoView.initView();
         _this.gmSshotView.initView();
     };
+    //메인탭뷰
+    fnObj.mainTabView = {
+        initView: function () {
+            this.initDisplay();
+            this.initEvent();
+        },
+        initDisplay : function() {
+            fnObj.mainTabView.switchTabList();
+        },
+        switchTabList : function(){
+            $(".db-sub-menu li.on").removeClass();
+            $("li[data-ax-path='gmSshot']").addClass("on");
+        },
+        initEvent : function(){
+            $(".db-sub-menu ul li a").click(function(){
+                location.href ="/gm/gm000/gm000?gameId="+fnObj.potoView.gameId+"&gmTabNm=gmInfo"
+            });
+        },
+    }
     //게임 리스트를 뿌려주기 위한 뷰
     fnObj.potoView = {
         gameId : $("#gameId").val(),
@@ -50,30 +70,6 @@ $(function(){
                     )
                 );
             }
-           /* $.each(_data, function(index, item) {
-                if(index === 5){
-                    return false;
-                }
-                    if ("1" == item['levelNo'])
-                    {
-                        $("h2[data-ax-path='description']").text(item['description']);
-                    }
-                    else
-                    {
-                        liTag = gameDivTag.find('#liPoto_1').clone();
-                        liTag.css("display", "");
-                        liTag.attr("id", "");
-                        //ToDo li length 를 비교하여 작업
-                        for (var key in item) {
-                            if ("gameSshotImgUrl" == key)
-                            {
-                                liTag.find("[data-ax-path='" + key + "']").attr("src", item[key]);
-                            }
-                        }
-                        ulTag.append(liTag);
-                        gameDivTag.append(ulTag);
-                    }
-            });*/
         },
         search : function(){
             //백앤드 호출
@@ -127,7 +123,6 @@ $(function(){
                     else
                         fnObj.potoView.layerIndex += 1;
 
-
                     if(fnObj.potoView.layerIndex % fnObj.potoView.layerHeaderSize == 0) {
                         fnObj.potoView.layerP += 1
                         fnObj.potoView.drawLayerHead();
@@ -172,43 +167,8 @@ $(function(){
         },
         //게임 리스트를 가져와서 html 셋팅
         gmSshotList : function(data){
-            $( '.ulssh' ).not( '#ulSshot_1' ).remove();
             var _data = data;
-            var gameDivTag = $(".db_thumlist");
-            var ulTag = undefined;
-            var liTag = undefined;
-            //ToDo ul 1개에 총 4개 li 들어가야함.
-            $.each(_data, function(index, item) {
-                if(index % 4 == 0) {
-                    ulTag = gameDivTag.find('#ulSshot_1').clone();
-                    ulTag.css("display","");
-                    ulTag.attr("id","");
-                }
-                liTag = ulTag.find("#liSshot_1").clone();
-                liTag.css("display", "");
-                liTag.attr("id", "");
-                //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
-                    }
-                    else if(key == "gameSshotId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameSshotId",item[key]);
-                    }
-                    else if("gameSshotImgUrl" == key)
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
-                    }
-                    else
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                ulTag.append(liTag);
-                gameDivTag.append(ulTag);
-            });
+            common.dataList(_data,$(".db_thumlist"),"#ulSshot_1","#liSshot_1");
         },
         gmSshotSearch : function(){
             //백앤드 호출

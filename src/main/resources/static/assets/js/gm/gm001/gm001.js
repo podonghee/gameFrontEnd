@@ -152,8 +152,8 @@ $(function(){
         },
         //게임 리스트를 가져와서 html 셋팅
         gameList : function(data){
+            var _data = data;
             var type = $(".dblist_st li.on").attr('id');
-            var ulTag = undefined;
             var ulClass = undefined;
             var divTag = undefined;
             $( '.dblist_gallery' ).not( "#ulEmptyBox" ).remove();
@@ -162,42 +162,15 @@ $(function(){
             if("GL_1" == type)
             {
                 ulClass = "dblist_gallery"
-                divTag = "gmdb-list-box"
+                divTag = "#gmdb-list-box"
             }
             //메인 ToList
             else if("GK_1" == type)
             {
                 ulClass = "dblist_news"
-                divTag = "gmdb-list-list"
+                divTag = "#gmdb-list-list"
             }
-            var _data = data;
-            var gameDivTag = $("#"+divTag);
-            var gameUlTag = $("<ul>");
-            gameUlTag.attr('class',ulClass);
-            var liTag = undefined;
-            $.each(_data, function(index, item) {
-                liTag = gameDivTag.find('ul > li').clone();
-                liTag.css("display","");
-                //ToDo li length 를 비교하여 작업
-                for(var key in item) {
-                    if(key == "gameId")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("gameId",item[key]);
-                    }
-                    else if(key == "img")
-                    {
-                        liTag.find("[data-ax-path='" + key + "']").attr("src",item[key]);
-                    }
-                    else
-                    {
-                        item[key] = item[key] == undefined ? '-' : item[key];
-                        liTag.find("[data-ax-path='" + key + "']").text(item[key]);
-                    }
-                }
-                gameUlTag.append(liTag);
-                liTag = undefined;
-            });
-            gameDivTag.append(gameUlTag);
+            common.dataList(_data,$(divTag),"#ulEmptyBox",undefined,ulClass);
         },
         search : function(){
             //백앤드 호출
@@ -226,7 +199,7 @@ $(function(){
             });
             //게임 이미지 클릭시  상세페이지
             $(document).on("click",'.dblist_area a',function(){
-                var list = {"gameId" : $(this).attr("gameId") , "gmTabNm" : "gmInfo"};
+                var list = {"gameId" : $(this).parent().find('input').val() , "gmTabNm" : "gmInfo"};
                 common.formData(list,fnObj.mainView.formTarget);
             });
         },
